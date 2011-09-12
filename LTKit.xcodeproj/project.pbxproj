@@ -1,0 +1,402 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EB1CDB32141DB07700729A2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CDB31141DB07700729A2D /* Foundation.framework */; };
+		EB1CDB38141DB07700729A2D /* LTKit.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1CDB37141DB07700729A2D /* LTKit.m */; };
+		EB1CDB40141DB07800729A2D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CDB3F141DB07800729A2D /* SenTestingKit.framework */; };
+		EB1CDB42141DB07800729A2D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CDB41141DB07800729A2D /* UIKit.framework */; };
+		EB1CDB43141DB07800729A2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CDB31141DB07700729A2D /* Foundation.framework */; };
+		EB1CDB46141DB07800729A2D /* libLTKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CDB2E141DB07700729A2D /* libLTKit.a */; };
+		EB1CDB4C141DB07800729A2D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB1CDB4A141DB07800729A2D /* InfoPlist.strings */; };
+		EB1CDB4F141DB07800729A2D /* LTKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1CDB4E141DB07800729A2D /* LTKitTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EB1CDB44141DB07800729A2D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB1CDB25141DB07700729A2D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB1CDB2D141DB07700729A2D;
+			remoteInfo = LTKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EB1CDB2E141DB07700729A2D /* libLTKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLTKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB1CDB31141DB07700729A2D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EB1CDB35141DB07700729A2D /* LTKit-Prefix.pch */ = {isa = PBXFileReference; path = "LTKit-Prefix.pch"; sourceTree = "<group>"; };
+		EB1CDB36141DB07700729A2D /* LTKit.h */ = {isa = PBXFileReference; path = LTKit.h; sourceTree = "<group>"; };
+		EB1CDB37141DB07700729A2D /* LTKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTKit.m; sourceTree = "<group>"; };
+		EB1CDB3E141DB07800729A2D /* LTKitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LTKitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB1CDB3F141DB07800729A2D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		EB1CDB41141DB07800729A2D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		EB1CDB49141DB07800729A2D /* LTKitTests-Info.plist */ = {isa = PBXFileReference; path = "LTKitTests-Info.plist"; sourceTree = "<group>"; };
+		EB1CDB4B141DB07800729A2D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EB1CDB4D141DB07800729A2D /* LTKitTests.h */ = {isa = PBXFileReference; path = LTKitTests.h; sourceTree = "<group>"; };
+		EB1CDB4E141DB07800729A2D /* LTKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTKitTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EB1CDB2B141DB07700729A2D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB1CDB32141DB07700729A2D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB1CDB3A141DB07800729A2D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB1CDB40141DB07800729A2D /* SenTestingKit.framework in Frameworks */,
+				EB1CDB42141DB07800729A2D /* UIKit.framework in Frameworks */,
+				EB1CDB43141DB07800729A2D /* Foundation.framework in Frameworks */,
+				EB1CDB46141DB07800729A2D /* libLTKit.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EB1CDB23141DB07700729A2D = {
+			isa = PBXGroup;
+			children = (
+				EB1CDB33141DB07700729A2D /* LTKit */,
+				EB1CDB47141DB07800729A2D /* LTKitTests */,
+				EB1CDB30141DB07700729A2D /* Frameworks */,
+				EB1CDB2F141DB07700729A2D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EB1CDB2F141DB07700729A2D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB1CDB2E141DB07700729A2D /* libLTKit.a */,
+				EB1CDB3E141DB07800729A2D /* LTKitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EB1CDB30141DB07700729A2D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB1CDB31141DB07700729A2D /* Foundation.framework */,
+				EB1CDB3F141DB07800729A2D /* SenTestingKit.framework */,
+				EB1CDB41141DB07800729A2D /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EB1CDB33141DB07700729A2D /* LTKit */ = {
+			isa = PBXGroup;
+			children = (
+				EB1CDB36141DB07700729A2D /* LTKit.h */,
+				EB1CDB37141DB07700729A2D /* LTKit.m */,
+				EB1CDB34141DB07700729A2D /* Supporting Files */,
+			);
+			path = LTKit;
+			sourceTree = "<group>";
+		};
+		EB1CDB34141DB07700729A2D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EB1CDB35141DB07700729A2D /* LTKit-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EB1CDB47141DB07800729A2D /* LTKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				EB1CDB4D141DB07800729A2D /* LTKitTests.h */,
+				EB1CDB4E141DB07800729A2D /* LTKitTests.m */,
+				EB1CDB48141DB07800729A2D /* Supporting Files */,
+			);
+			path = LTKitTests;
+			sourceTree = "<group>";
+		};
+		EB1CDB48141DB07800729A2D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EB1CDB49141DB07800729A2D /* LTKitTests-Info.plist */,
+				EB1CDB4A141DB07800729A2D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		EB1CDB2C141DB07700729A2D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		EB1CDB2D141DB07700729A2D /* LTKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB1CDB52141DB07800729A2D /* Build configuration list for PBXNativeTarget "LTKit" */;
+			buildPhases = (
+				EB1CDB2A141DB07700729A2D /* Sources */,
+				EB1CDB2B141DB07700729A2D /* Frameworks */,
+				EB1CDB2C141DB07700729A2D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LTKit;
+			productName = LTKit;
+			productReference = EB1CDB2E141DB07700729A2D /* libLTKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		EB1CDB3D141DB07800729A2D /* LTKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB1CDB55141DB07800729A2D /* Build configuration list for PBXNativeTarget "LTKitTests" */;
+			buildPhases = (
+				EB1CDB39141DB07800729A2D /* Sources */,
+				EB1CDB3A141DB07800729A2D /* Frameworks */,
+				EB1CDB3B141DB07800729A2D /* Resources */,
+				EB1CDB3C141DB07800729A2D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB1CDB45141DB07800729A2D /* PBXTargetDependency */,
+			);
+			name = LTKitTests;
+			productName = LTKitTests;
+			productReference = EB1CDB3E141DB07800729A2D /* LTKitTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EB1CDB25141DB07700729A2D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = EB1CDB28141DB07700729A2D /* Build configuration list for PBXProject "LTKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EB1CDB23141DB07700729A2D;
+			productRefGroup = EB1CDB2F141DB07700729A2D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EB1CDB2D141DB07700729A2D /* LTKit */,
+				EB1CDB3D141DB07800729A2D /* LTKitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EB1CDB3B141DB07800729A2D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB1CDB4C141DB07800729A2D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EB1CDB3C141DB07800729A2D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EB1CDB2A141DB07700729A2D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB1CDB38141DB07700729A2D /* LTKit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB1CDB39141DB07800729A2D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB1CDB4F141DB07800729A2D /* LTKitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EB1CDB45141DB07800729A2D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB1CDB2D141DB07700729A2D /* LTKit */;
+			targetProxy = EB1CDB44141DB07800729A2D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EB1CDB4A141DB07800729A2D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB1CDB4B141DB07800729A2D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EB1CDB50141DB07800729A2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EB1CDB51141DB07800729A2D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EB1CDB53141DB07800729A2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/LTKit.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LTKit/LTKit-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		EB1CDB54141DB07800729A2D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/LTKit.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LTKit/LTKit-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		EB1CDB56141DB07800729A2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LTKit/LTKit-Prefix.pch";
+				INFOPLIST_FILE = "LTKitTests/LTKitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		EB1CDB57141DB07800729A2D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LTKit/LTKit-Prefix.pch";
+				INFOPLIST_FILE = "LTKitTests/LTKitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EB1CDB28141DB07700729A2D /* Build configuration list for PBXProject "LTKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB1CDB50141DB07800729A2D /* Debug */,
+				EB1CDB51141DB07800729A2D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB1CDB52141DB07800729A2D /* Build configuration list for PBXNativeTarget "LTKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB1CDB53141DB07800729A2D /* Debug */,
+				EB1CDB54141DB07800729A2D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EB1CDB55141DB07800729A2D /* Build configuration list for PBXNativeTarget "LTKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB1CDB56141DB07800729A2D /* Debug */,
+				EB1CDB57141DB07800729A2D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EB1CDB25141DB07700729A2D /* Project object */;
+}
