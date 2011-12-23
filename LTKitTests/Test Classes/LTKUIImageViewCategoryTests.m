@@ -68,7 +68,7 @@
 #pragma mark - Internal Definitions
 
 static NSString *const LTKSampleImageName = @"LTKUIImageViewCategoryTestsSample";
-static NSString *const LTKSampleHighlightedImageName = @"LTKUIImageViewCategoryTestsSampleHighlighted1";
+static NSString *const LTKSampleHighlightedImageName = @"LTKUIImageViewCategoryTestsSampleHighlighted";
 static CGSize const LTKSampleImageSize = {75.0f, 110.0f};
 static CGSize const LTKSampleHighlightedImageSize = {75.0f, 110.0f};
 
