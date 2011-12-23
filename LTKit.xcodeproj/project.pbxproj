@@ -622,6 +622,7 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
 				INFOPLIST_FILE = "LTKitTests/Supporting Files/LTKitTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -640,6 +641,7 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
 				INFOPLIST_FILE = "LTKitTests/Supporting Files/LTKitTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",
