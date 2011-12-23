@@ -88,7 +88,7 @@ static CGSize const LTKSampleHighlightedImageSize = {75.0f, 110.0f};
 
 - (void)setUp
 {
-    [super setUp];
+	[super setUp];
 
 	UIImage *image = [UIImage imageNamed:LTKSampleImageName];
 	UIImage *highlightedImage = [UIImage imageNamed:LTKSampleHighlightedImageName];
@@ -98,7 +98,7 @@ static CGSize const LTKSampleHighlightedImageSize = {75.0f, 110.0f};
 
 - (void)tearDown
 {
-    [super tearDown];
+	[super tearDown];
 }
 
 #pragma mark - Unit Tests

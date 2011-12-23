@@ -38,7 +38,7 @@
 
 - (void)setUp
 {
-    [super setUp];
+	[super setUp];
 
 	self.superview = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 200.0f, 200.0f)];
 	self.subview = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 100.0f, 100.0f)];
@@ -48,7 +48,7 @@
 
 - (void)tearDown
 {
-    [super tearDown];
+	[super tearDown];
 }
 
 #pragma mark - Unit Tests
