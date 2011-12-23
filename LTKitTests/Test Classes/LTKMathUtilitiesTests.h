@@ -1,5 +1,5 @@
 //
-//	LTKUIViewCategoryTests.h
+//	LTKMathUtilitiesTests.h
 //	LTKitTests
 //
 //	Copyright (c) 2011 Michael Potter
@@ -19,6 +19,6 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface LTKUIViewCategoryTests : SenTestCase
+@interface LTKMathUtilitiesTests : SenTestCase
 
 @end

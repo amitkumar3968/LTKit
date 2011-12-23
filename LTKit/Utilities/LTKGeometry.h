@@ -1,6 +1,6 @@
 //
-//	LTKUIViewCategoryTests.h
-//	LTKitTests
+//	LTKGeometry.h
+//	LTKit
 //
 //	Copyright (c) 2011 Michael Potter
 //	http://lucas.tiz.ma
@@ -17,8 +17,12 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <UIKit/UIKit.h>
 
-@interface LTKUIViewCategoryTests : SenTestCase
+CG_INLINE CGPoint LTKPointApplyOffset(CGPoint point, UIOffset offset)
+{
+	point.x += offset.horizontal;
+	point.y += offset.vertical;
 
-@end
+	return point;
+}

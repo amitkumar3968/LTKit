@@ -1,5 +1,5 @@
 //
-//	LTKUIViewCategoryTests.h
+//	LTKUIGestureRecognizerCategoryTests.m
 //	LTKitTests
 //
 //	Copyright (c) 2011 Michael Potter
@@ -17,8 +17,33 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import "LTKUIGestureRecognizerCategoryTests.h"
+#import "UIGestureRecognizer+LTKAdditions.h"
 
-@interface LTKUIViewCategoryTests : SenTestCase
+#pragma mark Class Extension -
+
+@interface LTKUIGestureRecognizerCategoryTests ()
+
+- (void)handleGesture:(UIGestureRecognizer *)gestureRecognizer;
+
+@end
+
+@implementation LTKUIGestureRecognizerCategoryTests
+
+#pragma mark - LTKUIGestureRecognizerCategoryTests Methods (Private)
+
+- (void)handleGesture:(UIGestureRecognizer *)gestureRecognizer
+{
+	// Intentionally empty
+}
+
+#pragma mark - Unit Tests
+
+- (void)testGestureRecognizerWithTargetActionMethod
+{
+	UIGestureRecognizer *gestureRecognizer = [UIGestureRecognizer gestureRecognizerWithTarget:self action:@selector(handleGesture:)];
+
+	STAssertNotNil(gestureRecognizer, @"Gesture recognizer is nil.");
+}
 
 @end

@@ -1,6 +1,6 @@
 //
-//	LTKUIViewCategoryTests.h
-//	LTKitTests
+//	UIImageView+LTKAdditions.h
+//	LTKit
 //
 //	Copyright (c) 2011 Michael Potter
 //	http://lucas.tiz.ma
@@ -17,8 +17,15 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <UIKit/UIKit.h>
 
-@interface LTKUIViewCategoryTests : SenTestCase
+@interface UIImageView (LTKAdditions)
+
++ (id)imageViewWithImage:(UIImage *)image;
++ (id)imageViewWithImage:(UIImage *)image highlightedImage:(UIImage *)highlightedImage;
++ (id)imageViewWithImageNamed:(NSString *)imageName;
++ (id)imageViewWithImageNamed:(NSString *)imageName highlightedImageNamed:(NSString *)highlightedImageNamed;
+- (id)initWithImageNamed:(NSString *)imageName;
+- (id)initWithImageNamed:(NSString *)imageName highlightedImageNamed:(NSString *)highlightedImageNamed;
 
 @end

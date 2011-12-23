@@ -1,6 +1,6 @@
 //
-//	LTKUIViewCategoryTests.h
-//	LTKitTests
+//	UIGestureRecognizer+LTKAdditions.m
+//	LTKit
 //
 //	Copyright (c) 2011 Michael Potter
 //	http://lucas.tiz.ma
@@ -17,8 +17,15 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import "UIGestureRecognizer+LTKAdditions.h"
 
-@interface LTKUIViewCategoryTests : SenTestCase
+@implementation UIGestureRecognizer (LTKAdditions)
+
+#pragma mark - UIGestureRecognizer (LTKAdditions) Methods
+
++ (id)gestureRecognizerWithTarget:(id)target action:(SEL)action
+{
+	return [[self alloc] initWithTarget:target action:action];		// Would be autoreleased in a non-ARC environment
+}
 
 @end

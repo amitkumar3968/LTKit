@@ -23,6 +23,18 @@
 		EB1CDB9F141DC25100729A2D /* LTKitCategories.h in Headers */ = {isa = PBXBuildFile; fileRef = EB1CDB9E141DC25100729A2D /* LTKitCategories.h */; };
 		EB40D5621495D63E006C24CC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CDB92141DB6D000729A2D /* UIKit.framework */; };
 		EB40D5631495D644006C24CC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CDB60141DB46F00729A2D /* CoreGraphics.framework */; };
+		EB6F265114A21E6900347EE1 /* LTKMath.h in Headers */ = {isa = PBXBuildFile; fileRef = EB6F265014A21E6900347EE1 /* LTKMath.h */; };
+		EB6F265714A2241F00347EE1 /* LTKGeometryUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6F265614A2241F00347EE1 /* LTKGeometryUtilitiesTests.m */; };
+		EB6F265A14A227A200347EE1 /* LTKMathUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6F265914A227A200347EE1 /* LTKMathUtilitiesTests.m */; };
+		EBA760A414A0D7ED009713E2 /* UIImageView+LTKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EBA760A214A0D7ED009713E2 /* UIImageView+LTKAdditions.h */; };
+		EBA760A514A0D7ED009713E2 /* UIImageView+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA760A314A0D7ED009713E2 /* UIImageView+LTKAdditions.m */; };
+		EBA760A914A0D81A009713E2 /* LTKUIImageViewCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA760A814A0D81A009713E2 /* LTKUIImageViewCategoryTests.m */; };
+		EBA760AD14A0DD4E009713E2 /* LTKUIImageViewCategoryTestsSample.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA760AC14A0DD4E009713E2 /* LTKUIImageViewCategoryTestsSample.png */; };
+		EBA760AF14A0E108009713E2 /* LTKUIImageViewCategoryTestsSampleHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = EBA760AE14A0E108009713E2 /* LTKUIImageViewCategoryTestsSampleHighlighted.png */; };
+		EBA760B714A0F07F009713E2 /* LTKitUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = EBA760B614A0F07F009713E2 /* LTKitUtilities.h */; };
+		EBA760BA14A0FFDB009713E2 /* UIGestureRecognizer+LTKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EBA760B814A0FFDB009713E2 /* UIGestureRecognizer+LTKAdditions.h */; };
+		EBA760BB14A0FFDB009713E2 /* UIGestureRecognizer+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA760B914A0FFDB009713E2 /* UIGestureRecognizer+LTKAdditions.m */; };
+		EBA760C314A1009A009713E2 /* LTKUIGestureRecognizerCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA760C214A1009A009713E2 /* LTKUIGestureRecognizerCategoryTests.m */; };
 		EBF72BDE1445200F009C9B5E /* LTPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF72BD41445200F009C9B5E /* LTPAppDelegate.m */; };
 		EBF72BDF1445200F009C9B5E /* LTPStoryboardiPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF72BD61445200F009C9B5E /* LTPStoryboardiPad.storyboard */; };
 		EBF72BE01445200F009C9B5E /* LTPStoryboardiPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF72BD71445200F009C9B5E /* LTPStoryboardiPhone.storyboard */; };
@@ -48,7 +60,7 @@
 		EB1CDB3F141DB07800729A2D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		EB1CDB5C141DB46E00729A2D /* LTPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LTPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB1CDB60141DB46F00729A2D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		EB1CDB74141DB63000729A2D /* LTKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKit.h; sourceTree = "<group>"; };
+		EB1CDB74141DB63000729A2D /* LTKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LTKit.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		EB1CDB89141DB63F00729A2D /* LTKUIViewCategoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKUIViewCategoryTests.h; sourceTree = "<group>"; };
 		EB1CDB8A141DB63F00729A2D /* LTKUIViewCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKUIViewCategoryTests.m; sourceTree = "<group>"; };
 		EB1CDB8D141DB63F00729A2D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -57,6 +69,23 @@
 		EB1CDB9A141DC09900729A2D /* UIView+LTKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LTKAdditions.h"; sourceTree = "<group>"; };
 		EB1CDB9B141DC09900729A2D /* UIView+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LTKAdditions.m"; sourceTree = "<group>"; };
 		EB1CDB9E141DC25100729A2D /* LTKitCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKitCategories.h; sourceTree = "<group>"; };
+		EB6F265014A21E6900347EE1 /* LTKMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKMath.h; sourceTree = "<group>"; };
+		EB6F265514A2241F00347EE1 /* LTKGeometryUtilitiesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKGeometryUtilitiesTests.h; sourceTree = "<group>"; };
+		EB6F265614A2241F00347EE1 /* LTKGeometryUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKGeometryUtilitiesTests.m; sourceTree = "<group>"; };
+		EB6F265814A227A200347EE1 /* LTKMathUtilitiesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKMathUtilitiesTests.h; sourceTree = "<group>"; };
+		EB6F265914A227A200347EE1 /* LTKMathUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKMathUtilitiesTests.m; sourceTree = "<group>"; };
+		EBA760A214A0D7ED009713E2 /* UIImageView+LTKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LTKAdditions.h"; sourceTree = "<group>"; };
+		EBA760A314A0D7ED009713E2 /* UIImageView+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LTKAdditions.m"; sourceTree = "<group>"; };
+		EBA760A714A0D81A009713E2 /* LTKUIImageViewCategoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKUIImageViewCategoryTests.h; sourceTree = "<group>"; };
+		EBA760A814A0D81A009713E2 /* LTKUIImageViewCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKUIImageViewCategoryTests.m; sourceTree = "<group>"; };
+		EBA760AC14A0DD4E009713E2 /* LTKUIImageViewCategoryTestsSample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LTKUIImageViewCategoryTestsSample.png; sourceTree = "<group>"; };
+		EBA760AE14A0E108009713E2 /* LTKUIImageViewCategoryTestsSampleHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LTKUIImageViewCategoryTestsSampleHighlighted.png; sourceTree = "<group>"; };
+		EBA760B514A0F04B009713E2 /* LTKGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKGeometry.h; sourceTree = "<group>"; };
+		EBA760B614A0F07F009713E2 /* LTKitUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKitUtilities.h; sourceTree = "<group>"; };
+		EBA760B814A0FFDB009713E2 /* UIGestureRecognizer+LTKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+LTKAdditions.h"; sourceTree = "<group>"; };
+		EBA760B914A0FFDB009713E2 /* UIGestureRecognizer+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+LTKAdditions.m"; sourceTree = "<group>"; };
+		EBA760C114A1009A009713E2 /* LTKUIGestureRecognizerCategoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKUIGestureRecognizerCategoryTests.h; sourceTree = "<group>"; };
+		EBA760C214A1009A009713E2 /* LTKUIGestureRecognizerCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKUIGestureRecognizerCategoryTests.m; sourceTree = "<group>"; };
 		EBF72BD31445200F009C9B5E /* LTPAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTPAppDelegate.h; sourceTree = "<group>"; };
 		EBF72BD41445200F009C9B5E /* LTPAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTPAppDelegate.m; sourceTree = "<group>"; };
 		EBF72BD61445200F009C9B5E /* LTPStoryboardiPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LTPStoryboardiPad.storyboard; sourceTree = "<group>"; };
@@ -138,8 +167,11 @@
 			isa = PBXGroup;
 			children = (
 				EB1CDB74141DB63000729A2D /* LTKit.h */,
+				EB1CDB9E141DC25100729A2D /* LTKitCategories.h */,
+				EBA760B614A0F07F009713E2 /* LTKitUtilities.h */,
 				EB1CDB72141DB63000729A2D /* Categories */,
 				EB1CDB73141DB63000729A2D /* Classes */,
+				EBA760B414A0F03F009713E2 /* Utilities */,
 			);
 			path = LTKit;
 			sourceTree = "<group>";
@@ -147,7 +179,10 @@
 		EB1CDB72141DB63000729A2D /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				EB1CDB9E141DC25100729A2D /* LTKitCategories.h */,
+				EBA760B814A0FFDB009713E2 /* UIGestureRecognizer+LTKAdditions.h */,
+				EBA760B914A0FFDB009713E2 /* UIGestureRecognizer+LTKAdditions.m */,
+				EBA760A214A0D7ED009713E2 /* UIImageView+LTKAdditions.h */,
+				EBA760A314A0D7ED009713E2 /* UIImageView+LTKAdditions.m */,
 				EB1CDB9A141DC09900729A2D /* UIView+LTKAdditions.h */,
 				EB1CDB9B141DC09900729A2D /* UIView+LTKAdditions.m */,
 			);
@@ -164,6 +199,7 @@
 		EB1CDB87141DB63F00729A2D /* LTKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				EBA760AA14A0DD4E009713E2 /* Resources */,
 				EB1CDB8B141DB63F00729A2D /* Supporting Files */,
 				EB1CDB88141DB63F00729A2D /* Test Classes */,
 			);
@@ -173,6 +209,14 @@
 		EB1CDB88141DB63F00729A2D /* Test Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EB6F265514A2241F00347EE1 /* LTKGeometryUtilitiesTests.h */,
+				EB6F265614A2241F00347EE1 /* LTKGeometryUtilitiesTests.m */,
+				EB6F265814A227A200347EE1 /* LTKMathUtilitiesTests.h */,
+				EB6F265914A227A200347EE1 /* LTKMathUtilitiesTests.m */,
+				EBA760C114A1009A009713E2 /* LTKUIGestureRecognizerCategoryTests.h */,
+				EBA760C214A1009A009713E2 /* LTKUIGestureRecognizerCategoryTests.m */,
+				EBA760A714A0D81A009713E2 /* LTKUIImageViewCategoryTests.h */,
+				EBA760A814A0D81A009713E2 /* LTKUIImageViewCategoryTests.m */,
 				EB1CDB89141DB63F00729A2D /* LTKUIViewCategoryTests.h */,
 				EB1CDB8A141DB63F00729A2D /* LTKUIViewCategoryTests.m */,
 			);
@@ -186,6 +230,32 @@
 				EB1CDB8E141DB63F00729A2D /* LTKitTests-Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EBA760AA14A0DD4E009713E2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EBA760AB14A0DD4E009713E2 /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EBA760AB14A0DD4E009713E2 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				EBA760AC14A0DD4E009713E2 /* LTKUIImageViewCategoryTestsSample.png */,
+				EBA760AE14A0E108009713E2 /* LTKUIImageViewCategoryTestsSampleHighlighted.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		EBA760B414A0F03F009713E2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				EBA760B514A0F04B009713E2 /* LTKGeometry.h */,
+				EB6F265014A21E6900347EE1 /* LTKMath.h */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		EBF72BD11445200F009C9B5E /* LTPlayground */ = {
@@ -237,6 +307,10 @@
 				EB1CDB77141DB63000729A2D /* LTKit.h in Headers */,
 				EB1CDB9C141DC09900729A2D /* UIView+LTKAdditions.h in Headers */,
 				EB1CDB9F141DC25100729A2D /* LTKitCategories.h in Headers */,
+				EBA760A414A0D7ED009713E2 /* UIImageView+LTKAdditions.h in Headers */,
+				EBA760B714A0F07F009713E2 /* LTKitUtilities.h in Headers */,
+				EBA760BA14A0FFDB009713E2 /* UIGestureRecognizer+LTKAdditions.h in Headers */,
+				EB6F265114A21E6900347EE1 /* LTKMath.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +404,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB1CDB90141DB63F00729A2D /* InfoPlist.strings in Resources */,
+				EBA760AD14A0DD4E009713E2 /* LTKUIImageViewCategoryTestsSample.png in Resources */,
+				EBA760AF14A0E108009713E2 /* LTKUIImageViewCategoryTestsSampleHighlighted.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +444,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB1CDB9D141DC09900729A2D /* UIView+LTKAdditions.m in Sources */,
+				EBA760A514A0D7ED009713E2 /* UIImageView+LTKAdditions.m in Sources */,
+				EBA760BB14A0FFDB009713E2 /* UIGestureRecognizer+LTKAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +454,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB1CDB8F141DB63F00729A2D /* LTKUIViewCategoryTests.m in Sources */,
+				EBA760A914A0D81A009713E2 /* LTKUIImageViewCategoryTests.m in Sources */,
+				EBA760C314A1009A009713E2 /* LTKUIGestureRecognizerCategoryTests.m in Sources */,
+				EB6F265714A2241F00347EE1 /* LTKGeometryUtilitiesTests.m in Sources */,
+				EB6F265A14A227A200347EE1 /* LTKMathUtilitiesTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +582,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/LTKit.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				OTHER_LDFLAGS = (
 					"-all_load",
@@ -514,6 +600,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/LTKit.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				OTHER_LDFLAGS = (
 					"-all_load",
