@@ -25,4 +25,4 @@
 										__typeof__(MAX) LTK__max = (MAX); 														\
 										NSCAssert((LTK__min < LTK__max), @"LTK_CLAMP: MIN must be less than MAX.");				\
 										(LTK__min > LTK__value ? LTK__min : (LTK__value < LTK__max ? LTK__value : LTK__max));	\
-									})																							\
+									})

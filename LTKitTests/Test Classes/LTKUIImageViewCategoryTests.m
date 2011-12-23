@@ -20,57 +20,33 @@
 #import "LTKUIImageViewCategoryTests.h"
 #import "UIImageView+LTKAdditions.h"
 
-// Unit tests execute is a specialized bundle that is not the same as the .octest bundle. Therefore, resources added to the .octest bundle cannot be accessed
-// using +[NSBundle mainBundle]. Since +[UIImage imageNamed:] implicitly relies on this, this method is overridden to mimic the basic behavior of the actual
-// +[UIImage imageNamed:] method: an NSCache object is created and images are retrieved from the .octest bundle associated with the LTKUIImageViewCategoryTests
-// class.
-
-@interface UIImage (LTKUIImageViewCategoryTests)
-
-+ (UIImage *)imageNamed:(NSString *)name;
-
-@end
-
-@implementation UIImage (LTKUIImageViewCategoryTests)
-
-#pragma mark - UIImage (LTKUIImageViewCategoryTests) Methods
-
-+ (UIImage *)imageNamed:(NSString *)name
-{
-	static NSCache *imageCache = nil;
-
-	if (imageCache == nil)
-	{
-		imageCache = [[NSCache alloc] init];
-	}
-
-	NSString *imageType = ([[name pathExtension] isEqualToString:@""] ? @"png" : [name pathExtension]);
-
-	if (![imageType isEqualToString:@""])
-	{
-		name = [name stringByDeletingPathExtension];
-	}
-
-	UIImage *cachedImage = [imageCache objectForKey:name];
-
-	if (cachedImage == nil)
-	{
-		cachedImage = [UIImage imageWithContentsOfFile:[[NSBundle bundleForClass:[LTKUIImageViewCategoryTests class]] pathForResource:name ofType:imageType]];
-
-		[imageCache setObject:cachedImage forKey:name];
-	}
-
-	return cachedImage;
-}
-
-@end
-
-#pragma mark - Internal Definitions
+#pragma mark Internal Definitions
 
 static NSString *const LTKSampleImageName = @"LTKUIImageViewCategoryTestsSample";
 static NSString *const LTKSampleHighlightedImageName = @"LTKUIImageViewCategoryTestsSampleHighlighted";
 static CGSize const LTKSampleImageSize = {75.0f, 110.0f};
 static CGSize const LTKSampleHighlightedImageSize = {75.0f, 110.0f};
+
+#pragma mark - UIImage Internal Category
+
+// Unit tests execute is a specialized bundle that is not the same as the .octest bundle. Therefore, resources added to the .octest bundle cannot be accessed
+// using +[NSBundle mainBundle]. Since +[UIImage imageNamed:] implicitly relies on this, +[NSBundle mainBundle] is overridden to return the resource bundle
+// associated with the LTKUIImageViewCategoryTests class, which is the .octest bundle.
+
+@interface NSBundle (LTKUIImageViewCategoryTests)
+
++ (NSBundle *)mainBundle;
+
+@end
+
+@implementation NSBundle (LTKUIImageViewCategoryTests)
+
++ (NSBundle *)mainBundle
+{
+	return [NSBundle bundleForClass:[LTKUIImageViewCategoryTests class]];
+}
+
+@end
 
 #pragma mark - Class Extension -
 
@@ -94,11 +70,6 @@ static CGSize const LTKSampleHighlightedImageSize = {75.0f, 110.0f};
 	UIImage *highlightedImage = [UIImage imageNamed:LTKSampleHighlightedImageName];
 
 	self.referenceImageView = [[UIImageView alloc] initWithImage:image highlightedImage:highlightedImage];
-}
-
-- (void)tearDown
-{
-	[super tearDown];
 }
 
 #pragma mark - Unit Tests
