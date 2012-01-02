@@ -1,6 +1,6 @@
 //
-//	LTKit.h
-//	LTKit
+//	LTKGeometryTests.m
+//	LTKitTests
 //
 //	Copyright (c) 2011 Michael Potter
 //	http://lucas.tiz.ma
@@ -17,6 +17,25 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "LTKitCategories.h"
-#import "LTKitClasses.h"
-#import "LTKitUtilities.h"
+#import "LTKGeometryTests.h"
+#import "LTKGeometry.h"
+
+@implementation LTKGeometryTests
+
+#pragma mark - Unit Tests
+
+- (void)testPointApplyOffsetFunction
+{
+	CGPoint originalPoint = CGPointMake(100.0f, 100.0f);
+
+	STAssertTrue(CGPointEqualToPoint(LTKPointApplyOffset(originalPoint, UIOffsetMake(0.0f, 0.0f)), CGPointMake(100.0f, 100.0f)),
+		@"Offset point does not equal {100.0f, 100.0f}.");
+	STAssertTrue(CGPointEqualToPoint(LTKPointApplyOffset(originalPoint, UIOffsetMake(-100.0f, -100.0f)), CGPointMake(0.0f, 0.0f)),
+		@"Offset point does not equal {0.0f, 0.0f}.");
+	STAssertTrue(CGPointEqualToPoint(LTKPointApplyOffset(originalPoint, UIOffsetMake(100.0f, 0.0f)), CGPointMake(200.0f, 100.0f)),
+		@"Offset point does not equal {200.0f, 100.0f}.");
+	STAssertTrue(CGPointEqualToPoint(LTKPointApplyOffset(originalPoint, UIOffsetMake(0.0f, 100.0f)), CGPointMake(100.0f, 200.0f)),
+		@"Offset point does not equal {100.0f, 200.0f}.");
+}
+
+@end

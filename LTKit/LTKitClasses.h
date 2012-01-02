@@ -1,5 +1,5 @@
 //
-//	LTKit.h
+//	LTKitClasses.h
 //	LTKit
 //
 //	Copyright (c) 2011 Michael Potter
@@ -17,6 +17,4 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "LTKitCategories.h"
-#import "LTKitClasses.h"
-#import "LTKitUtilities.h"
+#import "Classes/LTKProgressSlider.h"

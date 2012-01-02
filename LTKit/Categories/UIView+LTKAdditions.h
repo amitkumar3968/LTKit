@@ -62,4 +62,6 @@
 @property (readwrite, nonatomic, assign) CGPoint boundsBottomLeftPoint;
 @property (readwrite, nonatomic, assign) CGPoint boundsMiddleLeftPoint;
 
++ (id)viewWithFrame:(CGRect)frame;
+
 @end

@@ -383,4 +383,15 @@
 		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.subview.bounds), nil], nil);
 }
 
+- (void)testViewWithFrameMethod
+{
+	UIView *view = [UIView viewWithFrame:CGRectMake(10.0f, 20.0f, 30.0f, 40.0f)];
+
+	STAssertNotNil(view, @"View is nil.");
+	STAssertTrue(CGRectEqualToRect(view.frame, CGRectMake(10.0f, 20.0f, 30.0f, 40.0f)),
+		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(view.frame), nil], nil);
+	STAssertTrue(CGRectEqualToRect(view.bounds, CGRectMake(0.0f, 0.0f, 30.0f, 40.0f)),
+		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(view.bounds), nil], nil);
+}
+
 @end

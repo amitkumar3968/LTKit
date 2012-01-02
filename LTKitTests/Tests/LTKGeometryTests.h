@@ -1,5 +1,5 @@
 //
-//	LTKGeometryUtilitiesTests.h
+//	LTKGeometryTests.h
 //	LTKitTests
 //
 //	Copyright (c) 2011 Michael Potter
@@ -19,6 +19,6 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface LTKGeometryUtilitiesTests : SenTestCase
+@interface LTKGeometryTests : SenTestCase
 
 @end

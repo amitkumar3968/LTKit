@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB005D0614AD3FF8009A70C9 /* LTKProgressSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = EB005D0414AD3FF8009A70C9 /* LTKProgressSlider.h */; };
+		EB005D0714AD3FF8009A70C9 /* LTKProgressSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = EB005D0514AD3FF8009A70C9 /* LTKProgressSlider.m */; };
+		EB005D0A14AD40E5009A70C9 /* LTKitClasses.h in Headers */ = {isa = PBXBuildFile; fileRef = EB005D0914AD40E4009A70C9 /* LTKitClasses.h */; };
+		EB005D1314AF8A80009A70C9 /* LTPToyChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB005D1214AF8A80009A70C9 /* LTPToyChooserViewController.m */; };
+		EB005D1614AF8E22009A70C9 /* LTPProgressSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB005D1514AF8E22009A70C9 /* LTPProgressSliderViewController.m */; };
+		EB005D1B14AF9B02009A70C9 /* LTPStoryboardiPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB005D1914AF9B02009A70C9 /* LTPStoryboardiPad.storyboard */; };
+		EB005D1C14AF9B02009A70C9 /* LTPStoryboardiPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB005D1A14AF9B02009A70C9 /* LTPStoryboardiPhone.storyboard */; };
+		EB005D1E14AF9B0C009A70C9 /* LTKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EB005D1D14AF9B0C009A70C9 /* LTKit.bundle */; };
+		EB005D2314AFEE73009A70C9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB005D2014AFE81D009A70C9 /* QuartzCore.framework */; };
 		EB1CDB32141DB07700729A2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CDB31141DB07700729A2D /* Foundation.framework */; };
 		EB1CDB40141DB07800729A2D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CDB3F141DB07800729A2D /* SenTestingKit.framework */; };
 		EB1CDB43141DB07800729A2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CDB31141DB07700729A2D /* Foundation.framework */; };
@@ -21,11 +30,16 @@
 		EB1CDB9C141DC09900729A2D /* UIView+LTKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EB1CDB9A141DC09900729A2D /* UIView+LTKAdditions.h */; };
 		EB1CDB9D141DC09900729A2D /* UIView+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1CDB9B141DC09900729A2D /* UIView+LTKAdditions.m */; };
 		EB1CDB9F141DC25100729A2D /* LTKitCategories.h in Headers */ = {isa = PBXBuildFile; fileRef = EB1CDB9E141DC25100729A2D /* LTKitCategories.h */; };
+		EB40BAB814B00CCA006DD25D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CDB92141DB6D000729A2D /* UIKit.framework */; };
+		EB40BABA14B00CEA006DD25D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CDB60141DB46F00729A2D /* CoreGraphics.framework */; };
+		EB40BABB14B00CEE006DD25D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB005D2014AFE81D009A70C9 /* QuartzCore.framework */; };
+		EB40BAC714B13EC1006DD25D /* LTPProgressSliderThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = EB40BAC514B13EC1006DD25D /* LTPProgressSliderThumb.png */; };
+		EB40BAC814B13EC1006DD25D /* LTPProgressSliderThumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB40BAC614B13EC1006DD25D /* LTPProgressSliderThumb@2x.png */; };
 		EB40D5621495D63E006C24CC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CDB92141DB6D000729A2D /* UIKit.framework */; };
 		EB40D5631495D644006C24CC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CDB60141DB46F00729A2D /* CoreGraphics.framework */; };
 		EB6F265114A21E6900347EE1 /* LTKMath.h in Headers */ = {isa = PBXBuildFile; fileRef = EB6F265014A21E6900347EE1 /* LTKMath.h */; };
-		EB6F265714A2241F00347EE1 /* LTKGeometryUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6F265614A2241F00347EE1 /* LTKGeometryUtilitiesTests.m */; };
-		EB6F265A14A227A200347EE1 /* LTKMathUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6F265914A227A200347EE1 /* LTKMathUtilitiesTests.m */; };
+		EB6F265714A2241F00347EE1 /* LTKGeometryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6F265614A2241F00347EE1 /* LTKGeometryTests.m */; };
+		EB6F265A14A227A200347EE1 /* LTKMathTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6F265914A227A200347EE1 /* LTKMathTests.m */; };
 		EBA760A414A0D7ED009713E2 /* UIImageView+LTKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EBA760A214A0D7ED009713E2 /* UIImageView+LTKAdditions.h */; };
 		EBA760A514A0D7ED009713E2 /* UIImageView+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA760A314A0D7ED009713E2 /* UIImageView+LTKAdditions.m */; };
 		EBA760A914A0D81A009713E2 /* LTKUIImageViewCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA760A814A0D81A009713E2 /* LTKUIImageViewCategoryTests.m */; };
@@ -36,10 +50,7 @@
 		EBA760BB14A0FFDB009713E2 /* UIGestureRecognizer+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA760B914A0FFDB009713E2 /* UIGestureRecognizer+LTKAdditions.m */; };
 		EBA760C314A1009A009713E2 /* LTKUIGestureRecognizerCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA760C214A1009A009713E2 /* LTKUIGestureRecognizerCategoryTests.m */; };
 		EBF72BDE1445200F009C9B5E /* LTPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF72BD41445200F009C9B5E /* LTPAppDelegate.m */; };
-		EBF72BDF1445200F009C9B5E /* LTPStoryboardiPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF72BD61445200F009C9B5E /* LTPStoryboardiPad.storyboard */; };
-		EBF72BE01445200F009C9B5E /* LTPStoryboardiPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF72BD71445200F009C9B5E /* LTPStoryboardiPhone.storyboard */; };
 		EBF72BE11445200F009C9B5E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBF72BD91445200F009C9B5E /* InfoPlist.strings */; };
-		EBF72BE21445200F009C9B5E /* LTPlayground-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBF72BDB1445200F009C9B5E /* LTPlayground-Info.plist */; };
 		EBF72BE31445200F009C9B5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF72BDD1445200F009C9B5E /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -51,9 +62,27 @@
 			remoteGlobalIDString = EB1CDB2D141DB07700729A2D;
 			remoteInfo = LTKit;
 		};
+		EB40BABE14B01B50006DD25D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB1CDB25141DB07700729A2D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB1CDB2D141DB07700729A2D;
+			remoteInfo = LTKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB005D0414AD3FF8009A70C9 /* LTKProgressSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKProgressSlider.h; sourceTree = "<group>"; };
+		EB005D0514AD3FF8009A70C9 /* LTKProgressSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKProgressSlider.m; sourceTree = "<group>"; };
+		EB005D0914AD40E4009A70C9 /* LTKitClasses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKitClasses.h; sourceTree = "<group>"; };
+		EB005D1114AF8A80009A70C9 /* LTPToyChooserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTPToyChooserViewController.h; sourceTree = "<group>"; };
+		EB005D1214AF8A80009A70C9 /* LTPToyChooserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTPToyChooserViewController.m; sourceTree = "<group>"; };
+		EB005D1414AF8E22009A70C9 /* LTPProgressSliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTPProgressSliderViewController.h; sourceTree = "<group>"; };
+		EB005D1514AF8E22009A70C9 /* LTPProgressSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTPProgressSliderViewController.m; sourceTree = "<group>"; };
+		EB005D1914AF9B02009A70C9 /* LTPStoryboardiPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LTPStoryboardiPad.storyboard; sourceTree = "<group>"; };
+		EB005D1A14AF9B02009A70C9 /* LTPStoryboardiPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LTPStoryboardiPhone.storyboard; sourceTree = "<group>"; };
+		EB005D1D14AF9B0C009A70C9 /* LTKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = LTKit.bundle; path = LTKit/LTKit.bundle; sourceTree = SOURCE_ROOT; };
+		EB005D2014AFE81D009A70C9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EB1CDB2E141DB07700729A2D /* libLTKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLTKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB1CDB31141DB07700729A2D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EB1CDB3E141DB07800729A2D /* LTKitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LTKitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,11 +98,13 @@
 		EB1CDB9A141DC09900729A2D /* UIView+LTKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LTKAdditions.h"; sourceTree = "<group>"; };
 		EB1CDB9B141DC09900729A2D /* UIView+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LTKAdditions.m"; sourceTree = "<group>"; };
 		EB1CDB9E141DC25100729A2D /* LTKitCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKitCategories.h; sourceTree = "<group>"; };
+		EB40BAC514B13EC1006DD25D /* LTPProgressSliderThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LTPProgressSliderThumb.png; sourceTree = "<group>"; };
+		EB40BAC614B13EC1006DD25D /* LTPProgressSliderThumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LTPProgressSliderThumb@2x.png"; sourceTree = "<group>"; };
 		EB6F265014A21E6900347EE1 /* LTKMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKMath.h; sourceTree = "<group>"; };
-		EB6F265514A2241F00347EE1 /* LTKGeometryUtilitiesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKGeometryUtilitiesTests.h; sourceTree = "<group>"; };
-		EB6F265614A2241F00347EE1 /* LTKGeometryUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKGeometryUtilitiesTests.m; sourceTree = "<group>"; };
-		EB6F265814A227A200347EE1 /* LTKMathUtilitiesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKMathUtilitiesTests.h; sourceTree = "<group>"; };
-		EB6F265914A227A200347EE1 /* LTKMathUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKMathUtilitiesTests.m; sourceTree = "<group>"; };
+		EB6F265514A2241F00347EE1 /* LTKGeometryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKGeometryTests.h; sourceTree = "<group>"; };
+		EB6F265614A2241F00347EE1 /* LTKGeometryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKGeometryTests.m; sourceTree = "<group>"; };
+		EB6F265814A227A200347EE1 /* LTKMathTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKMathTests.h; sourceTree = "<group>"; };
+		EB6F265914A227A200347EE1 /* LTKMathTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKMathTests.m; sourceTree = "<group>"; };
 		EBA760A214A0D7ED009713E2 /* UIImageView+LTKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LTKAdditions.h"; sourceTree = "<group>"; };
 		EBA760A314A0D7ED009713E2 /* UIImageView+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LTKAdditions.m"; sourceTree = "<group>"; };
 		EBA760A714A0D81A009713E2 /* LTKUIImageViewCategoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKUIImageViewCategoryTests.h; sourceTree = "<group>"; };
@@ -88,8 +119,6 @@
 		EBA760C214A1009A009713E2 /* LTKUIGestureRecognizerCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKUIGestureRecognizerCategoryTests.m; sourceTree = "<group>"; };
 		EBF72BD31445200F009C9B5E /* LTPAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTPAppDelegate.h; sourceTree = "<group>"; };
 		EBF72BD41445200F009C9B5E /* LTPAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTPAppDelegate.m; sourceTree = "<group>"; };
-		EBF72BD61445200F009C9B5E /* LTPStoryboardiPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LTPStoryboardiPad.storyboard; sourceTree = "<group>"; };
-		EBF72BD71445200F009C9B5E /* LTPStoryboardiPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LTPStoryboardiPhone.storyboard; sourceTree = "<group>"; };
 		EBF72BDA1445200F009C9B5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EBF72BDB1445200F009C9B5E /* LTPlayground-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LTPlayground-Info.plist"; sourceTree = "<group>"; };
 		EBF72BDC1445200F009C9B5E /* LTPlayground-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LTPlayground-Prefix.pch"; sourceTree = "<group>"; };
@@ -101,7 +130,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB40BABA14B00CEA006DD25D /* CoreGraphics.framework in Frameworks */,
 				EB1CDB32141DB07700729A2D /* Foundation.framework in Frameworks */,
+				EB40BABB14B00CEE006DD25D /* QuartzCore.framework in Frameworks */,
+				EB40BAB814B00CCA006DD25D /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,15 +154,59 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB1CDB94141DB6F200729A2D /* libLTKit.a in Frameworks */,
-				EB1CDB93141DB6D000729A2D /* UIKit.framework in Frameworks */,
-				EB1CDB5F141DB46F00729A2D /* Foundation.framework in Frameworks */,
 				EB1CDB61141DB46F00729A2D /* CoreGraphics.framework in Frameworks */,
+				EB1CDB5F141DB46F00729A2D /* Foundation.framework in Frameworks */,
+				EB005D2314AFEE73009A70C9 /* QuartzCore.framework in Frameworks */,
+				EB1CDB93141DB6D000729A2D /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB005D0B14AD418E009A70C9 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				EBA760C114A1009A009713E2 /* LTKUIGestureRecognizerCategoryTests.h */,
+				EBA760C214A1009A009713E2 /* LTKUIGestureRecognizerCategoryTests.m */,
+				EBA760A714A0D81A009713E2 /* LTKUIImageViewCategoryTests.h */,
+				EBA760A814A0D81A009713E2 /* LTKUIImageViewCategoryTests.m */,
+				EB1CDB89141DB63F00729A2D /* LTKUIViewCategoryTests.h */,
+				EB1CDB8A141DB63F00729A2D /* LTKUIViewCategoryTests.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		EB005D0C14AD4199009A70C9 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				EB6F265514A2241F00347EE1 /* LTKGeometryTests.h */,
+				EB6F265614A2241F00347EE1 /* LTKGeometryTests.m */,
+				EB6F265814A227A200347EE1 /* LTKMathTests.h */,
+				EB6F265914A227A200347EE1 /* LTKMathTests.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		EB005D1714AF9B02009A70C9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EB005D1D14AF9B0C009A70C9 /* LTKit.bundle */,
+				EB40BAC414B13EC1006DD25D /* Images */,
+				EB005D1814AF9B02009A70C9 /* Interface Builder */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EB005D1814AF9B02009A70C9 /* Interface Builder */ = {
+			isa = PBXGroup;
+			children = (
+				EB005D1914AF9B02009A70C9 /* LTPStoryboardiPad.storyboard */,
+				EB005D1A14AF9B02009A70C9 /* LTPStoryboardiPhone.storyboard */,
+			);
+			path = "Interface Builder";
+			sourceTree = "<group>";
+		};
 		EB1CDB23141DB07700729A2D = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +233,7 @@
 			children = (
 				EB1CDB60141DB46F00729A2D /* CoreGraphics.framework */,
 				EB1CDB31141DB07700729A2D /* Foundation.framework */,
+				EB005D2014AFE81D009A70C9 /* QuartzCore.framework */,
 				EB1CDB3F141DB07800729A2D /* SenTestingKit.framework */,
 				EB1CDB92141DB6D000729A2D /* UIKit.framework */,
 			);
@@ -168,6 +245,7 @@
 			children = (
 				EB1CDB74141DB63000729A2D /* LTKit.h */,
 				EB1CDB9E141DC25100729A2D /* LTKitCategories.h */,
+				EB005D0914AD40E4009A70C9 /* LTKitClasses.h */,
 				EBA760B614A0F07F009713E2 /* LTKitUtilities.h */,
 				EB1CDB72141DB63000729A2D /* Categories */,
 				EB1CDB73141DB63000729A2D /* Classes */,
@@ -192,6 +270,8 @@
 		EB1CDB73141DB63000729A2D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EB005D0414AD3FF8009A70C9 /* LTKProgressSlider.h */,
+				EB005D0514AD3FF8009A70C9 /* LTKProgressSlider.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -201,26 +281,18 @@
 			children = (
 				EBA760AA14A0DD4E009713E2 /* Resources */,
 				EB1CDB8B141DB63F00729A2D /* Supporting Files */,
-				EB1CDB88141DB63F00729A2D /* Test Classes */,
+				EB1CDB88141DB63F00729A2D /* Tests */,
 			);
 			path = LTKitTests;
 			sourceTree = "<group>";
 		};
-		EB1CDB88141DB63F00729A2D /* Test Classes */ = {
+		EB1CDB88141DB63F00729A2D /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				EB6F265514A2241F00347EE1 /* LTKGeometryUtilitiesTests.h */,
-				EB6F265614A2241F00347EE1 /* LTKGeometryUtilitiesTests.m */,
-				EB6F265814A227A200347EE1 /* LTKMathUtilitiesTests.h */,
-				EB6F265914A227A200347EE1 /* LTKMathUtilitiesTests.m */,
-				EBA760C114A1009A009713E2 /* LTKUIGestureRecognizerCategoryTests.h */,
-				EBA760C214A1009A009713E2 /* LTKUIGestureRecognizerCategoryTests.m */,
-				EBA760A714A0D81A009713E2 /* LTKUIImageViewCategoryTests.h */,
-				EBA760A814A0D81A009713E2 /* LTKUIImageViewCategoryTests.m */,
-				EB1CDB89141DB63F00729A2D /* LTKUIViewCategoryTests.h */,
-				EB1CDB8A141DB63F00729A2D /* LTKUIViewCategoryTests.m */,
+				EB005D0B14AD418E009A70C9 /* Categories */,
+				EB005D0C14AD4199009A70C9 /* Utilities */,
 			);
-			path = "Test Classes";
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		EB1CDB8B141DB63F00729A2D /* Supporting Files */ = {
@@ -230,6 +302,15 @@
 				EB1CDB8E141DB63F00729A2D /* LTKitTests-Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EB40BAC414B13EC1006DD25D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				EB40BAC514B13EC1006DD25D /* LTPProgressSliderThumb.png */,
+				EB40BAC614B13EC1006DD25D /* LTPProgressSliderThumb@2x.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		EBA760AA14A0DD4E009713E2 /* Resources */ = {
@@ -262,7 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				EBF72BD21445200F009C9B5E /* Classes */,
-				EBF72BD51445200F009C9B5E /* Interface Builder */,
+				EB005D1714AF9B02009A70C9 /* Resources */,
 				EBF72BD81445200F009C9B5E /* Supporting Files */,
 			);
 			path = LTPlayground;
@@ -273,17 +354,12 @@
 			children = (
 				EBF72BD31445200F009C9B5E /* LTPAppDelegate.h */,
 				EBF72BD41445200F009C9B5E /* LTPAppDelegate.m */,
+				EB005D1114AF8A80009A70C9 /* LTPToyChooserViewController.h */,
+				EB005D1214AF8A80009A70C9 /* LTPToyChooserViewController.m */,
+				EB005D1414AF8E22009A70C9 /* LTPProgressSliderViewController.h */,
+				EB005D1514AF8E22009A70C9 /* LTPProgressSliderViewController.m */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		EBF72BD51445200F009C9B5E /* Interface Builder */ = {
-			isa = PBXGroup;
-			children = (
-				EBF72BD61445200F009C9B5E /* LTPStoryboardiPad.storyboard */,
-				EBF72BD71445200F009C9B5E /* LTPStoryboardiPhone.storyboard */,
-			);
-			path = "Interface Builder";
 			sourceTree = "<group>";
 		};
 		EBF72BD81445200F009C9B5E /* Supporting Files */ = {
@@ -311,6 +387,8 @@
 				EBA760B714A0F07F009713E2 /* LTKitUtilities.h in Headers */,
 				EBA760BA14A0FFDB009713E2 /* UIGestureRecognizer+LTKAdditions.h in Headers */,
 				EB6F265114A21E6900347EE1 /* LTKMath.h in Headers */,
+				EB005D0614AD3FF8009A70C9 /* LTKProgressSlider.h in Headers */,
+				EB005D0A14AD40E5009A70C9 /* LTKitClasses.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +442,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				EB40BABF14B01B50006DD25D /* PBXTargetDependency */,
 			);
 			name = LTPlayground;
 			productName = LTKitPlayground;
@@ -413,10 +492,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBF72BDF1445200F009C9B5E /* LTPStoryboardiPad.storyboard in Resources */,
-				EBF72BE01445200F009C9B5E /* LTPStoryboardiPhone.storyboard in Resources */,
 				EBF72BE11445200F009C9B5E /* InfoPlist.strings in Resources */,
-				EBF72BE21445200F009C9B5E /* LTPlayground-Info.plist in Resources */,
+				EB005D1B14AF9B02009A70C9 /* LTPStoryboardiPad.storyboard in Resources */,
+				EB005D1C14AF9B02009A70C9 /* LTPStoryboardiPhone.storyboard in Resources */,
+				EB005D1E14AF9B0C009A70C9 /* LTKit.bundle in Resources */,
+				EB40BAC714B13EC1006DD25D /* LTPProgressSliderThumb.png in Resources */,
+				EB40BAC814B13EC1006DD25D /* LTPProgressSliderThumb@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +527,7 @@
 				EB1CDB9D141DC09900729A2D /* UIView+LTKAdditions.m in Sources */,
 				EBA760A514A0D7ED009713E2 /* UIImageView+LTKAdditions.m in Sources */,
 				EBA760BB14A0FFDB009713E2 /* UIGestureRecognizer+LTKAdditions.m in Sources */,
+				EB005D0714AD3FF8009A70C9 /* LTKProgressSlider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,8 +538,8 @@
 				EB1CDB8F141DB63F00729A2D /* LTKUIViewCategoryTests.m in Sources */,
 				EBA760A914A0D81A009713E2 /* LTKUIImageViewCategoryTests.m in Sources */,
 				EBA760C314A1009A009713E2 /* LTKUIGestureRecognizerCategoryTests.m in Sources */,
-				EB6F265714A2241F00347EE1 /* LTKGeometryUtilitiesTests.m in Sources */,
-				EB6F265A14A227A200347EE1 /* LTKMathUtilitiesTests.m in Sources */,
+				EB6F265714A2241F00347EE1 /* LTKGeometryTests.m in Sources */,
+				EB6F265A14A227A200347EE1 /* LTKMathTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +549,8 @@
 			files = (
 				EBF72BDE1445200F009C9B5E /* LTPAppDelegate.m in Sources */,
 				EBF72BE31445200F009C9B5E /* main.m in Sources */,
+				EB005D1314AF8A80009A70C9 /* LTPToyChooserViewController.m in Sources */,
+				EB005D1614AF8E22009A70C9 /* LTPProgressSliderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +561,11 @@
 			isa = PBXTargetDependency;
 			target = EB1CDB2D141DB07700729A2D /* LTKit */;
 			targetProxy = EB1CDB44141DB07800729A2D /* PBXContainerItemProxy */;
+		};
+		EB40BABF14B01B50006DD25D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB1CDB2D141DB07700729A2D /* LTKit */;
+			targetProxy = EB40BABE14B01B50006DD25D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -661,8 +750,12 @@
 					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LTKitPlayground/Supporting Files/LTKitPlayground-Prefix.pch";
-				INFOPLIST_FILE = "LTKitPlayground/Supporting Files/LTKitPlayground-Info.plist";
+				GCC_PREFIX_HEADER = "LTPlayground/Supporting Files/LTPlayground-Prefix.pch";
+				INFOPLIST_FILE = "LTPlayground/Supporting Files/LTPlayground-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -678,9 +771,13 @@
 					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LTKitPlayground/Supporting Files/LTKitPlayground-Prefix.pch";
-				INFOPLIST_FILE = "LTKitPlayground/Supporting Files/LTKitPlayground-Info.plist";
+				GCC_PREFIX_HEADER = "LTPlayground/Supporting Files/LTPlayground-Prefix.pch";
+				INFOPLIST_FILE = "LTPlayground/Supporting Files/LTPlayground-Info.plist";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;

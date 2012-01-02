@@ -475,4 +475,11 @@
 	self.boundsMidY = boundsMiddleLeftPoint.y;
 }
 
+#pragma mark - UIView (LTKAdditions) Methods
+
++ (id)viewWithFrame:(CGRect)frame
+{
+	return [[self alloc] initWithFrame:frame];			// Should be autoreleased in a non-ARC environment
+}
+
 @end

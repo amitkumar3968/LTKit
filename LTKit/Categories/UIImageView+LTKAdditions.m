@@ -25,22 +25,22 @@
 
 + (id)imageViewWithImage:(UIImage *)image
 {
-	return [[self alloc] initWithImage:image];															// Autoreleased in a non-ARC environment
+	return [[self alloc] initWithImage:image];															// Should be autoreleased in a non-ARC environment
 }
 
 + (id)imageViewWithImage:(UIImage *)image highlightedImage:(UIImage *)highlightedImage
 {
-	return [[self alloc] initWithImage:image highlightedImage:highlightedImage];						// Autoreleased in a non-ARC environment
+	return [[self alloc] initWithImage:image highlightedImage:highlightedImage];						// Should be autoreleased in a non-ARC environment
 }
 
 + (id)imageViewWithImageNamed:(NSString *)imageName
 {
-	return [[self alloc] initWithImageNamed:imageName];													// Autoreleased in a non-ARC environment
+	return [[self alloc] initWithImageNamed:imageName];													// Should be autoreleased in a non-ARC environment
 }
 
 + (id)imageViewWithImageNamed:(NSString *)imageName highlightedImageNamed:(NSString *)highlightedImageNamed
 {
-	return [[self alloc] initWithImageNamed:imageName highlightedImageNamed:highlightedImageNamed];		// Autoreleased in a non-ARC environment
+	return [[self alloc] initWithImageNamed:imageName highlightedImageNamed:highlightedImageNamed];		// Should be autoreleased in a non-ARC environment
 }
 
 - (id)initWithImageNamed:(NSString *)imageName
