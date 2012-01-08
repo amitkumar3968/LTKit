@@ -2,7 +2,7 @@
 //	LTPAppDelegate.m
 //	LTPlayground
 //
-//	Copyright (c) 2011 Michael Potter
+//	Copyright (c) 2012 Michael Potter
 //	http://lucas.tiz.ma
 //	lucas@tiz.ma
 //
@@ -22,5 +22,21 @@
 @implementation LTPAppDelegate
 
 @synthesize window;
+
+#pragma mark - Protocol Implementations
+
+#pragma mark - UIApplicationDelegate Methods
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+	{
+		UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
+	    UINavigationController *navigationController = [splitViewController.viewControllers objectAtIndex:0];
+	    splitViewController.delegate = (id<UISplitViewControllerDelegate>)navigationController.topViewController;
+	}
+
+	return YES;
+}
 
 @end

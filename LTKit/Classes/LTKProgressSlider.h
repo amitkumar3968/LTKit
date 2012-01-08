@@ -2,7 +2,7 @@
 //	LTKProgressSlider.h
 //	LTKit
 //
-//	Copyright (c) 2011 Michael Potter
+//	Copyright (c) 2012 Michael Potter
 //	http://lucas.tiz.ma
 //	lucas@tiz.ma
 //
@@ -25,6 +25,7 @@
 
 @property (readwrite, nonatomic, weak) IBOutlet id<LTKProgressSliderDelegate> delegate;
 @property (readwrite, nonatomic, strong) UIView *thumbView;
+@property (readwrite, nonatomic, strong) UIView *thumbTrackingOverlayView;
 @property (readwrite, nonatomic, assign) UIEdgeInsets thumbViewBoundsInsets;
 @property (readwrite, nonatomic, assign) BOOL trackingRateLevelsEnabled;
 @property (readwrite, nonatomic, assign) BOOL shouldMonitorPresentationLayerDuringAnimations;
@@ -46,11 +47,11 @@
 @optional
 
 - (BOOL)progressSliderShouldBeginTracking:(LTKProgressSlider *)progressSlider;
-- (BOOL)progressSliderShouldMonitorPresentationLayerDuringAnimations:(LTKProgressSlider *)progressSlider;
 - (void)progressSliderDidBeginTracking:(LTKProgressSlider *)progressSlider;
 - (void)progressSliderDidEndTracking:(LTKProgressSlider *)progressSlider;
 - (void)progressSlider:(LTKProgressSlider *)progressSlider willChangeProgress:(CGFloat)progress withAnimationDuration:(NSTimeInterval)animationDuration;
 - (void)progressSlider:(LTKProgressSlider *)progressSlider didChangeProgress:(CGFloat)progress;
 - (void)progressSlider:(LTKProgressSlider *)progressSlider didChangeTrackingRateLevel:(NSInteger)trackingRateLevel;
+- (NSString *)progressSlider:(LTKProgressSlider *)progressSlider titleForTrackingRateLevel:(NSInteger)trackingRateLevel;
 
 @end

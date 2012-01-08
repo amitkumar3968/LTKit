@@ -1,5 +1,5 @@
 //
-//	LTKUIViewCategoryTests.h
+//	LTKNSObjectCategoryTests.m
 //	LTKitTests
 //
 //	Copyright (c) 2012 Michael Potter
@@ -17,8 +17,12 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import "LTKNSObjectCategoryTests.h"
 
-@interface LTKUIViewCategoryTests : SenTestCase
+@implementation LTKNSObjectCategoryTests
+
+#pragma mark - Unit Tests
+
+
 
 @end

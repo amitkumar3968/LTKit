@@ -2,7 +2,7 @@
 //	LTKitCategories.h
 //	LTKit
 //
-//	Copyright (c) 2011 Michael Potter
+//	Copyright (c) 2012 Michael Potter
 //	http://lucas.tiz.ma
 //	lucas@tiz.ma
 //
@@ -17,6 +17,9 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#import "Categories/CALayer+LTKAdditions.h"
+#import "Categories/NSObject+LTKAdditions.h"
+#import "Categories/NSTimer+LTKAdditions.h"
 #import "Categories/UIGestureRecognizer+LTKAdditions.h"
 #import "Categories/UIImageView+LTKAdditions.h"
 #import "Categories/UIView+LTKAdditions.h"

@@ -2,7 +2,7 @@
 //	LTKProgressSlider.m
 //	LTKit
 //
-//	Copyright (c) 2011 Michael Potter
+//	Copyright (c) 2012 Michael Potter
 //	http://lucas.tiz.ma
 //	lucas@tiz.ma
 //
@@ -50,6 +50,7 @@
 
 @synthesize delegate;
 @synthesize thumbView;
+@synthesize thumbTrackingOverlayView;
 @synthesize thumbViewBoundsInsets;
 @synthesize trackingRateLevelsEnabled;
 @synthesize shouldMonitorPresentationLayerDuringAnimations;
@@ -103,6 +104,20 @@
 
 		[self addSubview:self.thumbViewContainerView];
 	}
+}
+
+- (void)setThumbTrackingOverlayView:(UIView *)newThumbTrackingOverlayView
+{
+	if (self.thumbView == nil)
+	{
+		[self configureDefaultThumbView];
+	}
+
+	thumbTrackingOverlayView = newThumbTrackingOverlayView;
+	thumbTrackingOverlayView.center = self.thumbView.center;
+	thumbTrackingOverlayView.hidden = YES;
+
+	[self.thumbViewContainerView addSubview:thumbTrackingOverlayView];
 }
 
 - (void)setThumbViewBoundsInsets:(UIEdgeInsets)newThumbViewBoundsInsets
@@ -170,6 +185,7 @@
 {
 	self.usingDefaultThumbViewConfiguration = YES;
 	self.thumbView = [UIImageView imageViewWithImageNamed:@"LTKit.bundle/LTKProgressSliderDefaultThumb"];
+	self.thumbTrackingOverlayView = [UIImageView imageViewWithImageNamed:@"LTKit.bundle/LTKProgressSliderDefaultThumbTrackingOverlay"];
 	self.thumbViewBoundsInsets = UIEdgeInsetsMake(0.0f, 4.0f, 0.0f, 4.0f);
 }
 
@@ -186,10 +202,10 @@
 	// calculation. Effectively, the container view's bounds need to be flush against both the left edge of the progress view (at 0.0 progress) and the right
 	// edge of the progress view (at 1.0 progress).
 
-	self.thumbViewContainerView.frameMidX = ((self.thumbViewContainerView.boundsWidth / 2.0f) + (self.effectiveWidth * self.progress));
-
 	//	A = ((B / 2.0f) + (C * D));		Get the frame from the progress
 	//	D = ((A - (B / 2.0f)) / C);		Get the progress from the frame
+
+	self.thumbViewContainerView.frameMidX = ((self.thumbViewContainerView.boundsWidth / 2.0f) + (self.effectiveWidth * self.progress));
 }
 
 - (void)handleThumbViewPanGesture:(UIPanGestureRecognizer *)panGestureRecognizer
@@ -219,6 +235,9 @@
 
 		if (panGestureRecognizerEnabled && [self.delegate respondsToSelector:@selector(progressSliderDidBeginTracking:)])
 		{
+			[self.thumbTrackingOverlayView.layer addDefaultFadeTransition];
+			self.thumbTrackingOverlayView.hidden = NO;
+
 			[self.delegate progressSliderDidBeginTracking:self];
 		}
 	}
@@ -266,6 +285,9 @@
 
 		if ([self.delegate respondsToSelector:@selector(progressSliderDidEndTracking:)])
 		{
+			[self.thumbTrackingOverlayView.layer addDefaultFadeTransition];
+			self.thumbTrackingOverlayView.hidden = YES;
+
 			[self.delegate progressSliderDidEndTracking:self];
 		}
 	}
@@ -310,8 +332,25 @@
 					[self.delegate progressSlider:self willChangeProgress:newProgress withAnimationDuration:animationDuration];
 				}
 
-				self.presentationLayerMonitorTimer = [NSTimer scheduledTimerWithTimeInterval:self.presentationLayerMonitoringInterval target:self
-					selector:@selector(presentationLayerMonitorTimerDidFire) userInfo:nil repeats:YES];
+				if (self.shouldMonitorPresentationLayerDuringAnimations)
+				{
+					// Set up the repeating timer to monitor the presentation layer during animations to alert the delegate at regular intervals
+
+					self.presentationLayerMonitorTimer = [NSTimer scheduledTimerWithTimeInterval:self.presentationLayerMonitoringInterval repeats:YES
+						block:
+						^{
+							// Based on the currently interpolated position of the thumb view container view, an interpolated progress can be calculated
+
+							CGFloat interpolatedFrameMidX = CGRectGetMidX([[self.thumbViewContainerView.layer presentationLayer] frame]);
+							CGFloat interpolatedProgress = ((interpolatedFrameMidX - (self.thumbViewContainerView.boundsWidth / 2.0f)) / self.effectiveWidth);
+
+							if ([self.delegate respondsToSelector:@selector(progressSlider:didChangeProgress:)])
+							{
+								[self.delegate progressSlider:self didChangeProgress:interpolatedProgress];
+							}
+						}
+					];
+				}
 			}
 			completion:
 			^(BOOL finished)

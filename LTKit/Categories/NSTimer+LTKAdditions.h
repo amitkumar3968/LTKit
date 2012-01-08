@@ -1,6 +1,6 @@
 //
-//	LTKUIViewCategoryTests.h
-//	LTKitTests
+//	NSTimer+LTKAdditions.h
+//	LTKit
 //
 //	Copyright (c) 2012 Michael Potter
 //	http://lucas.tiz.ma
@@ -17,8 +17,13 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <Foundation/Foundation.h>
 
-@interface LTKUIViewCategoryTests : SenTestCase
+@interface NSTimer (LTKAdditions)
+
++ (id)scheduledTimerWithTimeInterval:(NSTimeInterval)timeInterval repeats:(BOOL)repeats block:(void (^)(void))block;
++ (id)timerWithTimeInterval:(NSTimeInterval)timeInterval repeats:(BOOL)repeats block:(void (^)(void))block;
++ (id)timerWithFireDate:(NSDate *)fireDate timeInterval:(NSTimeInterval)timeInterval repeats:(BOOL)repeats block:(void (^)(void))block;
+- (id)initWithFireDate:(NSDate *)fireDate timeInterval:(NSTimeInterval)timeInterval repeats:(BOOL)repeats block:(void (^)(void))block;
 
 @end

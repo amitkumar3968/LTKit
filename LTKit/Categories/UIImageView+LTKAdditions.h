@@ -2,7 +2,7 @@
 //	UIImageView+LTKAdditions.h
 //	LTKit
 //
-//	Copyright (c) 2011 Michael Potter
+//	Copyright (c) 2012 Michael Potter
 //	http://lucas.tiz.ma
 //	lucas@tiz.ma
 //

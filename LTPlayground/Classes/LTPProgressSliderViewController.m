@@ -2,7 +2,7 @@
 //	LTPProgressSliderViewController.m
 //	LTPlayground
 //
-//	Copyright (c) 2011 Michael Potter
+//	Copyright (c) 2012 Michael Potter
 //	http://lucas.tiz.ma
 //	lucas@tiz.ma
 //
@@ -25,11 +25,14 @@
 
 @property (readwrite, nonatomic, strong) IBOutlet LTKProgressSlider *exampleProgressSlider;
 @property (readwrite, nonatomic, strong) IBOutlet UILabel *exampleProgressPercentageLabel;
+@property (readwrite, nonatomic, strong) IBOutlet UISwitch *progressTintColorSwitch;
 @property (readwrite, nonatomic, strong) IBOutlet UISwitch *trackingEnabledSwitch;
 @property (readwrite, nonatomic, strong) IBOutlet UISwitch *animateProgressSwitch;
 @property (readwrite, nonatomic, strong) IBOutlet UILabel *trackingRateDetailLabel;
 
+- (IBAction)progressTintColorSwitchValueChanged;
 - (IBAction)customThumbViewSwitchValueChanged:(UISwitch *)customThumbViewSwitch;
+- (IBAction)trackingEnabledSwitchValueChanged;
 - (IBAction)trackingRateLevelsSwitchValueChanged:(UISwitch *)trackingRateLevelsSwitch;
 - (CGFloat)exampleLabelMidXForProgressSlider:(LTKProgressSlider *)progressSlider;
 
@@ -39,21 +42,35 @@
 
 @synthesize exampleProgressSlider;
 @synthesize exampleProgressPercentageLabel;
+@synthesize progressTintColorSwitch;
 @synthesize trackingEnabledSwitch;
 @synthesize animateProgressSwitch;
 @synthesize trackingRateDetailLabel;
 
 #pragma mark - LTPProgressSliderViewController Methods (Private)
 
+- (IBAction)progressTintColorSwitchValueChanged
+{
+	[self.exampleProgressSlider.layer addDefaultFadeTransition];
+
+	UIColor *progressTintColor = nil;
+
+	if (progressTintColorSwitch.on)
+	{
+		progressTintColor = [UIColor colorWithHue:((self.exampleProgressSlider.progress * 114.0f) / 359.0f) saturation:1.0f brightness:0.9f alpha:1.0f];
+	}
+
+	self.exampleProgressSlider.progressTintColor = progressTintColor;
+}
+
 - (IBAction)customThumbViewSwitchValueChanged:(UISwitch *)customThumbViewSwitch
 {
-	CATransition *fadeTransition = [CATransition animation];
-	[self.exampleProgressSlider.layer addAnimation:fadeTransition forKey:kCATransition];
+	[self.exampleProgressSlider.layer addDefaultFadeTransition];
 
 	if (customThumbViewSwitch.on)
 	{
 		self.exampleProgressSlider.thumbView = [UIImageView imageViewWithImageNamed:@"LTPProgressSliderThumb"];
-		self.exampleProgressSlider.thumbViewBoundsInsets = UIEdgeInsetsMake(0.0f, 1.0f, 0.0f, 1.0f);
+		self.exampleProgressSlider.thumbViewBoundsInsets = UIEdgeInsetsMake(0.0f, 4.0f, 0.0f, 4.0f);
 	}
 	else
 	{
@@ -61,6 +78,16 @@
 	}
 
 	self.exampleProgressPercentageLabel.frameMidX = [self exampleLabelMidXForProgressSlider:self.exampleProgressSlider];
+}
+
+- (IBAction)trackingEnabledSwitchValueChanged
+{
+	[UIView animateWithDuration:0.3
+		animations:
+		^{
+			self.exampleProgressSlider.thumbView.alpha = (self.trackingEnabledSwitch.on ? 1.0f : 0.0f);
+		}
+	];
 }
 
 - (IBAction)trackingRateLevelsSwitchValueChanged:(UISwitch *)trackingRateLevelsSwitch
@@ -84,9 +111,8 @@
 	[super viewDidLoad];
 
 	self.exampleProgressSlider.shouldMonitorPresentationLayerDuringAnimations = YES;
-	self.exampleProgressSlider.trackingRateLevelsEnabled = YES;
 	self.exampleProgressSlider.numberOfTrackingRateLevels = 4;
-	self.exampleProgressSlider.trackingRateLevelHeight = 35.0f;
+	self.exampleProgressSlider.trackingRateLevelHeight = 75.0f;
 	self.exampleProgressSlider.trackingRateLevelMultiplier = 0.5f;
 }
 
@@ -96,6 +122,7 @@
 
 	self.exampleProgressSlider = nil;
 	self.exampleProgressPercentageLabel = nil;
+	self.progressTintColorSwitch = nil;
 	self.trackingEnabledSwitch = nil;
 	self.animateProgressSwitch = nil;
 	self.trackingRateDetailLabel = nil;
@@ -110,7 +137,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-	return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+	return (([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) ? (interfaceOrientation == UIInterfaceOrientationPortrait) : YES);
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration
@@ -124,7 +151,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	if (indexPath.row == 4)
+	if (indexPath.row == 5)
 	{
 		[tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:YES];
 
@@ -173,7 +200,11 @@
 
 - (void)progressSlider:(LTKProgressSlider *)progressSlider didChangeProgress:(CGFloat)progress
 {
-	progressSlider.progressTintColor = [UIColor colorWithHue:((progress * 114.0f) / 359.0f) saturation:1.0f brightness:0.9f alpha:1.0f];
+	if (self.progressTintColorSwitch.on)
+	{
+		progressSlider.progressTintColor = [UIColor colorWithHue:((progress * 114.0f) / 359.0f) saturation:1.0f brightness:0.9f alpha:1.0f];
+	}
+
 	self.exampleProgressPercentageLabel.frameMidX = [self exampleLabelMidXForProgressSlider:progressSlider];
 	self.exampleProgressPercentageLabel.text = [NSString stringWithFormat:@"%.0f%%", (progress * 100.0f)];
 }

@@ -1,6 +1,6 @@
 //
-//	LTKUIViewCategoryTests.h
-//	LTKitTests
+//	NSObject+LTKAdditions.m
+//	LTKit
 //
 //	Copyright (c) 2012 Michael Potter
 //	http://lucas.tiz.ma
@@ -17,8 +17,22 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import "NSObject+LTKAdditions.h"
 
-@interface LTKUIViewCategoryTests : SenTestCase
+@implementation NSObject (LTKAdditions)
+
+#pragma mark - NSObject (LTKAdditions) Methods
+
+- (void)performBlockAfterDelay:(NSTimeInterval)delay block:(void (^)(void))block
+{
+	[self performBlockAfterDelay:delay inQueue:dispatch_get_main_queue() block:block];
+}
+
+- (void)performBlockAfterDelay:(NSTimeInterval)delay inQueue:(dispatch_queue_t)queue block:(void (^)(void))block
+{
+	dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC));
+
+	dispatch_after(popTime, queue, block);
+}
 
 @end

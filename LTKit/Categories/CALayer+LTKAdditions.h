@@ -1,5 +1,5 @@
 //
-//	UIView+LTKAdditions.h
+//	CALayer+LTKAdditions.h
 //	LTKit
 //
 //	Copyright (c) 2012 Michael Potter
@@ -17,9 +17,9 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
-@interface UIView (LTKAdditions)
+@interface CALayer (LTKAdditions)
 
 @property (readwrite, nonatomic, assign) CGPoint frameOrigin;
 @property (readwrite, nonatomic, assign) CGSize frameSize;
@@ -62,6 +62,13 @@
 @property (readwrite, nonatomic, assign) CGPoint boundsBottomLeftPoint;
 @property (readwrite, nonatomic, assign) CGPoint boundsMiddleLeftPoint;
 
-+ (id)viewWithFrame:(CGRect)frame;
+- (void)addDefaultFadeTransition;
+- (void)addDefaultMoveInTransitionWithSubtype:(NSString *)subtype;
+- (void)addDefaultPushTransitionWithSubtype:(NSString *)subtype;
+- (void)addDefaultRevealTransitionWithSubtype:(NSString *)subtype;
+- (void)addFadeTransitionWithDuration:(NSTimeInterval)duration;
+- (void)addMoveInTransitionWithSubtype:(NSString *)subtype duration:(NSTimeInterval)duration;
+- (void)addPushTransitionWithSubtype:(NSString *)subtype duration:(NSTimeInterval)duration;
+- (void)addRevealTransitionWithSubtype:(NSString *)subtype duration:(NSTimeInterval)duration;
 
 @end

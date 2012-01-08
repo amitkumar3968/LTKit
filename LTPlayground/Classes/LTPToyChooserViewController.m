@@ -2,7 +2,7 @@
 //	LTPToyChooserViewController.m
 //	LTPlayground
 //
-//	Copyright (c) 2011 Michael Potter
+//	Copyright (c) 2012 Michael Potter
 //	http://lucas.tiz.ma
 //	lucas@tiz.ma
 //
@@ -23,9 +23,56 @@
 
 #pragma mark - UIViewController Methods
 
+- (void)viewDidLoad
+{
+	[super viewDidLoad];
+
+	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+	{
+		self.clearsSelectionOnViewWillAppear = NO;
+	}
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+
+	if (([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) && ([self.tableView indexPathForSelectedRow] == nil))
+	{
+		NSIndexPath *firstCellIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+
+		[self tableView:self.tableView didSelectRowAtIndexPath:firstCellIndexPath];
+		[self.tableView selectRowAtIndexPath:firstCellIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+	}
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-	return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+	return (([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) ? (interfaceOrientation == UIInterfaceOrientationPortrait) : YES);
+}
+
+#pragma mark - Protocol Implementations
+
+#pragma mark - UITableViewDelegate Methods
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+	{
+		UITableViewCell *selectedTableViewCell = [self.tableView cellForRowAtIndexPath:indexPath];
+		UIViewController *nextViewController = [self.storyboard instantiateViewControllerWithIdentifier:selectedTableViewCell.textLabel.text];
+
+		UINavigationController *detailNavigationController = [self.splitViewController.viewControllers lastObject];
+		detailNavigationController.viewControllers = [NSArray arrayWithObject:nextViewController];
+	}
+}
+
+#pragma mark - UISplitViewControllerDelegate Methods
+
+- (BOOL)splitViewController:(UISplitViewController *)splitViewController shouldHideViewController:(UIViewController *)viewController
+	inOrientation:(UIInterfaceOrientation)orientation
+{
+	return NO;
 }
 
 @end

@@ -1,5 +1,5 @@
 //
-//	LTKUIViewCategoryTests.h
+//	LTKProgressSliderTests.h
 //	LTKitTests
 //
 //	Copyright (c) 2012 Michael Potter
@@ -19,6 +19,6 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface LTKUIViewCategoryTests : SenTestCase
+@interface LTKProgressSliderTests : SenTestCase
 
 @end

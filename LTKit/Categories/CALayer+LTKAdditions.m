@@ -1,5 +1,5 @@
 //
-//	UIView+LTKAdditions.m
+//	CALayer+LTKAdditions.m
 //	LTKit
 //
 //	Copyright (c) 2012 Michael Potter
@@ -17,9 +17,13 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "UIView+LTKAdditions.h"
+#import "CALayer+LTKAdditions.h"
 
-@implementation UIView (LTKAdditions)
+#pragma mark Internal Definitions -
+
+static NSTimeInterval const LTKDefaultTransitionDuration = 0.2;
+
+@implementation CALayer (LTKAdditions)
 
 #pragma mark - Property Accessors
 
@@ -475,11 +479,64 @@
 	self.boundsMidY = boundsMiddleLeftPoint.y;
 }
 
-#pragma mark - UIView (LTKAdditions) Methods
+#pragma mark - CALayer (LTKAdditions) Methods
 
-+ (id)viewWithFrame:(CGRect)frame
+- (void)addDefaultFadeTransition
 {
-	return [[self alloc] initWithFrame:frame];			// Should be autoreleased in a non-ARC environment
+	[self addFadeTransitionWithDuration:LTKDefaultTransitionDuration];
+}
+
+- (void)addDefaultMoveInTransitionWithSubtype:(NSString *)subtype
+{
+	[self addMoveInTransitionWithSubtype:subtype duration:LTKDefaultTransitionDuration];
+}
+
+- (void)addDefaultPushTransitionWithSubtype:(NSString *)subtype
+{
+	[self addPushTransitionWithSubtype:subtype duration:LTKDefaultTransitionDuration];
+}
+
+- (void)addDefaultRevealTransitionWithSubtype:(NSString *)subtype
+{
+	[self addRevealTransitionWithSubtype:subtype duration:LTKDefaultTransitionDuration];
+}
+
+- (void)addFadeTransitionWithDuration:(NSTimeInterval)duration
+{
+	CATransition *transition = [CATransition animation];		// kCATransitionFade is the default type
+	transition.duration = duration;
+
+	[self addAnimation:transition forKey:kCATransition];
+}
+
+- (void)addMoveInTransitionWithSubtype:(NSString *)subtype duration:(NSTimeInterval)duration
+{
+	CATransition *transition = [CATransition animation];
+	transition.type = kCATransitionMoveIn;
+	transition.subtype = subtype;
+	transition.duration = duration;
+
+	[self addAnimation:transition forKey:kCATransition];
+}
+
+- (void)addPushTransitionWithSubtype:(NSString *)subtype duration:(NSTimeInterval)duration
+{
+	CATransition *transition = [CATransition animation];
+	transition.type = kCATransitionPush;
+	transition.subtype = subtype;
+	transition.duration = duration;
+
+	[self addAnimation:transition forKey:kCATransition];
+}
+
+- (void)addRevealTransitionWithSubtype:(NSString *)subtype duration:(NSTimeInterval)duration
+{
+	CATransition *transition = [CATransition animation];
+	transition.type = kCATransitionReveal;
+	transition.subtype = subtype;
+	transition.duration = duration;
+
+	[self addAnimation:transition forKey:kCATransition];
 }
 
 @end
