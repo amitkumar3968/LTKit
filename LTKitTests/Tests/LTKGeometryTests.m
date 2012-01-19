@@ -38,4 +38,11 @@
 		@"Offset point does not equal {100.0f, 200.0f}.");
 }
 
+- (void)testSizeGetAreaFunction
+{
+	STAssertEquals(LTKSizeGetArea(CGSizeMake(10.0f, 10.0f)), 100.0f, @"Area does not equal 100.0f.");
+	STAssertEquals(LTKSizeGetArea(CGSizeZero), 0.0f, @"Area does not equal 0.0f.");
+	STAssertEquals(LTKSizeGetArea(CGSizeMake(-10.0f, -10.0f)), 100.0f, @"Area does not equal 100.0f.");
+}
+
 @end

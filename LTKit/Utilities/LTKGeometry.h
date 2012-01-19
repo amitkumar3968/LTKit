@@ -19,6 +19,9 @@
 
 #import <UIKit/UIKit.h>
 
+UIKIT_EXTERN NSUInteger const LTKViewAutoresizingFlexibleMargins;
+UIKIT_EXTERN NSUInteger const LTKViewAutoresizingFlexibleSize;
+
 CG_INLINE CGPoint LTKPointApplyOffset(CGPoint point, UIOffset offset)
 {
 	point.x += offset.horizontal;
@@ -26,3 +29,53 @@ CG_INLINE CGPoint LTKPointApplyOffset(CGPoint point, UIOffset offset)
 
 	return point;
 }
+
+CG_INLINE UIEdgeInsets LTKUniformEdgeInsetsMake(CGFloat inset)
+{
+	return UIEdgeInsetsMake(inset, inset, inset, inset);
+}
+
+CG_INLINE CGFloat LTKSizeGetArea(CGSize size)
+{
+	return (size.width * size.height);
+}
+
+CG_INLINE CGFloat LTKRectsGetMaxHeight(const CGRect rects[], size_t count) 
+{
+	CGFloat maxHeight = 0.0f;
+	
+	for (NSUInteger i = 0; i < count; i++)
+	{		
+		if (rects[i].size.height > maxHeight)
+		{
+			maxHeight = rects[i].size.height;
+		}
+	}
+	
+	return maxHeight;
+}
+
+CG_INLINE CGFloat LTKRectsGetMaxWidth(const CGRect rects[], size_t count) 
+{
+	CGFloat maxWidth = 0.0f;
+	
+	for (NSUInteger i = 0; i < count; i++)
+	{
+		if (rects[i].size.width > maxWidth)
+		{
+			maxWidth = rects[i].size.width;
+		}
+	}
+	
+	return maxWidth;
+}
+
+// LTKRectsGetMinX
+// LTKRectsGetMaxX
+// LTKRectsGetMinY
+// LTKRectsGetMaxY
+
+// LTKRectUnionOfRects
+// LTKRectIntersectionOfRects
+
+// LTKEdgeOutsetsMake, etc.

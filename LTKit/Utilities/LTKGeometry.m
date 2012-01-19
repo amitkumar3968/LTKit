@@ -1,6 +1,6 @@
 //
-//	LTKAVCaptureSessionCategoryTests.m
-//	LTKitTests
+//	LTKGeometry.m
+//	LTKit
 //
 //	Copyright (c) 2012 Michael Potter
 //	http://lucas.tiz.ma
@@ -17,14 +17,8 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "LTKAVCaptureSessionCategoryTests.h"
+#import "LTKGeometry.h"
 
-@implementation LTKAVCaptureSessionCategoryTests
-
-#pragma mark - Unit Tests
-
-//- (BOOL)addInputIfPossible:(AVCaptureInput *)input;
-//- (BOOL)addOutputIfPossible:(AVCaptureOutput *)output;
-//- (BOOL)setSessionPresetIfPossible:(NSString *)sessionPreset;
-
-@end
+NSUInteger const LTKViewAutoresizingFlexibleMargins = (UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin |
+	UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin);
+NSUInteger const LTKViewAutoresizingFlexibleSize = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);

@@ -19,8 +19,11 @@
 
 #import "Categories/AVCaptureSession+LTKAdditions.h"
 #import "Categories/CALayer+LTKAdditions.h"
+#import "Categories/NSArray+LTKAdditions.h"
 #import "Categories/NSObject+LTKAdditions.h"
+#import "Categories/NSString+LTKAdditions.h"
 #import "Categories/NSTimer+LTKAdditions.h"
+#import "Categories/UIColor+LTKAdditions.h"
 #import "Categories/UIGestureRecognizer+LTKAdditions.h"
 #import "Categories/UIImageView+LTKAdditions.h"
 #import "Categories/UIView+LTKAdditions.h"

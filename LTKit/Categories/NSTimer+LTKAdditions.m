@@ -54,7 +54,7 @@
 
 + (id)timerWithFireDate:(NSDate *)fireDate timeInterval:(NSTimeInterval)timeInterval repeats:(BOOL)repeats block:(void (^)(void))block
 {
-	return [[self alloc] initWithFireDate:fireDate timeInterval:timeInterval repeats:repeats block:block];	// Should be autoreleased in a non-ARC environment
+	return [[self alloc] initWithFireDate:fireDate timeInterval:timeInterval repeats:repeats block:block];
 }
 
 - (id)initWithFireDate:(NSDate *)fireDate timeInterval:(NSTimeInterval)timeInterval repeats:(BOOL)repeats block:(void (^)(void))block

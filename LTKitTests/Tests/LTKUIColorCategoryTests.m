@@ -1,5 +1,5 @@
 //
-//	LTKAVCaptureSessionCategoryTests.m
+//	LTKUIColorCategoryTests.m
 //	LTKitTests
 //
 //	Copyright (c) 2012 Michael Potter
@@ -17,14 +17,10 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "LTKAVCaptureSessionCategoryTests.h"
+#import "LTKUIColorCategoryTests.h"
 
-@implementation LTKAVCaptureSessionCategoryTests
+@implementation LTKUIColorCategoryTests
 
 #pragma mark - Unit Tests
-
-//- (BOOL)addInputIfPossible:(AVCaptureInput *)input;
-//- (BOOL)addOutputIfPossible:(AVCaptureOutput *)output;
-//- (BOOL)setSessionPresetIfPossible:(NSString *)sessionPreset;
 
 @end

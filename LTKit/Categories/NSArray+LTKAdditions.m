@@ -1,6 +1,6 @@
 //
-//	LTKAVCaptureSessionCategoryTests.m
-//	LTKitTests
+//	NSArray+LTKAdditions.m
+//	LTKit
 //
 //	Copyright (c) 2012 Michael Potter
 //	http://lucas.tiz.ma
@@ -17,14 +17,20 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "LTKAVCaptureSessionCategoryTests.h"
+#import "NSArray+LTKAdditions.h"
 
-@implementation LTKAVCaptureSessionCategoryTests
+@implementation NSArray (LTKAdditions)
 
-#pragma mark - Unit Tests
+#pragma mark - NSArray (LTKAdditions)
 
-//- (BOOL)addInputIfPossible:(AVCaptureInput *)input;
-//- (BOOL)addOutputIfPossible:(AVCaptureOutput *)output;
-//- (BOOL)setSessionPresetIfPossible:(NSString *)sessionPreset;
+- (BOOL)isEmpty
+{
+	return ![self isNotEmpty];
+}
+
+- (BOOL)isNotEmpty
+{
+	return ([self count] > 0);
+}
 
 @end

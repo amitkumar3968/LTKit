@@ -62,6 +62,24 @@
 @property (readwrite, nonatomic, assign) CGPoint boundsBottomLeftPoint;
 @property (readwrite, nonatomic, assign) CGPoint boundsMiddleLeftPoint;
 
+// Create corresponding setters to apply edge insets
+
 + (id)viewWithFrame:(CGRect)frame;
+
++ (id)viewByEnclosingViewsHorizontally:(NSArray *)enclosedViews;
++ (id)viewByEnclosingViewsHorizontally:(NSArray *)enclosedViews withPadding:(CGFloat)padding;
++ (id)viewByEnclosingViewsHorizontally:(NSArray *)enclosedViews withPadding:(CGFloat)padding edgeInsets:(UIEdgeInsets)edgeInsets;
+- (id)initByEnclosingViewsHorizontally:(NSArray *)enclosedViews;
+- (id)initByEnclosingViewsHorizontally:(NSArray *)enclosedViews withPadding:(CGFloat)padding;
+- (id)initByEnclosingViewsHorizontally:(NSArray *)enclosedViews withPadding:(CGFloat)padding edgeInsets:(UIEdgeInsets)edgeInsets;
+
+// Create corresponding methods for vertical enclosure
+
++ (CGFloat)smallestWidthInViews:(NSArray *)views;
++ (CGFloat)smallestHeightInViews:(NSArray *)views;
++ (CGFloat)largestWidthInViews:(NSArray *)views;
++ (CGFloat)largestHeightInViews:(NSArray *)views;
+
+- (void)removeSubviews;
 
 @end

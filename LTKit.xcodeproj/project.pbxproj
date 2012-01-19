@@ -64,6 +64,16 @@
 		EBA760BA14A0FFDB009713E2 /* UIGestureRecognizer+LTKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EBA760B814A0FFDB009713E2 /* UIGestureRecognizer+LTKAdditions.h */; };
 		EBA760BB14A0FFDB009713E2 /* UIGestureRecognizer+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA760B914A0FFDB009713E2 /* UIGestureRecognizer+LTKAdditions.m */; };
 		EBA760C314A1009A009713E2 /* LTKUIGestureRecognizerCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA760C214A1009A009713E2 /* LTKUIGestureRecognizerCategoryTests.m */; };
+		EBACB14314C61C29009F9D26 /* UIColor+LTKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EBACB14114C61C29009F9D26 /* UIColor+LTKAdditions.h */; };
+		EBACB14414C61C29009F9D26 /* UIColor+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBACB14214C61C29009F9D26 /* UIColor+LTKAdditions.m */; };
+		EBACB14814C62800009F9D26 /* LTKUIColorCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBACB14714C62800009F9D26 /* LTKUIColorCategoryTests.m */; };
+		EBACB16314C77489009F9D26 /* NSArray+LTKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EBACB16114C77488009F9D26 /* NSArray+LTKAdditions.h */; };
+		EBACB16414C77489009F9D26 /* NSArray+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBACB16214C77488009F9D26 /* NSArray+LTKAdditions.m */; };
+		EBACB16714C77551009F9D26 /* LTKNSArrayCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBACB16614C77551009F9D26 /* LTKNSArrayCategoryTests.m */; };
+		EBACB16A14C77602009F9D26 /* NSString+LTKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EBACB16814C77600009F9D26 /* NSString+LTKAdditions.h */; };
+		EBACB16B14C77602009F9D26 /* NSString+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBACB16914C77601009F9D26 /* NSString+LTKAdditions.m */; };
+		EBACB16E14C77993009F9D26 /* LTKNSStringCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBACB16D14C77992009F9D26 /* LTKNSStringCategoryTests.m */; };
+		EBACB17614C8077D009F9D26 /* LTKGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = EBACB17514C8077D009F9D26 /* LTKGeometry.m */; };
 		EBF72BDE1445200F009C9B5E /* LTPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF72BD41445200F009C9B5E /* LTPAppDelegate.m */; };
 		EBF72BE11445200F009C9B5E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBF72BD91445200F009C9B5E /* InfoPlist.strings */; };
 		EBF72BE31445200F009C9B5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF72BDD1445200F009C9B5E /* main.m */; };
@@ -152,6 +162,19 @@
 		EBA760B914A0FFDB009713E2 /* UIGestureRecognizer+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+LTKAdditions.m"; sourceTree = "<group>"; };
 		EBA760C114A1009A009713E2 /* LTKUIGestureRecognizerCategoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKUIGestureRecognizerCategoryTests.h; sourceTree = "<group>"; };
 		EBA760C214A1009A009713E2 /* LTKUIGestureRecognizerCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKUIGestureRecognizerCategoryTests.m; sourceTree = "<group>"; };
+		EBACB14114C61C29009F9D26 /* UIColor+LTKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+LTKAdditions.h"; sourceTree = "<group>"; };
+		EBACB14214C61C29009F9D26 /* UIColor+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+LTKAdditions.m"; sourceTree = "<group>"; };
+		EBACB14614C62800009F9D26 /* LTKUIColorCategoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKUIColorCategoryTests.h; sourceTree = "<group>"; };
+		EBACB14714C62800009F9D26 /* LTKUIColorCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKUIColorCategoryTests.m; sourceTree = "<group>"; };
+		EBACB16114C77488009F9D26 /* NSArray+LTKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+LTKAdditions.h"; sourceTree = "<group>"; };
+		EBACB16214C77488009F9D26 /* NSArray+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+LTKAdditions.m"; sourceTree = "<group>"; };
+		EBACB16514C77550009F9D26 /* LTKNSArrayCategoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKNSArrayCategoryTests.h; sourceTree = "<group>"; };
+		EBACB16614C77551009F9D26 /* LTKNSArrayCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKNSArrayCategoryTests.m; sourceTree = "<group>"; };
+		EBACB16814C77600009F9D26 /* NSString+LTKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+LTKAdditions.h"; sourceTree = "<group>"; };
+		EBACB16914C77601009F9D26 /* NSString+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+LTKAdditions.m"; sourceTree = "<group>"; };
+		EBACB16C14C77992009F9D26 /* LTKNSStringCategoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKNSStringCategoryTests.h; sourceTree = "<group>"; };
+		EBACB16D14C77992009F9D26 /* LTKNSStringCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKNSStringCategoryTests.m; sourceTree = "<group>"; };
+		EBACB17514C8077D009F9D26 /* LTKGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKGeometry.m; sourceTree = "<group>"; };
 		EBF72BD31445200F009C9B5E /* LTPAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTPAppDelegate.h; sourceTree = "<group>"; };
 		EBF72BD41445200F009C9B5E /* LTPAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTPAppDelegate.m; sourceTree = "<group>"; };
 		EBF72BDA1445200F009C9B5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -206,10 +229,16 @@
 				EB963EC514BFC81B00016509 /* LTKAVCaptureSessionCategoryTests.m */,
 				EB40BB7F14B75332006DD25D /* LTKCALayerCategoryTests.h */,
 				EB40BB8014B75332006DD25D /* LTKCALayerCategoryTests.m */,
+				EBACB16514C77550009F9D26 /* LTKNSArrayCategoryTests.h */,
+				EBACB16614C77551009F9D26 /* LTKNSArrayCategoryTests.m */,
 				EB40BB7114B73457006DD25D /* LTKNSObjectCategoryTests.h */,
 				EB40BB7214B73457006DD25D /* LTKNSObjectCategoryTests.m */,
+				EBACB16C14C77992009F9D26 /* LTKNSStringCategoryTests.h */,
+				EBACB16D14C77992009F9D26 /* LTKNSStringCategoryTests.m */,
 				EB40BB7414B73468006DD25D /* LTKNSTimerCategoryTests.h */,
 				EB40BB7514B73468006DD25D /* LTKNSTimerCategoryTests.m */,
+				EBACB14614C62800009F9D26 /* LTKUIColorCategoryTests.h */,
+				EBACB14714C62800009F9D26 /* LTKUIColorCategoryTests.m */,
 				EBA760C114A1009A009713E2 /* LTKUIGestureRecognizerCategoryTests.h */,
 				EBA760C214A1009A009713E2 /* LTKUIGestureRecognizerCategoryTests.m */,
 				EBA760A714A0D81A009713E2 /* LTKUIImageViewCategoryTests.h */,
@@ -304,10 +333,16 @@
 				EB6A49A614BF726300D41934 /* AVCaptureSession+LTKAdditions.m */,
 				EB40BB7B14B7505C006DD25D /* CALayer+LTKAdditions.h */,
 				EB40BB7C14B7505C006DD25D /* CALayer+LTKAdditions.m */,
+				EBACB16114C77488009F9D26 /* NSArray+LTKAdditions.h */,
+				EBACB16214C77488009F9D26 /* NSArray+LTKAdditions.m */,
 				EB40BB6C14B733FF006DD25D /* NSObject+LTKAdditions.h */,
 				EB40BB6D14B733FF006DD25D /* NSObject+LTKAdditions.m */,
+				EBACB16814C77600009F9D26 /* NSString+LTKAdditions.h */,
+				EBACB16914C77601009F9D26 /* NSString+LTKAdditions.m */,
 				EB40BAD314B21B0C006DD25D /* NSTimer+LTKAdditions.h */,
 				EB40BAD414B21B0C006DD25D /* NSTimer+LTKAdditions.m */,
+				EBACB14114C61C29009F9D26 /* UIColor+LTKAdditions.h */,
+				EBACB14214C61C29009F9D26 /* UIColor+LTKAdditions.m */,
 				EBA760B814A0FFDB009713E2 /* UIGestureRecognizer+LTKAdditions.h */,
 				EBA760B914A0FFDB009713E2 /* UIGestureRecognizer+LTKAdditions.m */,
 				EBA760A214A0D7ED009713E2 /* UIImageView+LTKAdditions.h */,
@@ -397,6 +432,7 @@
 			isa = PBXGroup;
 			children = (
 				EBA760B514A0F04B009713E2 /* LTKGeometry.h */,
+				EBACB17514C8077D009F9D26 /* LTKGeometry.m */,
 				EB6F265014A21E6900347EE1 /* LTKMath.h */,
 			);
 			path = Utilities;
@@ -456,6 +492,9 @@
 				EB40BB6E14B733FF006DD25D /* NSObject+LTKAdditions.h in Headers */,
 				EB40BB7D14B7505C006DD25D /* CALayer+LTKAdditions.h in Headers */,
 				EB6A49A714BF726300D41934 /* AVCaptureSession+LTKAdditions.h in Headers */,
+				EBACB14314C61C29009F9D26 /* UIColor+LTKAdditions.h in Headers */,
+				EBACB16314C77489009F9D26 /* NSArray+LTKAdditions.h in Headers */,
+				EBACB16A14C77602009F9D26 /* NSString+LTKAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,6 +640,10 @@
 				EB40BB6F14B733FF006DD25D /* NSObject+LTKAdditions.m in Sources */,
 				EB40BB7E14B7505C006DD25D /* CALayer+LTKAdditions.m in Sources */,
 				EB6A49A814BF726300D41934 /* AVCaptureSession+LTKAdditions.m in Sources */,
+				EBACB14414C61C29009F9D26 /* UIColor+LTKAdditions.m in Sources */,
+				EBACB16414C77489009F9D26 /* NSArray+LTKAdditions.m in Sources */,
+				EBACB16B14C77602009F9D26 /* NSString+LTKAdditions.m in Sources */,
+				EBACB17614C8077D009F9D26 /* LTKGeometry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,6 +661,9 @@
 				EB40BB7A14B73484006DD25D /* LTKProgressSliderTests.m in Sources */,
 				EB40BB8114B75332006DD25D /* LTKCALayerCategoryTests.m in Sources */,
 				EB963EC614BFC81B00016509 /* LTKAVCaptureSessionCategoryTests.m in Sources */,
+				EBACB14814C62800009F9D26 /* LTKUIColorCategoryTests.m in Sources */,
+				EBACB16714C77551009F9D26 /* LTKNSArrayCategoryTests.m in Sources */,
+				EBACB16E14C77993009F9D26 /* LTKNSStringCategoryTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

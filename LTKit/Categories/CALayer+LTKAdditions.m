@@ -18,6 +18,8 @@
 //
 
 #import "CALayer+LTKAdditions.h"
+#import "NSArray+LTKAdditions.h"
+#import "UIColor+LTKAdditions.h"
 
 #pragma mark Internal Definitions -
 
@@ -537,6 +539,20 @@ static NSTimeInterval const LTKDefaultTransitionDuration = 0.2;
 	transition.duration = duration;
 
 	[self addAnimation:transition forKey:kCATransition];
+}
+
+- (void)enableDebugBordersRecursively:(BOOL)recursively
+{
+	self.borderWidth = 1.0f;
+	self.borderColor = [[UIColor randomColor] CGColor];
+	
+	if (recursively && [self.sublayers isNotEmpty])
+	{
+		for (CALayer *sublayer in self.sublayers)
+		{
+			[sublayer enableDebugBordersRecursively:YES];
+		}
+	}
 }
 
 @end

@@ -71,4 +71,6 @@
 - (void)addPushTransitionWithSubtype:(NSString *)subtype duration:(NSTimeInterval)duration;
 - (void)addRevealTransitionWithSubtype:(NSString *)subtype duration:(NSTimeInterval)duration;
 
+- (void)enableDebugBordersRecursively:(BOOL)recurse;
+
 @end
