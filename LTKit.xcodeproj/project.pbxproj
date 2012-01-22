@@ -74,6 +74,12 @@
 		EBACB16B14C77602009F9D26 /* NSString+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBACB16914C77601009F9D26 /* NSString+LTKAdditions.m */; };
 		EBACB16E14C77993009F9D26 /* LTKNSStringCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBACB16D14C77992009F9D26 /* LTKNSStringCategoryTests.m */; };
 		EBACB17614C8077D009F9D26 /* LTKGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = EBACB17514C8077D009F9D26 /* LTKGeometry.m */; };
+		EBACB18114CB7ED1009F9D26 /* UIStoryboard+LTKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EBACB17F14CB7ED1009F9D26 /* UIStoryboard+LTKAdditions.h */; };
+		EBACB18214CB7ED1009F9D26 /* UIStoryboard+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBACB18014CB7ED1009F9D26 /* UIStoryboard+LTKAdditions.m */; };
+		EBACB18614CB81C6009F9D26 /* LTKUIStoryboardCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBACB18514CB81C6009F9D26 /* LTKUIStoryboardCategoryTests.m */; };
+		EBACB18914CB8718009F9D26 /* UIViewController+LTKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EBACB18714CB8717009F9D26 /* UIViewController+LTKAdditions.h */; };
+		EBACB18A14CB8718009F9D26 /* UIViewController+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBACB18814CB8717009F9D26 /* UIViewController+LTKAdditions.m */; };
+		EBACB18D14CB87E9009F9D26 /* LTKUIViewControllerCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBACB18C14CB87E8009F9D26 /* LTKUIViewControllerCategoryTests.m */; };
 		EBF72BDE1445200F009C9B5E /* LTPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF72BD41445200F009C9B5E /* LTPAppDelegate.m */; };
 		EBF72BE11445200F009C9B5E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBF72BD91445200F009C9B5E /* InfoPlist.strings */; };
 		EBF72BE31445200F009C9B5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF72BDD1445200F009C9B5E /* main.m */; };
@@ -138,11 +144,11 @@
 		EB40BB7814B73484006DD25D /* LTKProgressSliderTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKProgressSliderTests.h; sourceTree = "<group>"; };
 		EB40BB7914B73484006DD25D /* LTKProgressSliderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKProgressSliderTests.m; sourceTree = "<group>"; };
 		EB40BB7B14B7505C006DD25D /* CALayer+LTKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+LTKAdditions.h"; sourceTree = "<group>"; };
-		EB40BB7C14B7505C006DD25D /* CALayer+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+LTKAdditions.m"; sourceTree = "<group>"; };
+		EB40BB7C14B7505C006DD25D /* CALayer+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "CALayer+LTKAdditions.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		EB40BB7F14B75332006DD25D /* LTKCALayerCategoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKCALayerCategoryTests.h; sourceTree = "<group>"; };
 		EB40BB8014B75332006DD25D /* LTKCALayerCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKCALayerCategoryTests.m; sourceTree = "<group>"; };
 		EB6A49A514BF726300D41934 /* AVCaptureSession+LTKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AVCaptureSession+LTKAdditions.h"; sourceTree = "<group>"; };
-		EB6A49A614BF726300D41934 /* AVCaptureSession+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AVCaptureSession+LTKAdditions.m"; sourceTree = "<group>"; };
+		EB6A49A614BF726300D41934 /* AVCaptureSession+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "AVCaptureSession+LTKAdditions.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		EB6F265014A21E6900347EE1 /* LTKMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKMath.h; sourceTree = "<group>"; };
 		EB6F265514A2241F00347EE1 /* LTKGeometryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKGeometryTests.h; sourceTree = "<group>"; };
 		EB6F265614A2241F00347EE1 /* LTKGeometryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKGeometryTests.m; sourceTree = "<group>"; };
@@ -156,7 +162,7 @@
 		EBA760A814A0D81A009713E2 /* LTKUIImageViewCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKUIImageViewCategoryTests.m; sourceTree = "<group>"; };
 		EBA760AC14A0DD4E009713E2 /* LTKUIImageViewCategoryTestsSample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LTKUIImageViewCategoryTestsSample.png; sourceTree = "<group>"; };
 		EBA760AE14A0E108009713E2 /* LTKUIImageViewCategoryTestsSampleHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LTKUIImageViewCategoryTestsSampleHighlighted.png; sourceTree = "<group>"; };
-		EBA760B514A0F04B009713E2 /* LTKGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKGeometry.h; sourceTree = "<group>"; };
+		EBA760B514A0F04B009713E2 /* LTKGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LTKGeometry.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		EBA760B614A0F07F009713E2 /* LTKitUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKitUtilities.h; sourceTree = "<group>"; };
 		EBA760B814A0FFDB009713E2 /* UIGestureRecognizer+LTKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+LTKAdditions.h"; sourceTree = "<group>"; };
 		EBA760B914A0FFDB009713E2 /* UIGestureRecognizer+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+LTKAdditions.m"; sourceTree = "<group>"; };
@@ -175,6 +181,14 @@
 		EBACB16C14C77992009F9D26 /* LTKNSStringCategoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKNSStringCategoryTests.h; sourceTree = "<group>"; };
 		EBACB16D14C77992009F9D26 /* LTKNSStringCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKNSStringCategoryTests.m; sourceTree = "<group>"; };
 		EBACB17514C8077D009F9D26 /* LTKGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKGeometry.m; sourceTree = "<group>"; };
+		EBACB17F14CB7ED1009F9D26 /* UIStoryboard+LTKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIStoryboard+LTKAdditions.h"; sourceTree = "<group>"; };
+		EBACB18014CB7ED1009F9D26 /* UIStoryboard+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboard+LTKAdditions.m"; sourceTree = "<group>"; };
+		EBACB18414CB81C6009F9D26 /* LTKUIStoryboardCategoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKUIStoryboardCategoryTests.h; sourceTree = "<group>"; };
+		EBACB18514CB81C6009F9D26 /* LTKUIStoryboardCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKUIStoryboardCategoryTests.m; sourceTree = "<group>"; };
+		EBACB18714CB8717009F9D26 /* UIViewController+LTKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LTKAdditions.h"; sourceTree = "<group>"; };
+		EBACB18814CB8717009F9D26 /* UIViewController+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LTKAdditions.m"; sourceTree = "<group>"; };
+		EBACB18B14CB87E8009F9D26 /* LTKUIViewControllerCategoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKUIViewControllerCategoryTests.h; sourceTree = "<group>"; };
+		EBACB18C14CB87E8009F9D26 /* LTKUIViewControllerCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKUIViewControllerCategoryTests.m; sourceTree = "<group>"; };
 		EBF72BD31445200F009C9B5E /* LTPAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTPAppDelegate.h; sourceTree = "<group>"; };
 		EBF72BD41445200F009C9B5E /* LTPAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTPAppDelegate.m; sourceTree = "<group>"; };
 		EBF72BDA1445200F009C9B5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -243,8 +257,12 @@
 				EBA760C214A1009A009713E2 /* LTKUIGestureRecognizerCategoryTests.m */,
 				EBA760A714A0D81A009713E2 /* LTKUIImageViewCategoryTests.h */,
 				EBA760A814A0D81A009713E2 /* LTKUIImageViewCategoryTests.m */,
+				EBACB18414CB81C6009F9D26 /* LTKUIStoryboardCategoryTests.h */,
+				EBACB18514CB81C6009F9D26 /* LTKUIStoryboardCategoryTests.m */,
 				EB1CDB89141DB63F00729A2D /* LTKUIViewCategoryTests.h */,
 				EB1CDB8A141DB63F00729A2D /* LTKUIViewCategoryTests.m */,
+				EBACB18B14CB87E8009F9D26 /* LTKUIViewControllerCategoryTests.h */,
+				EBACB18C14CB87E8009F9D26 /* LTKUIViewControllerCategoryTests.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -347,8 +365,12 @@
 				EBA760B914A0FFDB009713E2 /* UIGestureRecognizer+LTKAdditions.m */,
 				EBA760A214A0D7ED009713E2 /* UIImageView+LTKAdditions.h */,
 				EBA760A314A0D7ED009713E2 /* UIImageView+LTKAdditions.m */,
+				EBACB17F14CB7ED1009F9D26 /* UIStoryboard+LTKAdditions.h */,
+				EBACB18014CB7ED1009F9D26 /* UIStoryboard+LTKAdditions.m */,
 				EB1CDB9A141DC09900729A2D /* UIView+LTKAdditions.h */,
 				EB1CDB9B141DC09900729A2D /* UIView+LTKAdditions.m */,
+				EBACB18714CB8717009F9D26 /* UIViewController+LTKAdditions.h */,
+				EBACB18814CB8717009F9D26 /* UIViewController+LTKAdditions.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -495,6 +517,8 @@
 				EBACB14314C61C29009F9D26 /* UIColor+LTKAdditions.h in Headers */,
 				EBACB16314C77489009F9D26 /* NSArray+LTKAdditions.h in Headers */,
 				EBACB16A14C77602009F9D26 /* NSString+LTKAdditions.h in Headers */,
+				EBACB18114CB7ED1009F9D26 /* UIStoryboard+LTKAdditions.h in Headers */,
+				EBACB18914CB8718009F9D26 /* UIViewController+LTKAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,6 +668,8 @@
 				EBACB16414C77489009F9D26 /* NSArray+LTKAdditions.m in Sources */,
 				EBACB16B14C77602009F9D26 /* NSString+LTKAdditions.m in Sources */,
 				EBACB17614C8077D009F9D26 /* LTKGeometry.m in Sources */,
+				EBACB18214CB7ED1009F9D26 /* UIStoryboard+LTKAdditions.m in Sources */,
+				EBACB18A14CB8718009F9D26 /* UIViewController+LTKAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,6 +690,8 @@
 				EBACB14814C62800009F9D26 /* LTKUIColorCategoryTests.m in Sources */,
 				EBACB16714C77551009F9D26 /* LTKNSArrayCategoryTests.m in Sources */,
 				EBACB16E14C77993009F9D26 /* LTKNSStringCategoryTests.m in Sources */,
+				EBACB18614CB81C6009F9D26 /* LTKUIStoryboardCategoryTests.m in Sources */,
+				EBACB18D14CB87E9009F9D26 /* LTKUIViewControllerCategoryTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

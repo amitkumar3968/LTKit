@@ -26,36 +26,36 @@
 - (BOOL)addInputIfPossible:(AVCaptureInput *)input
 {
 	BOOL canAddInput = [self canAddInput:input];
-	
+
 	if (canAddInput)
 	{
 		[self addInput:input];
 	}
-	
+
 	return canAddInput;
 }
 
 - (BOOL)addOutputIfPossible:(AVCaptureOutput *)output
 {
 	BOOL canAddOutput = [self canAddOutput:output];
-	
+
 	if (canAddOutput)
 	{
 		[self addOutput:output];
 	}
-	
+
 	return canAddOutput;
 }
 
 - (BOOL)setSessionPresetIfPossible:(NSString *)sessionPreset
 {
 	BOOL canSetSessionPreset = [self canSetSessionPreset:sessionPreset];
-	
+
 	if (canSetSessionPreset)
 	{
 		self.sessionPreset = sessionPreset;
 	}
-	
+
 	return canSetSessionPreset;
 }
 

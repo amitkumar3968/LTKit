@@ -1,5 +1,5 @@
 //
-//	LTKNSArrayCategoryTests.m
+//	LTKUIStoryboardCategoryTests.m
 //	LTKitTests
 //
 //	Copyright (c) 2012 Michael Potter
@@ -17,20 +17,10 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "LTKNSArrayCategoryTests.h"
+#import "LTKUIStoryboardCategoryTests.h"
 
-@implementation LTKNSArrayCategoryTests
+@implementation LTKUIStoryboardCategoryTests
 
 #pragma mark - Unit Tests
-
-- (void)testIsEmptyMethod
-{
-
-}
-
-- (void)testIsNotEmptyMethod
-{
-
-}
 
 @end

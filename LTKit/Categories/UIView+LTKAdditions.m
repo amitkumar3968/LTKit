@@ -511,38 +511,36 @@
 - (id)initByEnclosingViewsHorizontally:(NSArray *)enclosedViews withPadding:(CGFloat)padding edgeInsets:(UIEdgeInsets)edgeInsets
 {
 	self = [self initWithFrame:CGRectZero];
-	
+
 	if (self != nil)
 	{
 		if ([enclosedViews isNotEmpty])
 		{
 			self.frameWidth = -edgeInsets.left;
 			self.frameHeight = ([UIView largestHeightInViews:enclosedViews] - edgeInsets.top - edgeInsets.bottom);
-			
-			[enclosedViews 
-				enumerateObjectsUsingBlock:^(UIView *enclosedView, NSUInteger index, BOOL *stop)
-				{
-					enclosedView.frameX = self.frameWidth;
-					enclosedView.frameMidY = self.frameMidY;
-					
-					self.frameWidth += (enclosedView.frameWidth + padding);
 
-					[self addSubview:enclosedView];
-				}
-			];
-			
+			for (UIView *enclosedView in enclosedViews)
+			{
+				enclosedView.frameX = self.frameWidth;
+				enclosedView.frameMidY = self.frameMidY;
+
+				self.frameWidth += (enclosedView.frameWidth + padding);
+
+				[self addSubview:enclosedView];
+			}
+
 			self.frameWidth -= padding;
 			self.frameWidth -= edgeInsets.right;
 		}
 	}
-	
+
 	return self;
 }
 
 + (CGFloat)smallestWidthInViews:(NSArray *)views
 {
 	CGFloat smallestWidth = 0.0f;
-	
+
 	for (UIView *view in views)
 	{
 		if (view.frameWidth < smallestWidth)
@@ -550,14 +548,14 @@
 			smallestWidth = view.frameWidth;
 		}
 	}
-	
+
 	return smallestWidth;
 }
 
 + (CGFloat)smallestHeightInViews:(NSArray *)views
 {
 	CGFloat smallestHeight = 0.0f;
-	
+
 	for (UIView *view in views)
 	{
 		if (view.frameHeight < smallestHeight)
@@ -565,14 +563,14 @@
 			smallestHeight = view.frameHeight;
 		}
 	}
-	
+
 	return smallestHeight;
 }
 
 + (CGFloat)largestWidthInViews:(NSArray *)views
 {
 	CGFloat largestWidth = 0.0f;
-	
+
 	for (UIView *view in views)
 	{
 		if (view.frameWidth > largestWidth)
@@ -580,14 +578,14 @@
 			largestWidth = view.frameWidth;
 		}
 	}
-	
+
 	return largestWidth;
 }
 
 + (CGFloat)largestHeightInViews:(NSArray *)views
 {
 	CGFloat largestHeight = 0.0f;
-	
+
 	for (UIView *view in views)
 	{
 		if (view.frameHeight > largestHeight)
@@ -595,7 +593,7 @@
 			largestHeight = view.frameHeight;
 		}
 	}
-	
+
 	return largestHeight;
 }
 

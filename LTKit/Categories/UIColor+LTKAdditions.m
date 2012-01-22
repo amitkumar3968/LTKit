@@ -68,7 +68,7 @@
 	CGFloat percentageHue = (decimalHue / 359.0f);
 	CGFloat percentageSaturation = (decimalSaturation / 100.0f);
 	CGFloat percentageBrightness = (decimalBrightness / 100.0f);
-	
+
 	return [self initWithHue:percentageHue saturation:percentageSaturation brightness:percentageBrightness alpha:alpha];
 }
 
@@ -87,7 +87,7 @@
 	CGFloat percentageRed = (decimalRed / 255.0f);
 	CGFloat percentageGreen = (decimalGreen / 255.0f);
 	CGFloat percentageBlue = (decimalBlue / 255.0f);
-	
+
 	return [self initWithRed:percentageRed green:percentageGreen blue:percentageBlue alpha:alpha];
 }
 
@@ -96,7 +96,7 @@
 	CGFloat randomPercentageRed = ((CGFloat)arc4random() / UINT32_MAX);
 	CGFloat randomPercentageGreen = ((CGFloat)arc4random() / UINT32_MAX);
 	CGFloat randomPercentageBlue = ((CGFloat)arc4random() / UINT32_MAX);
-	
+
 	return [UIColor colorWithRed:randomPercentageRed green:randomPercentageGreen blue:randomPercentageBlue];
 }
 
@@ -115,16 +115,16 @@
 	CGFloat percentageHue = 0.0f;
 	CGFloat percentageSaturation = 0.0f;
 	CGFloat percentageBrightness = 0.0f;
-	
+
 	BOOL didGetColorComponents = [self getHue:&percentageHue saturation:&percentageSaturation brightness:&percentageBrightness alpha:alpha];
-	
+
 	if (didGetColorComponents)
 	{
 		*decimalHue = (percentageHue * 359.0f);
 		*decimalSaturation = (percentageSaturation * 100.0f);
 		*decimalBrightness = (percentageBrightness * 100.0f);
 	}
-	
+
 	return didGetColorComponents;
 }
 
@@ -143,16 +143,16 @@
 	CGFloat percentageRed = 0.0f;
 	CGFloat percentageGreen = 0.0f;
 	CGFloat percentageBlue = 0.0f;
-	
+
 	BOOL didGetColorComponents = [self getRed:&percentageRed green:&percentageGreen blue:&percentageBlue alpha:alpha];
-	
+
 	if (didGetColorComponents)
 	{
 		*decimalRed = (percentageRed * 255.0f);
 		*decimalGreen = (percentageGreen * 255.0f);
 		*decimalBlue = (percentageBlue * 255.0f);
 	}
-	
+
 	return didGetColorComponents;
 }
 

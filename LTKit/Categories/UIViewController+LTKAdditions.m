@@ -1,6 +1,6 @@
 //
-//	LTKNSArrayCategoryTests.m
-//	LTKitTests
+//	UIViewController+LTKAdditions.m
+//	LTKit
 //
 //	Copyright (c) 2012 Michael Potter
 //	http://lucas.tiz.ma
@@ -17,20 +17,15 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "LTKNSArrayCategoryTests.h"
+#import "UIViewController+LTKAdditions.h"
 
-@implementation LTKNSArrayCategoryTests
+@implementation UIViewController (LTKAdditions)
 
-#pragma mark - Unit Tests
+#pragma mark - UIViewController (LTKAdditions)
 
-- (void)testIsEmptyMethod
+- (BOOL)isViewNotLoaded
 {
-
-}
-
-- (void)testIsNotEmptyMethod
-{
-
+	return ![self isViewLoaded];
 }
 
 @end

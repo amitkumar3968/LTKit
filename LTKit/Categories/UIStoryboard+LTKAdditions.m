@@ -1,6 +1,6 @@
 //
-//	LTKNSArrayCategoryTests.m
-//	LTKitTests
+//	UIStoryboard+LTKAdditions.m
+//	LTKit
 //
 //	Copyright (c) 2012 Michael Potter
 //	http://lucas.tiz.ma
@@ -17,20 +17,15 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "LTKNSArrayCategoryTests.h"
+#import "UIStoryboard+LTKAdditions.h"
 
-@implementation LTKNSArrayCategoryTests
+@implementation UIStoryboard (LTKAdditions)
 
-#pragma mark - Unit Tests
+#pragma mark - UIStoryboard (LTKAdditions)
 
-- (void)testIsEmptyMethod
+- (id)instantiateViewControllerWithClass:(Class)viewControllerClass
 {
-
-}
-
-- (void)testIsNotEmptyMethod
-{
-
+	return [self instantiateViewControllerWithIdentifier:NSStringFromClass([viewControllerClass class])];
 }
 
 @end

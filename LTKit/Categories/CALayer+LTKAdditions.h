@@ -62,6 +62,9 @@
 @property (readwrite, nonatomic, assign) CGPoint boundsBottomLeftPoint;
 @property (readwrite, nonatomic, assign) CGPoint boundsMiddleLeftPoint;
 
+- (CALayer *)presentationCALayer;
+- (CALayer *)modelCALayer;
+
 - (void)addDefaultFadeTransition;
 - (void)addDefaultMoveInTransitionWithSubtype:(NSString *)subtype;
 - (void)addDefaultPushTransitionWithSubtype:(NSString *)subtype;

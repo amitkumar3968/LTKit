@@ -483,6 +483,16 @@ static NSTimeInterval const LTKDefaultTransitionDuration = 0.2;
 
 #pragma mark - CALayer (LTKAdditions) Methods
 
+- (CALayer *)presentationCALayer
+{
+	return (CALayer *)[self presentationLayer];
+}
+
+- (CALayer *)modelCALayer
+{
+	return (CALayer *)[self modelLayer];
+}
+
 - (void)addDefaultFadeTransition
 {
 	[self addFadeTransitionWithDuration:LTKDefaultTransitionDuration];
@@ -545,8 +555,8 @@ static NSTimeInterval const LTKDefaultTransitionDuration = 0.2;
 {
 	self.borderWidth = 1.0f;
 	self.borderColor = [[UIColor randomColor] CGColor];
-	
-	if (recursively && [self.sublayers isNotEmpty])
+
+	if (recursively)
 	{
 		for (CALayer *sublayer in self.sublayers)
 		{
