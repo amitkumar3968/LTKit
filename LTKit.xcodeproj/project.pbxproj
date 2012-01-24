@@ -54,6 +54,9 @@
 		EB6F265114A21E6900347EE1 /* LTKMath.h in Headers */ = {isa = PBXBuildFile; fileRef = EB6F265014A21E6900347EE1 /* LTKMath.h */; };
 		EB6F265714A2241F00347EE1 /* LTKGeometryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6F265614A2241F00347EE1 /* LTKGeometryTests.m */; };
 		EB6F265A14A227A200347EE1 /* LTKMathTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6F265914A227A200347EE1 /* LTKMathTests.m */; };
+		EB84FC7214CF5BD00086C5A4 /* UIImage+LTKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EB84FC7014CF5BD00086C5A4 /* UIImage+LTKAdditions.h */; };
+		EB84FC7314CF5BD00086C5A4 /* UIImage+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EB84FC7114CF5BD00086C5A4 /* UIImage+LTKAdditions.m */; };
+		EB84FC7714CF5C340086C5A4 /* LTKUIImageCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB84FC7614CF5C340086C5A4 /* LTKUIImageCategoryTests.m */; };
 		EB963EC614BFC81B00016509 /* LTKAVCaptureSessionCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB963EC514BFC81B00016509 /* LTKAVCaptureSessionCategoryTests.m */; };
 		EBA760A414A0D7ED009713E2 /* UIImageView+LTKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EBA760A214A0D7ED009713E2 /* UIImageView+LTKAdditions.h */; };
 		EBA760A514A0D7ED009713E2 /* UIImageView+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA760A314A0D7ED009713E2 /* UIImageView+LTKAdditions.m */; };
@@ -154,6 +157,10 @@
 		EB6F265614A2241F00347EE1 /* LTKGeometryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKGeometryTests.m; sourceTree = "<group>"; };
 		EB6F265814A227A200347EE1 /* LTKMathTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKMathTests.h; sourceTree = "<group>"; };
 		EB6F265914A227A200347EE1 /* LTKMathTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKMathTests.m; sourceTree = "<group>"; };
+		EB84FC7014CF5BD00086C5A4 /* UIImage+LTKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+LTKAdditions.h"; sourceTree = "<group>"; };
+		EB84FC7114CF5BD00086C5A4 /* UIImage+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+LTKAdditions.m"; sourceTree = "<group>"; };
+		EB84FC7514CF5C340086C5A4 /* LTKUIImageCategoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKUIImageCategoryTests.h; sourceTree = "<group>"; };
+		EB84FC7614CF5C340086C5A4 /* LTKUIImageCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKUIImageCategoryTests.m; sourceTree = "<group>"; };
 		EB963EC414BFC81B00016509 /* LTKAVCaptureSessionCategoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKAVCaptureSessionCategoryTests.h; sourceTree = "<group>"; };
 		EB963EC514BFC81B00016509 /* LTKAVCaptureSessionCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKAVCaptureSessionCategoryTests.m; sourceTree = "<group>"; };
 		EBA760A214A0D7ED009713E2 /* UIImageView+LTKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LTKAdditions.h"; sourceTree = "<group>"; };
@@ -255,6 +262,8 @@
 				EBACB14714C62800009F9D26 /* LTKUIColorCategoryTests.m */,
 				EBA760C114A1009A009713E2 /* LTKUIGestureRecognizerCategoryTests.h */,
 				EBA760C214A1009A009713E2 /* LTKUIGestureRecognizerCategoryTests.m */,
+				EB84FC7514CF5C340086C5A4 /* LTKUIImageCategoryTests.h */,
+				EB84FC7614CF5C340086C5A4 /* LTKUIImageCategoryTests.m */,
 				EBA760A714A0D81A009713E2 /* LTKUIImageViewCategoryTests.h */,
 				EBA760A814A0D81A009713E2 /* LTKUIImageViewCategoryTests.m */,
 				EBACB18414CB81C6009F9D26 /* LTKUIStoryboardCategoryTests.h */,
@@ -363,6 +372,8 @@
 				EBACB14214C61C29009F9D26 /* UIColor+LTKAdditions.m */,
 				EBA760B814A0FFDB009713E2 /* UIGestureRecognizer+LTKAdditions.h */,
 				EBA760B914A0FFDB009713E2 /* UIGestureRecognizer+LTKAdditions.m */,
+				EB84FC7014CF5BD00086C5A4 /* UIImage+LTKAdditions.h */,
+				EB84FC7114CF5BD00086C5A4 /* UIImage+LTKAdditions.m */,
 				EBA760A214A0D7ED009713E2 /* UIImageView+LTKAdditions.h */,
 				EBA760A314A0D7ED009713E2 /* UIImageView+LTKAdditions.m */,
 				EBACB17F14CB7ED1009F9D26 /* UIStoryboard+LTKAdditions.h */,
@@ -519,6 +530,7 @@
 				EBACB16A14C77602009F9D26 /* NSString+LTKAdditions.h in Headers */,
 				EBACB18114CB7ED1009F9D26 /* UIStoryboard+LTKAdditions.h in Headers */,
 				EBACB18914CB8718009F9D26 /* UIViewController+LTKAdditions.h in Headers */,
+				EB84FC7214CF5BD00086C5A4 /* UIImage+LTKAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,6 +682,7 @@
 				EBACB17614C8077D009F9D26 /* LTKGeometry.m in Sources */,
 				EBACB18214CB7ED1009F9D26 /* UIStoryboard+LTKAdditions.m in Sources */,
 				EBACB18A14CB8718009F9D26 /* UIViewController+LTKAdditions.m in Sources */,
+				EB84FC7314CF5BD00086C5A4 /* UIImage+LTKAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -692,6 +705,7 @@
 				EBACB16E14C77993009F9D26 /* LTKNSStringCategoryTests.m in Sources */,
 				EBACB18614CB81C6009F9D26 /* LTKUIStoryboardCategoryTests.m in Sources */,
 				EBACB18D14CB87E9009F9D26 /* LTKUIViewControllerCategoryTests.m in Sources */,
+				EB84FC7714CF5C340086C5A4 /* LTKUIImageCategoryTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
