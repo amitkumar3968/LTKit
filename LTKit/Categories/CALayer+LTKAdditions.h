@@ -18,6 +18,7 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
+#import <UIKit/UIKit.h>
 
 @interface CALayer (LTKAdditions)
 
@@ -73,6 +74,12 @@
 - (void)addMoveInTransitionWithSubtype:(NSString *)subtype duration:(NSTimeInterval)duration;
 - (void)addPushTransitionWithSubtype:(NSString *)subtype duration:(NSTimeInterval)duration;
 - (void)addRevealTransitionWithSubtype:(NSString *)subtype duration:(NSTimeInterval)duration;
+
+- (UIImage *)renderToImage;
+- (UIImage *)renderToImageWithContextSize:(CGSize)contextSize;
+- (BOOL)renderToImageAndCreateFileAtPath:(NSString *)filePath;
+- (BOOL)renderToImageWithContextSize:(CGSize)contextSize andCreateFileAtPath:(NSString *)filePath;
+- (BOOL)renderToImageWithContextSize:(CGSize)contextSize andCreateFileAtPath:(NSString *)filePath attributes:(NSDictionary *)fileAttributes;
 
 - (void)enableDebugBordersRecursively:(BOOL)recurse;
 
