@@ -50,6 +50,8 @@
 	uint32_t kernelWidth = (uint32_t)(LTK_VALUE_IS_ODD(kernelSize.width) ? kernelSize.width : (kernelSize.width + 1));
 	uint32_t kernelHeight = (uint32_t)(LTK_VALUE_IS_ODD(kernelSize.height) ? kernelSize.height : (kernelSize.height + 1));
 
+	// General algorithm taken from NYXImagesKit (https://github.com/Nyx0uf/NYXImagesKit)
+
 	const size_t imageWidth = (size_t)self.size.width;
 	const size_t imageHeight = (size_t)self.size.height;
 	const size_t bytesPerRow = imageWidth * 4;
@@ -84,7 +86,6 @@
 				vImageTentConvolve_ARGB8888(&sourceImageBuffer, &destinationImageBuffer, NULL, 0, 0, kernelHeight, kernelWidth, 0, flags);
 			}
 
-
 			memcpy(imageData, outputBufferBytes, numberOfOutputBufferBytes);
 			free(outputBufferBytes);
 
@@ -98,16 +99,6 @@
 	CGContextRelease(bitmapContextRef);
 
 	return convolvedImage;
-}
-
-- (UIImage *)imageByApplyingGaussianBlurWithBias:(NSInteger)bias
-{
-	return nil;
-}
-
-- (UIImage *)imageByApplyingGaussianBlurWithBias:(NSInteger)bias numberOfBlurRepetitions:(NSUInteger)blurRepetitions
-{
-	return nil;
 }
 
 @end
