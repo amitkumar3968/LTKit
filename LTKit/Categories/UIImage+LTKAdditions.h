@@ -17,10 +17,34 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#import <Accelerate/Accelerate.h>
 #import <UIKit/UIKit.h>
+
+typedef enum LTKHighSpeedConvolutionType
+{
+	LTKHighSpeedConvolutionTypeBox,
+	LTKHighSpeedConvolutionTypeTent
+}
+LTKHighSpeedConvolutionType;
+
+typedef enum LTKGuassianBlurKernelType
+{
+	LTKGuassianBlurKernelType3x3,
+	LTKGuassianBlurKernelType7x7,
+	LTKGuassianBlurKernelType9x9,
+	LTKGuassianBlurKernelType13x11,
+	LTKGuassianBlurKernelType17x17,
+	LTKGuassianBlurKernelType19x19
+}
+LTKGuassianBlurKernelType;
 
 @interface UIImage (LTKAdditions)
 
 - (UIImage *)croppedImageWithRect:(CGRect)rect;
+
+- (UIImage *)imageByApplyingHighSpeedConvolution:(LTKHighSpeedConvolutionType)convolutionType kernelSize:(CGSize)kernelSize;
+- (UIImage *)imageByApplyingHighSpeedConvolution:(LTKHighSpeedConvolutionType)convolutionType kernelSize:(CGSize)kernelSize flags:(vImage_Flags)flags;
+- (UIImage *)imageByApplyingGaussianBlurWithBias:(NSInteger)bias;														// Empty implementation for now
+- (UIImage *)imageByApplyingGaussianBlurWithBias:(NSInteger)bias numberOfBlurRepetitions:(NSUInteger)blurRepetitions; 	// Empty implementation for now
 
 @end

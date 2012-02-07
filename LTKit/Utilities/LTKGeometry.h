@@ -40,11 +40,6 @@ CG_INLINE UIEdgeInsets LTKEdgeOutsetsMake(CGFloat top, CGFloat left, CGFloat bot
 	return UIEdgeInsetsMake(-top, -left, -bottom, -right);
 }
 
-CG_INLINE CGRect LTKEdgeOutsetsOutsetRect(CGRect rect, UIEdgeInsets outsets)
-{
-	return UIEdgeInsetsInsetRect(rect, LTKEdgeOutsetsMake(-outsets.top, -outsets.left, -outsets.bottom, -outsets.right));
-}
-
 CG_INLINE UIEdgeInsets LTKUniformEdgeOutsetsMake(CGFloat outset)
 {
 	return UIEdgeInsetsMake(-outset, -outset, -outset, -outset);

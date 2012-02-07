@@ -26,3 +26,11 @@
 										NSCAssert((LTK__min < LTK__max), @"LTK_CLAMP: MIN must be less than MAX.");				\
 										(LTK__min > LTK__value ? LTK__min : (LTK__value < LTK__max ? LTK__value : LTK__max));	\
 									})
+
+#define LTK_VALUE_IS_POSITIVE(VALUE)	((VALUE) >= 0)
+
+#define LTK_VALUE_IS_NEGATIVE(VALUE)	((VALUE) < 0)
+
+#define LTK_VALUE_IS_EVEN(VALUE) 	((NSInteger)(VALUE) % 2 == 0)
+
+#define LTK_VALUE_IS_ODD(VALUE) 	((NSInteger)(VALUE) % 2 == 1)
