@@ -17,6 +17,8 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#import <objc/runtime.h>
+
 #import "NSObject+LTKAdditions.h"
 
 #pragma mark Internal Definitions
@@ -28,6 +30,7 @@ static NSString *const LTKAssociationKeyPointersKey = @"LTKAssociationKeyPointer
 @interface NSObject (LTKAdditionsInternal)
 
 - (NSMutableArray *)associationKeyPointers;
+- (objc_AssociationPolicy)runtimeAssociationPolicyForLTKObjectAssociationPolicy:(LTKObjectAssociationPolicy)associationPolicy atomic:(BOOL)atomic;
 
 @end
 
@@ -48,6 +51,44 @@ static NSString *const LTKAssociationKeyPointersKey = @"LTKAssociationKeyPointer
 	}
 
 	return associationKeyPointers;
+}
+
+- (objc_AssociationPolicy)runtimeAssociationPolicyForLTKObjectAssociationPolicy:(LTKObjectAssociationPolicy)associationPolicy atomic:(BOOL)atomic
+{
+	objc_AssociationPolicy runtimeAssociationPolicy = OBJC_ASSOCIATION_RETAIN;
+
+	if (atomic)
+	{
+		if (associationPolicy == LTKObjectAssociationPolicyAssign)
+		{
+			runtimeAssociationPolicy = OBJC_ASSOCIATION_ASSIGN;
+		}
+		else if (associationPolicy == LTKObjectAssociationPolicyRetain)
+		{
+			runtimeAssociationPolicy = OBJC_ASSOCIATION_RETAIN;
+		}
+		else if (associationPolicy == LTKObjectAssociationPolicyCopy)
+		{
+			runtimeAssociationPolicy = OBJC_ASSOCIATION_COPY;
+		}
+	}
+	else
+	{
+		if (associationPolicy == LTKObjectAssociationPolicyAssign)
+		{
+			runtimeAssociationPolicy = OBJC_ASSOCIATION_ASSIGN;
+		}
+		else if (associationPolicy == LTKObjectAssociationPolicyRetain)
+		{
+			runtimeAssociationPolicy = OBJC_ASSOCIATION_RETAIN_NONATOMIC;
+		}
+		else if (associationPolicy == LTKObjectAssociationPolicyCopy)
+		{
+			runtimeAssociationPolicy = OBJC_ASSOCIATION_COPY_NONATOMIC;
+		}
+	}
+
+	return runtimeAssociationPolicy;
 }
 
 @end
@@ -92,11 +133,19 @@ static NSString *const LTKAssociationKeyPointersKey = @"LTKAssociationKeyPointer
 {
 	@synchronized(key)
 	{
-		[self setAssociatedObject:object forKey:key associationPolicy:OBJC_ASSOCIATION_RETAIN];
+		[self setAssociatedObject:object forKey:key associationPolicy:LTKObjectAssociationPolicyRetain atomic:YES];
 	}
 }
 
-- (void)setAssociatedObject:(id)object forKey:(NSString *)key associationPolicy:(objc_AssociationPolicy)associationPolicy
+- (void)setAssociatedObject:(id)object forKey:(NSString *)key associationPolicy:(LTKObjectAssociationPolicy)associationPolicy
+{
+	@synchronized(key)
+	{
+		[self setAssociatedObject:object forKey:key associationPolicy:associationPolicy atomic:YES];
+	}
+}
+
+- (void)setAssociatedObject:(id)object forKey:(NSString *)key associationPolicy:(LTKObjectAssociationPolicy)associationPolicy atomic:(BOOL)atomic
 {
 	@synchronized(key)
 	{
@@ -115,7 +164,8 @@ static NSString *const LTKAssociationKeyPointersKey = @"LTKAssociationKeyPointer
 			keyPointer = [associationKeyPointers objectAtIndex:keyPointerIndex];
 		}
 
-		objc_setAssociatedObject(self, (__bridge void *)keyPointer, object, associationPolicy);
+		objc_AssociationPolicy runtimeAssociationPolicy = [self runtimeAssociationPolicyForLTKObjectAssociationPolicy:associationPolicy atomic:atomic];
+		objc_setAssociatedObject(self, (__bridge void *)keyPointer, object, runtimeAssociationPolicy);
 	}
 }
 
@@ -132,6 +182,8 @@ static NSString *const LTKAssociationKeyPointersKey = @"LTKAssociationKeyPointer
 			id keyPointer = [associationKeyPointers objectAtIndex:keyPointerIndex];
 
 			objc_setAssociatedObject(self, (__bridge void *)keyPointer, nil, OBJC_ASSOCIATION_ASSIGN);
+
+			[associationKeyPointers removeObject:keyPointer];
 		}
 	}
 }
@@ -141,6 +193,8 @@ static NSString *const LTKAssociationKeyPointersKey = @"LTKAssociationKeyPointer
 	@synchronized(self)
 	{
 		objc_removeAssociatedObjects(self);
+
+		[[self associationKeyPointers] removeAllObjects];
 	}
 }
 

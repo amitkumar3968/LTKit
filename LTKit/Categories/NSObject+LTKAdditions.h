@@ -18,7 +18,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <objc/runtime.h>
+
+typedef enum LTKObjectAssociationPolicy
+{
+	LTKObjectAssociationPolicyAssign,
+	LTKObjectAssociationPolicyRetain,
+	LTKObjectAssociationPolicyCopy
+}
+LTKObjectAssociationPolicy;
 
 @interface NSObject (LTKAdditions)
 
@@ -27,7 +34,8 @@
 
 - (id)associatedObjectForKey:(NSString *)key;
 - (void)setAssociatedObject:(id)object forKey:(NSString *)key;
-- (void)setAssociatedObject:(id)object forKey:(NSString *)key associationPolicy:(objc_AssociationPolicy)associationPolicy;
+- (void)setAssociatedObject:(id)object forKey:(NSString *)key associationPolicy:(LTKObjectAssociationPolicy)associationPolicy;
+- (void)setAssociatedObject:(id)object forKey:(NSString *)key associationPolicy:(LTKObjectAssociationPolicy)associationPolicy atomic:(BOOL)atomic;
 - (void)removeAssociatedObjectForKey:(NSString *)key;
 - (void)removeAssociatedObjects;
 
