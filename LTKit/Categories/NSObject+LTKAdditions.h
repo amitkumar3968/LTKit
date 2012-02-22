@@ -21,8 +21,8 @@
 
 typedef enum LTKObjectAssociationPolicy
 {
-	LTKObjectAssociationPolicyAssign,
 	LTKObjectAssociationPolicyRetain,
+	LTKObjectAssociationPolicyAssign,
 	LTKObjectAssociationPolicyCopy
 }
 LTKObjectAssociationPolicy;
