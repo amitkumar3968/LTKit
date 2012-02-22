@@ -601,7 +601,7 @@
 		EB1CDB25141DB07700729A2D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0440;
 				ORGANIZATIONNAME = LucasTizma;
 			};
 			buildConfigurationList = EB1CDB28141DB07700729A2D /* Build configuration list for PBXProject "LTKit" */;

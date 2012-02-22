@@ -19,6 +19,39 @@
 
 #import "NSObject+LTKAdditions.h"
 
+#pragma mark Internal Definitions
+
+static NSString *const LTKAssociationKeyPointersKey = @"LTKAssociationKeyPointersKey";
+
+#pragma mark - NSObject Internal Category
+
+@interface NSObject (LTKAdditionsInternal)
+
+- (NSMutableArray *)associationKeyPointers;
+
+@end
+
+@implementation NSObject (LTKAdditionsInternal)
+
+- (NSMutableArray *)associationKeyPointers
+{
+	NSMutableArray *associationKeyPointers = objc_getAssociatedObject(self, (__bridge void *)LTKAssociationKeyPointersKey);
+
+	if (associationKeyPointers == nil)
+	{
+		@synchronized(self)
+		{
+			associationKeyPointers = [NSMutableArray array];
+
+			objc_setAssociatedObject(self, (__bridge void *)LTKAssociationKeyPointersKey, associationKeyPointers, OBJC_ASSOCIATION_RETAIN);
+		}
+	}
+
+	return associationKeyPointers;
+}
+
+@end
+
 @implementation NSObject (LTKAdditions)
 
 #pragma mark - NSObject (LTKAdditions) Methods
@@ -33,6 +66,82 @@
 	dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC));
 
 	dispatch_after(popTime, queue, block);
+}
+
+- (id)associatedObjectForKey:(NSString *)key
+{
+	@synchronized(key)
+	{
+		NSMutableArray *associationKeyPointers = [self associationKeyPointers];
+
+		NSUInteger keyPointerIndex = [associationKeyPointers indexOfObject:key];
+		id associatedObject = nil;
+
+		if (keyPointerIndex != NSNotFound)
+		{
+			id keyPointer = [associationKeyPointers objectAtIndex:keyPointerIndex];
+
+			associatedObject = objc_getAssociatedObject(self, (__bridge void *)keyPointer);
+		}
+
+		return associatedObject;
+	}
+}
+
+- (void)setAssociatedObject:(id)object forKey:(NSString *)key
+{
+	@synchronized(key)
+	{
+		[self setAssociatedObject:object forKey:key associationPolicy:OBJC_ASSOCIATION_RETAIN];
+	}
+}
+
+- (void)setAssociatedObject:(id)object forKey:(NSString *)key associationPolicy:(objc_AssociationPolicy)associationPolicy
+{
+	@synchronized(key)
+	{
+		NSMutableArray *associationKeyPointers = [self associationKeyPointers];
+
+		NSUInteger keyPointerIndex = [associationKeyPointers indexOfObject:key];
+		id keyPointer = nil;
+
+		if (keyPointerIndex == NSNotFound)
+		{
+			keyPointer = key;
+			[associationKeyPointers addObject:keyPointer];
+		}
+		else
+		{
+			keyPointer = [associationKeyPointers objectAtIndex:keyPointerIndex];
+		}
+
+		objc_setAssociatedObject(self, (__bridge void *)keyPointer, object, associationPolicy);
+	}
+}
+
+- (void)removeAssociatedObjectForKey:(NSString *)key
+{
+	@synchronized(key)
+	{
+		NSMutableArray *associationKeyPointers = [self associationKeyPointers];
+
+		NSUInteger keyPointerIndex = [associationKeyPointers indexOfObject:key];
+
+		if (keyPointerIndex != NSNotFound)
+		{
+			id keyPointer = [associationKeyPointers objectAtIndex:keyPointerIndex];
+
+			objc_setAssociatedObject(self, (__bridge void *)keyPointer, nil, OBJC_ASSOCIATION_ASSIGN);
+		}
+	}
+}
+
+- (void)removeAssociatedObjects
+{
+	@synchronized(self)
+	{
+		objc_removeAssociatedObjects(self);
+	}
 }
 
 @end

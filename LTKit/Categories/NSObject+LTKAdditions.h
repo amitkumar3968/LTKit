@@ -18,10 +18,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <objc/runtime.h>
 
 @interface NSObject (LTKAdditions)
 
 - (void)performBlockAfterDelay:(NSTimeInterval)delay block:(void (^)(void))block;
 - (void)performBlockAfterDelay:(NSTimeInterval)delay inQueue:(dispatch_queue_t)queue block:(void (^)(void))block;
+
+- (id)associatedObjectForKey:(NSString *)key;
+- (void)setAssociatedObject:(id)object forKey:(NSString *)key;
+- (void)setAssociatedObject:(id)object forKey:(NSString *)key associationPolicy:(objc_AssociationPolicy)associationPolicy;
+- (void)removeAssociatedObjectForKey:(NSString *)key;
+- (void)removeAssociatedObjects;
 
 @end
