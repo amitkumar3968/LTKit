@@ -97,12 +97,12 @@ static NSString *const LTKAssociationKeyPointersKey = @"LTKAssociationKeyPointer
 
 #pragma mark - NSObject (LTKAdditions) Methods
 
-- (void)performBlockAfterDelay:(NSTimeInterval)delay block:(void (^)(void))block
++ (void)performBlockAfterDelay:(NSTimeInterval)delay block:(void (^)(void))block
 {
 	[self performBlockAfterDelay:delay inQueue:dispatch_get_main_queue() block:block];
 }
 
-- (void)performBlockAfterDelay:(NSTimeInterval)delay inQueue:(dispatch_queue_t)queue block:(void (^)(void))block
++ (void)performBlockAfterDelay:(NSTimeInterval)delay inQueue:(dispatch_queue_t)queue block:(void (^)(void))block
 {
 	dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC));
 
