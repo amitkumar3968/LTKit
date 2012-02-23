@@ -81,6 +81,6 @@
 - (BOOL)renderToImageWithContextSize:(CGSize)contextSize andCreateFileAtPath:(NSString *)filePath;
 - (BOOL)renderToImageWithContextSize:(CGSize)contextSize andCreateFileAtPath:(NSString *)filePath attributes:(NSDictionary *)fileAttributes;
 
-- (void)enableDebugBordersRecursively:(BOOL)recurse;
+- (void)enableDebugBordersRecursively:(BOOL)recursively;
 
 @end
