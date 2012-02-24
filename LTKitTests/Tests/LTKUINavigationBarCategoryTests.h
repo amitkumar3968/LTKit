@@ -1,6 +1,6 @@
 //
-//	LTKitCategories.h
-//	LTKit
+//	LTKUINavigationBarCategoryTests.h
+//	LTKitTests
 //
 //	Copyright (c) 2012 Michael Potter
 //	http://lucas.tiz.ma
@@ -17,17 +17,8 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "Categories/AVCaptureSession+LTKAdditions.h"
-#import "Categories/CALayer+LTKAdditions.h"
-#import "Categories/NSArray+LTKAdditions.h"
-#import "Categories/NSObject+LTKAdditions.h"
-#import "Categories/NSString+LTKAdditions.h"
-#import "Categories/NSTimer+LTKAdditions.h"
-#import "Categories/UIColor+LTKAdditions.h"
-#import "Categories/UIGestureRecognizer+LTKAdditions.h"
-#import "Categories/UINavigationBar+LTKAdditions.h"
-#import "Categories/UIImage+LTKAdditions.h"
-#import "Categories/UIImageView+LTKAdditions.h"
-#import "Categories/UIStoryboard+LTKAdditions.h"
-#import "Categories/UIView+LTKAdditions.h"
-#import "Categories/UIViewController+LTKAdditions.h"
+#import <SenTestingKit/SenTestingKit.h>
+
+@interface LTKUINavigationBarCategoryTests : SenTestCase
+
+@end

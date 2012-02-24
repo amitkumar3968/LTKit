@@ -30,6 +30,9 @@
 		EB1CDB9C141DC09900729A2D /* UIView+LTKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EB1CDB9A141DC09900729A2D /* UIView+LTKAdditions.h */; };
 		EB1CDB9D141DC09900729A2D /* UIView+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1CDB9B141DC09900729A2D /* UIView+LTKAdditions.m */; };
 		EB1CDB9F141DC25100729A2D /* LTKitCategories.h in Headers */ = {isa = PBXBuildFile; fileRef = EB1CDB9E141DC25100729A2D /* LTKitCategories.h */; };
+		EB337BCF14F7294A00564949 /* UINavigationBar+LTKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EB337BCD14F7294A00564949 /* UINavigationBar+LTKAdditions.h */; };
+		EB337BD014F7294A00564949 /* UINavigationBar+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EB337BCE14F7294A00564949 /* UINavigationBar+LTKAdditions.m */; };
+		EB337BD414F7298200564949 /* LTKUINavigationBarCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB337BD314F7298200564949 /* LTKUINavigationBarCategoryTests.m */; };
 		EB40BAB814B00CCA006DD25D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CDB92141DB6D000729A2D /* UIKit.framework */; };
 		EB40BABA14B00CEA006DD25D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CDB60141DB46F00729A2D /* CoreGraphics.framework */; };
 		EB40BABB14B00CEE006DD25D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB005D2014AFE81D009A70C9 /* QuartzCore.framework */; };
@@ -133,6 +136,10 @@
 		EB1CDB9A141DC09900729A2D /* UIView+LTKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LTKAdditions.h"; sourceTree = "<group>"; };
 		EB1CDB9B141DC09900729A2D /* UIView+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LTKAdditions.m"; sourceTree = "<group>"; };
 		EB1CDB9E141DC25100729A2D /* LTKitCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKitCategories.h; sourceTree = "<group>"; };
+		EB337BCD14F7294A00564949 /* UINavigationBar+LTKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+LTKAdditions.h"; sourceTree = "<group>"; };
+		EB337BCE14F7294A00564949 /* UINavigationBar+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+LTKAdditions.m"; sourceTree = "<group>"; };
+		EB337BD214F7298200564949 /* LTKUINavigationBarCategoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKUINavigationBarCategoryTests.h; sourceTree = "<group>"; };
+		EB337BD314F7298200564949 /* LTKUINavigationBarCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKUINavigationBarCategoryTests.m; sourceTree = "<group>"; };
 		EB40BAC514B13EC1006DD25D /* LTPProgressSliderThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LTPProgressSliderThumb.png; sourceTree = "<group>"; };
 		EB40BAC614B13EC1006DD25D /* LTPProgressSliderThumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LTPProgressSliderThumb@2x.png"; sourceTree = "<group>"; };
 		EB40BACF14B171A5006DD25D /* LTPProgressSliderThumbnail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LTPProgressSliderThumbnail@2x.png"; sourceTree = "<group>"; };
@@ -269,6 +276,8 @@
 				EB84FC7614CF5C340086C5A4 /* LTKUIImageCategoryTests.m */,
 				EBA760A714A0D81A009713E2 /* LTKUIImageViewCategoryTests.h */,
 				EBA760A814A0D81A009713E2 /* LTKUIImageViewCategoryTests.m */,
+				EB337BD214F7298200564949 /* LTKUINavigationBarCategoryTests.h */,
+				EB337BD314F7298200564949 /* LTKUINavigationBarCategoryTests.m */,
 				EBACB18414CB81C6009F9D26 /* LTKUIStoryboardCategoryTests.h */,
 				EBACB18514CB81C6009F9D26 /* LTKUIStoryboardCategoryTests.m */,
 				EB1CDB89141DB63F00729A2D /* LTKUIViewCategoryTests.h */,
@@ -380,6 +389,8 @@
 				EB84FC7114CF5BD00086C5A4 /* UIImage+LTKAdditions.m */,
 				EBA760A214A0D7ED009713E2 /* UIImageView+LTKAdditions.h */,
 				EBA760A314A0D7ED009713E2 /* UIImageView+LTKAdditions.m */,
+				EB337BCD14F7294A00564949 /* UINavigationBar+LTKAdditions.h */,
+				EB337BCE14F7294A00564949 /* UINavigationBar+LTKAdditions.m */,
 				EBACB17F14CB7ED1009F9D26 /* UIStoryboard+LTKAdditions.h */,
 				EBACB18014CB7ED1009F9D26 /* UIStoryboard+LTKAdditions.m */,
 				EB1CDB9A141DC09900729A2D /* UIView+LTKAdditions.h */,
@@ -535,6 +546,7 @@
 				EBACB18114CB7ED1009F9D26 /* UIStoryboard+LTKAdditions.h in Headers */,
 				EBACB18914CB8718009F9D26 /* UIViewController+LTKAdditions.h in Headers */,
 				EB84FC7214CF5BD00086C5A4 /* UIImage+LTKAdditions.h in Headers */,
+				EB337BCF14F7294A00564949 /* UINavigationBar+LTKAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,6 +699,7 @@
 				EBACB18214CB7ED1009F9D26 /* UIStoryboard+LTKAdditions.m in Sources */,
 				EBACB18A14CB8718009F9D26 /* UIViewController+LTKAdditions.m in Sources */,
 				EB84FC7314CF5BD00086C5A4 /* UIImage+LTKAdditions.m in Sources */,
+				EB337BD014F7294A00564949 /* UINavigationBar+LTKAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -710,6 +723,7 @@
 				EBACB18614CB81C6009F9D26 /* LTKUIStoryboardCategoryTests.m in Sources */,
 				EBACB18D14CB87E9009F9D26 /* LTKUIViewControllerCategoryTests.m in Sources */,
 				EB84FC7714CF5C340086C5A4 /* LTKUIImageCategoryTests.m in Sources */,
+				EB337BD414F7298200564949 /* LTKUINavigationBarCategoryTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
