@@ -59,13 +59,13 @@ static NSString *const LTKAssociationKeyPointersKey = @"LTKAssociationKeyPointer
 
 	if (atomic)
 	{
-		if (associationPolicy == LTKObjectAssociationPolicyAssign)
-		{
-			runtimeAssociationPolicy = OBJC_ASSOCIATION_ASSIGN;
-		}
-		else if (associationPolicy == LTKObjectAssociationPolicyRetain)
+		if (associationPolicy == LTKObjectAssociationPolicyRetain)
 		{
 			runtimeAssociationPolicy = OBJC_ASSOCIATION_RETAIN;
+		}
+		else if (associationPolicy == LTKObjectAssociationPolicyAssign)
+		{
+			runtimeAssociationPolicy = OBJC_ASSOCIATION_ASSIGN;
 		}
 		else if (associationPolicy == LTKObjectAssociationPolicyCopy)
 		{
@@ -74,13 +74,13 @@ static NSString *const LTKAssociationKeyPointersKey = @"LTKAssociationKeyPointer
 	}
 	else
 	{
-		if (associationPolicy == LTKObjectAssociationPolicyAssign)
-		{
-			runtimeAssociationPolicy = OBJC_ASSOCIATION_ASSIGN;
-		}
-		else if (associationPolicy == LTKObjectAssociationPolicyRetain)
+		if (associationPolicy == LTKObjectAssociationPolicyRetain)
 		{
 			runtimeAssociationPolicy = OBJC_ASSOCIATION_RETAIN_NONATOMIC;
+		}
+		else if (associationPolicy == LTKObjectAssociationPolicyAssign)
+		{
+			runtimeAssociationPolicy = OBJC_ASSOCIATION_ASSIGN;
 		}
 		else if (associationPolicy == LTKObjectAssociationPolicyCopy)
 		{
