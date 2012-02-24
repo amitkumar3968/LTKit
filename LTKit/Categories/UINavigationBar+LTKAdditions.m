@@ -19,6 +19,32 @@
 
 #import "UINavigationBar+LTKAdditions.h"
 
+#pragma mark - UINavigationBar Internal Category
+
+@interface UINavigationBar (LTKAdditionsInternal)
+
+- (void)setTitleTextAttribute:(id)attribute forKey:(NSString *)key;
+
+@end
+
+@implementation UINavigationBar (LTKAdditionsInternal)
+
+- (void)setTitleTextAttribute:(id)attribute forKey:(NSString *)key
+{
+	NSMutableDictionary *mutableTitleTextAttributes = [self.titleTextAttributes mutableCopy];
+
+	if (mutableTitleTextAttributes == nil)
+	{
+		mutableTitleTextAttributes = [NSMutableDictionary dictionary];
+	}
+
+	[mutableTitleTextAttributes setValue:attribute forKey:key];
+
+	self.titleTextAttributes = mutableTitleTextAttributes;
+}
+
+@end
+
 @implementation UINavigationBar (LTKAdditions)
 
 #pragma mark - Property Accessors
@@ -30,10 +56,7 @@
 
 - (void)setTitleTextFont:(UIFont *)titleTextFont
 {
-	NSMutableDictionary *mutableTitleTextAttributes = [self.titleTextAttributes mutableCopy];
-	[mutableTitleTextAttributes setValue:titleTextFont forKey:UITextAttributeFont];
-	
-	self.titleTextAttributes = mutableTitleTextAttributes;
+	[self setTitleTextAttribute:titleTextFont forKey:UITextAttributeFont];
 }
 
 - (UIColor *)titleTextColor
@@ -43,10 +66,7 @@
 
 - (void)setTitleTextColor:(UIColor *)titleTextColor
 {
-	NSMutableDictionary *mutableTitleTextAttributes = [self.titleTextAttributes mutableCopy];
-	[mutableTitleTextAttributes setValue:titleTextColor forKey:UITextAttributeTextColor];
-	
-	self.titleTextAttributes = mutableTitleTextAttributes;
+	[self setTitleTextAttribute:titleTextColor forKey:UITextAttributeTextColor];
 }
 
 - (UIColor *)titleTextShadowColor
@@ -56,10 +76,7 @@
 
 - (void)setTitleTextShadowColor:(UIColor *)titleTextShadowColor
 {
-	NSMutableDictionary *mutableTitleTextAttributes = [self.titleTextAttributes mutableCopy];
-	[mutableTitleTextAttributes setValue:titleTextShadowColor forKey:UITextAttributeTextShadowColor];
-	
-	self.titleTextAttributes = mutableTitleTextAttributes;
+	[self setTitleTextAttribute:titleTextShadowColor forKey:UITextAttributeTextShadowColor];
 }
 
 - (UIOffset)titleTextShadowOffset
@@ -69,10 +86,7 @@
 
 - (void)setTitleTextShadowOffset:(UIOffset)titleTextShadowOffset
 {
-	NSMutableDictionary *mutableTitleTextAttributes = [self.titleTextAttributes mutableCopy];
-	[mutableTitleTextAttributes setValue:[NSValue valueWithUIOffset:titleTextShadowOffset] forKey:UITextAttributeTextShadowOffset];
-	
-	self.titleTextAttributes = mutableTitleTextAttributes;
+	[self setTitleTextAttribute:[NSValue valueWithUIOffset:titleTextShadowOffset] forKey:UITextAttributeTextShadowOffset];
 }
 
 @end
