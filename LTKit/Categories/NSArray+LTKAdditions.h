@@ -24,4 +24,6 @@
 - (BOOL)isEmpty;
 - (BOOL)isNotEmpty;
 
+- (id)firstObject;
+
 @end
