@@ -487,18 +487,18 @@ static NSTimeInterval const LTKDefaultTransitionDuration = 0.2;
 {
 	CGPoint newPoint = CGPointMake((self.boundsWidth * anchorPoint.x), (self.boundsHeight * anchorPoint.y));
 	CGPoint oldPoint = CGPointMake((self.boundsWidth * self.anchorPoint.x), (self.boundsHeight * self.anchorPoint.y));
-	
+
 	newPoint = CGPointApplyAffineTransform(newPoint, self.affineTransform);
 	oldPoint = CGPointApplyAffineTransform(oldPoint, self.affineTransform);
-	
+
 	CGPoint position = self.position;
-	
+
 	position.x -= oldPoint.x;
 	position.x += newPoint.x;
-	
+
 	position.y -= oldPoint.y;
 	position.y += newPoint.y;
-	
+
 	self.position = position;
 	self.anchorPoint = anchorPoint;
 }

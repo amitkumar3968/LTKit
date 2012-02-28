@@ -41,21 +41,21 @@
 - (BOOL)isContainedInStrings:(NSString *)firstString, ...
 {
 	BOOL isContainedInStrings = NO;
-	
+
     va_list variableArguments;
     va_start(variableArguments, firstString);
-	
+
 	NSString *string = firstString;
-	
+
 	while (!isContainedInStrings && string != nil)
 	{
 		isContainedInStrings = [self isEqualToString:string];
 		string = va_arg(variableArguments, NSString *);
-		
+
 	}
-	
+
     va_end(variableArguments);
-	
+
 	return isContainedInStrings;
 }
 
