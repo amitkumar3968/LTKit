@@ -33,12 +33,12 @@
 		drawingRect = CGRectMake((rect.origin.x * self.scale), (rect.origin.y * self.scale), (rect.size.width * self.scale), (rect.size.height * self.scale));
 	}
 
-    CGImageRef croppedImageRef = CGImageCreateWithImageInRect(self.CGImage, drawingRect);
-    UIImage *croppedImage = [UIImage imageWithCGImage:croppedImageRef scale:self.scale orientation:self.imageOrientation];
+	CGImageRef croppedImageRef = CGImageCreateWithImageInRect(self.CGImage, drawingRect);
+	UIImage *croppedImage = [UIImage imageWithCGImage:croppedImageRef scale:self.scale orientation:self.imageOrientation];
 
-    CGImageRelease(croppedImageRef);
+	CGImageRelease(croppedImageRef);
 
-    return croppedImage;
+	return croppedImage;
 }
 
 - (UIImage *)imageByApplyingHighSpeedConvolution:(LTKHighSpeedConvolutionType)convolutionType kernelSize:(CGSize)kernelSize

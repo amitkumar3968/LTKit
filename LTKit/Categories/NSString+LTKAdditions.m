@@ -42,8 +42,8 @@
 {
 	BOOL isContainedInStrings = NO;
 
-    va_list variableArguments;
-    va_start(variableArguments, firstString);
+	va_list variableArguments;
+	va_start(variableArguments, firstString);
 
 	NSString *string = firstString;
 
@@ -54,7 +54,7 @@
 
 	}
 
-    va_end(variableArguments);
+	va_end(variableArguments);
 
 	return isContainedInStrings;
 }
