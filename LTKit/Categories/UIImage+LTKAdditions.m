@@ -26,21 +26,19 @@
 
 - (UIImage *)croppedImageWithRect:(CGRect)rect
 {
-	UIGraphicsBeginImageContextWithOptions(rect.size, YES, 0.0f);
-	
-	CGContextRef currentContextRef = UIGraphicsGetCurrentContext();
+	CGRect drawingRect = rect;
 
-	CGRect clippedRect = CGRectMake(0.0f, 0.0f, rect.size.width, rect.size.height);
-	CGContextClipToRect(currentContextRef, clippedRect);
+	if (self.scale > 1.0f)
+	{
+        drawingRect = CGRectMake((rect.origin.x * self.scale), (rect.origin.y * self.scale), (rect.size.width * self.scale), (rect.size.height * self.scale));
+    }
 	
-	CGRect drawingRect = CGRectMake((rect.origin.x * -1.0f), (rect.origin.y * -1.0f), self.size.width, self.size.height);
-	CGContextDrawImage(currentContextRef, drawingRect, self.CGImage);
+    CGImageRef croppedImageRef = CGImageCreateWithImageInRect(self.CGImage, drawingRect);
+    UIImage *croppedImage = [UIImage imageWithCGImage:croppedImageRef scale:self.scale orientation:self.imageOrientation];
 	
-	UIImage *croppedImage = UIGraphicsGetImageFromCurrentImageContext();
-	
-	UIGraphicsEndImageContext();
-	
-	return croppedImage;
+    CGImageRelease(croppedImageRef);
+
+    return croppedImage;
 }
 
 - (UIImage *)imageByApplyingHighSpeedConvolution:(LTKHighSpeedConvolutionType)convolutionType kernelSize:(CGSize)kernelSize
