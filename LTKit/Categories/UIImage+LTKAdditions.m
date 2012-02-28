@@ -27,13 +27,20 @@
 - (UIImage *)croppedImageWithRect:(CGRect)rect
 {
 	UIGraphicsBeginImageContextWithOptions(rect.size, YES, 0.0f);
+	
+	CGContextRef currentContextRef = UIGraphicsGetCurrentContext();
 
-	[self drawInRect:rect];
+	CGRect clippedRect = CGRectMake(0.0f, 0.0f, rect.size.width, rect.size.height);
+	CGContextClipToRect(currentContextRef, clippedRect);
+	
+	CGRect drawingRect = CGRectMake((rect.origin.x * -1.0f), (rect.origin.y * -1.0f), self.size.width, self.size.height);
+	CGContextDrawImage(currentContextRef, drawingRect, self.CGImage);
+	
 	UIImage *croppedImage = UIGraphicsGetImageFromCurrentImageContext();
-
+	
 	UIGraphicsEndImageContext();
-
-    return croppedImage;
+	
+	return croppedImage;
 }
 
 - (UIImage *)imageByApplyingHighSpeedConvolution:(LTKHighSpeedConvolutionType)convolutionType kernelSize:(CGSize)kernelSize

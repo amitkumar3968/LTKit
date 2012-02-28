@@ -52,6 +52,9 @@
 		EB40BB8114B75332006DD25D /* LTKCALayerCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB40BB8014B75332006DD25D /* LTKCALayerCategoryTests.m */; };
 		EB40D5621495D63E006C24CC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CDB92141DB6D000729A2D /* UIKit.framework */; };
 		EB40D5631495D644006C24CC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CDB60141DB46F00729A2D /* CoreGraphics.framework */; };
+		EB5C4C6814F8871600D37841 /* UITableView+LTKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EB5C4C6614F8871600D37841 /* UITableView+LTKAdditions.h */; };
+		EB5C4C6914F8871600D37841 /* UITableView+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5C4C6714F8871600D37841 /* UITableView+LTKAdditions.m */; };
+		EB5C4C6D14F8875D00D37841 /* LTKUITableViewCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5C4C6C14F8875D00D37841 /* LTKUITableViewCategoryTests.m */; };
 		EB6A49A714BF726300D41934 /* AVCaptureSession+LTKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EB6A49A514BF726300D41934 /* AVCaptureSession+LTKAdditions.h */; };
 		EB6A49A814BF726300D41934 /* AVCaptureSession+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6A49A614BF726300D41934 /* AVCaptureSession+LTKAdditions.m */; };
 		EB6F265114A21E6900347EE1 /* LTKMath.h in Headers */ = {isa = PBXBuildFile; fileRef = EB6F265014A21E6900347EE1 /* LTKMath.h */; };
@@ -158,6 +161,10 @@
 		EB40BB7C14B7505C006DD25D /* CALayer+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "CALayer+LTKAdditions.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		EB40BB7F14B75332006DD25D /* LTKCALayerCategoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKCALayerCategoryTests.h; sourceTree = "<group>"; };
 		EB40BB8014B75332006DD25D /* LTKCALayerCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKCALayerCategoryTests.m; sourceTree = "<group>"; };
+		EB5C4C6614F8871600D37841 /* UITableView+LTKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+LTKAdditions.h"; sourceTree = "<group>"; };
+		EB5C4C6714F8871600D37841 /* UITableView+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+LTKAdditions.m"; sourceTree = "<group>"; };
+		EB5C4C6B14F8875D00D37841 /* LTKUITableViewCategoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKUITableViewCategoryTests.h; sourceTree = "<group>"; };
+		EB5C4C6C14F8875D00D37841 /* LTKUITableViewCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKUITableViewCategoryTests.m; sourceTree = "<group>"; };
 		EB6A49A514BF726300D41934 /* AVCaptureSession+LTKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AVCaptureSession+LTKAdditions.h"; sourceTree = "<group>"; };
 		EB6A49A614BF726300D41934 /* AVCaptureSession+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "AVCaptureSession+LTKAdditions.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		EB6F265014A21E6900347EE1 /* LTKMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKMath.h; sourceTree = "<group>"; };
@@ -280,6 +287,8 @@
 				EB337BD314F7298200564949 /* LTKUINavigationBarCategoryTests.m */,
 				EBACB18414CB81C6009F9D26 /* LTKUIStoryboardCategoryTests.h */,
 				EBACB18514CB81C6009F9D26 /* LTKUIStoryboardCategoryTests.m */,
+				EB5C4C6B14F8875D00D37841 /* LTKUITableViewCategoryTests.h */,
+				EB5C4C6C14F8875D00D37841 /* LTKUITableViewCategoryTests.m */,
 				EB1CDB89141DB63F00729A2D /* LTKUIViewCategoryTests.h */,
 				EB1CDB8A141DB63F00729A2D /* LTKUIViewCategoryTests.m */,
 				EBACB18B14CB87E8009F9D26 /* LTKUIViewControllerCategoryTests.h */,
@@ -393,6 +402,8 @@
 				EB337BCE14F7294A00564949 /* UINavigationBar+LTKAdditions.m */,
 				EBACB17F14CB7ED1009F9D26 /* UIStoryboard+LTKAdditions.h */,
 				EBACB18014CB7ED1009F9D26 /* UIStoryboard+LTKAdditions.m */,
+				EB5C4C6614F8871600D37841 /* UITableView+LTKAdditions.h */,
+				EB5C4C6714F8871600D37841 /* UITableView+LTKAdditions.m */,
 				EB1CDB9A141DC09900729A2D /* UIView+LTKAdditions.h */,
 				EB1CDB9B141DC09900729A2D /* UIView+LTKAdditions.m */,
 				EBACB18714CB8717009F9D26 /* UIViewController+LTKAdditions.h */,
@@ -547,6 +558,7 @@
 				EBACB18914CB8718009F9D26 /* UIViewController+LTKAdditions.h in Headers */,
 				EB84FC7214CF5BD00086C5A4 /* UIImage+LTKAdditions.h in Headers */,
 				EB337BCF14F7294A00564949 /* UINavigationBar+LTKAdditions.h in Headers */,
+				EB5C4C6814F8871600D37841 /* UITableView+LTKAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -700,6 +712,7 @@
 				EBACB18A14CB8718009F9D26 /* UIViewController+LTKAdditions.m in Sources */,
 				EB84FC7314CF5BD00086C5A4 /* UIImage+LTKAdditions.m in Sources */,
 				EB337BD014F7294A00564949 /* UINavigationBar+LTKAdditions.m in Sources */,
+				EB5C4C6914F8871600D37841 /* UITableView+LTKAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -724,6 +737,7 @@
 				EBACB18D14CB87E9009F9D26 /* LTKUIViewControllerCategoryTests.m in Sources */,
 				EB84FC7714CF5C340086C5A4 /* LTKUIImageCategoryTests.m in Sources */,
 				EB337BD414F7298200564949 /* LTKUINavigationBarCategoryTests.m in Sources */,
+				EB5C4C6D14F8875D00D37841 /* LTKUITableViewCategoryTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

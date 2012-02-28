@@ -24,4 +24,8 @@
 - (BOOL)isEmpty;
 - (BOOL)isNotEmpty;
 
+- (BOOL)isNotEqualToString:(NSString *)string;
+
+- (BOOL)isContainedInStrings:(NSString *)firstString, ... NS_REQUIRES_NIL_TERMINATION;
+
 @end

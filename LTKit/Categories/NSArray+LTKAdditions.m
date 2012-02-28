@@ -38,4 +38,19 @@
 	return [self objectAtIndex:0];
 }
 
+- (NSArray *)filteredArrayUsingPredicate:(NSPredicate *)predicate andSortedUsingDescriptor:(NSSortDescriptor *)sortDescriptor
+{
+	return [self filteredArrayUsingPredicate:predicate andSortedUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+}
+
+- (NSArray *)filteredArrayUsingPredicate:(NSPredicate *)predicate andSortedUsingDescriptors:(NSArray *)sortDescriptors
+{
+	return [[self filteredArrayUsingPredicate:predicate] sortedArrayUsingDescriptors:sortDescriptors];
+}
+
+- (NSArray *)sortedArrayUsingDescriptor:(NSSortDescriptor *)sortDescriptor
+{
+	return [self sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+}
+
 @end

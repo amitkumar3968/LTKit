@@ -63,6 +63,8 @@
 @property (readwrite, nonatomic, assign) CGPoint boundsBottomLeftPoint;
 @property (readwrite, nonatomic, assign) CGPoint boundsMiddleLeftPoint;
 
+- (void)setAnchorPointAndPreserveExistingPosition:(CGPoint)anchorPoint;
+
 - (CALayer *)presentationCALayer;
 - (CALayer *)modelCALayer;
 
