@@ -106,4 +106,17 @@
 	return convolvedImage;
 }
 
+- (BOOL)createFileAtPath:(NSString *)filePath
+{
+	return [self createFileAtPath:filePath withAttributes:nil];
+}
+
+- (BOOL)createFileAtPath:(NSString *)filePath withAttributes:(NSDictionary *)fileAttributes
+{
+	NSFileManager *fileManager = [NSFileManager new];
+	BOOL fileCreationStatus = [fileManager createFileAtPath:filePath contents:UIImagePNGRepresentation(self) attributes:fileAttributes];
+	
+	return fileCreationStatus;
+}
+
 @end

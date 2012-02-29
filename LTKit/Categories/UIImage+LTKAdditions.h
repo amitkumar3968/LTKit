@@ -34,4 +34,7 @@ LTKHighSpeedConvolutionType;
 - (UIImage *)imageByApplyingHighSpeedConvolution:(LTKHighSpeedConvolutionType)convolutionType kernelSize:(CGSize)kernelSize;
 - (UIImage *)imageByApplyingHighSpeedConvolution:(LTKHighSpeedConvolutionType)convolutionType kernelSize:(CGSize)kernelSize flags:(vImage_Flags)flags;
 
+- (BOOL)createFileAtPath:(NSString *)filePath;
+- (BOOL)createFileAtPath:(NSString *)filePath withAttributes:(NSDictionary *)fileAttributes;
+
 @end
