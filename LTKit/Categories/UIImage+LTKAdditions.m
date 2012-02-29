@@ -52,8 +52,8 @@
 
 	// Kernel sizes must be odd
 
-	uint32_t kernelWidth = (uint32_t)(LTK_VALUE_IS_ODD(kernelSize.width) ? kernelSize.width : (kernelSize.width + 1));
-	uint32_t kernelHeight = (uint32_t)(LTK_VALUE_IS_ODD(kernelSize.height) ? kernelSize.height : (kernelSize.height + 1));
+	uint32_t kernelWidth = (uint32_t)(LTK_VALUE_IS_ODD((NSInteger)kernelSize.width) ? kernelSize.width : (kernelSize.width + 1));
+	uint32_t kernelHeight = (uint32_t)(LTK_VALUE_IS_ODD((NSInteger)kernelSize.height) ? kernelSize.height : (kernelSize.height + 1));
 
 	// General algorithm taken from NYXImagesKit (https://github.com/Nyx0uf/NYXImagesKit)
 
