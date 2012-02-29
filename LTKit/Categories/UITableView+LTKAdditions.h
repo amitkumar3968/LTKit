@@ -21,6 +21,12 @@
 
 @interface UITableView (LTKAdditions)
 
+- (NSArray *)visibleSections;
 - (NSArray *)indexPathsForVisibleRowsInSection:(NSInteger)section;
+- (NSArray *)visibleSectionRects;
+- (NSArray *)visibleSectionHeaderRects;
+//- (NSArray *)visibleSectionFooterRects;
+- (NSArray *)visibleCellRects;
+- (NSArray *)allVisibleRects;
 
 @end
