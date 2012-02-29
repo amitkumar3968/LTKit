@@ -72,7 +72,6 @@ static NSString *const LTKAllVisibleRectsAssociatedObjectKey = @"LTKAllVisibleRe
 			sectionRect.origin.y -= tableViewContentYOffset;
 			
 			[visibleSectionRects addObject:[NSValue valueWithCGRect:sectionRect]];
-			[allVisibleRects addObject:[NSValue valueWithCGRect:sectionRect]];
 
 			// The section header rect is a little bit more work. -rectForHeaderInSection: does not take into consideration that the top-most section header is
 			// fixed to the top of the table view. It's y coordinate is offset just as the section rect is, except that the top-most section header's y position
