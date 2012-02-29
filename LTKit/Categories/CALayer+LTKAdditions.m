@@ -639,41 +639,30 @@ static NSTimeInterval const LTKDefaultTransitionDuration = 0.2;
 
 - (UIImage *)renderToImage
 {
-	return [self renderToImageWithContextSize:CGSizeZero];
+	return [self renderToImageWithContextSize:CGSizeZero contextTransform:CGAffineTransformIdentity];
 }
 
 - (UIImage *)renderToImageWithContextSize:(CGSize)contextSize
 {
+	return [self renderToImageWithContextSize:contextSize contextTransform:CGAffineTransformIdentity];
+}
+
+- (UIImage *)renderToImageWithContextSize:(CGSize)contextSize contextTransform:(CGAffineTransform)contextTransform
+{
 	contextSize = (CGSizeEqualToSize(contextSize, CGSizeZero) ? self.frameSize : contextSize);
-
+	
 	UIGraphicsBeginImageContextWithOptions(contextSize, NO, 0.0f);
-
-	[self renderInContext:UIGraphicsGetCurrentContext()];
+	
+	CGContextRef graphicsContextRef = UIGraphicsGetCurrentContext();
+	
+	CGContextConcatCTM(graphicsContextRef, contextTransform);
+	
+	[self renderInContext:graphicsContextRef];
 	UIImage *renderedImage = UIGraphicsGetImageFromCurrentImageContext();
-
+	
 	UIGraphicsEndImageContext();
-
+	
 	return renderedImage;
-}
-
-- (BOOL)renderToImageAndCreateFileAtPath:(NSString *)filePath
-{
-	return [self renderToImageWithContextSize:CGSizeZero andCreateFileAtPath:filePath attributes:nil];
-}
-
-- (BOOL)renderToImageWithContextSize:(CGSize)contextSize andCreateFileAtPath:(NSString *)filePath
-{
-	return [self renderToImageWithContextSize:contextSize andCreateFileAtPath:filePath attributes:nil];
-}
-
-- (BOOL)renderToImageWithContextSize:(CGSize)contextSize andCreateFileAtPath:(NSString *)filePath attributes:(NSDictionary *)fileAttributes
-{
-	UIImage *renderedImage = [self renderToImageWithContextSize:contextSize];
-
-	NSFileManager *fileManager = [NSFileManager new];
-	BOOL fileCreationStatus = [fileManager createFileAtPath:filePath contents:UIImagePNGRepresentation(renderedImage) attributes:fileAttributes];
-
-	return fileCreationStatus;
 }
 
 - (void)enableDebugBordersRecursively:(BOOL)recursively

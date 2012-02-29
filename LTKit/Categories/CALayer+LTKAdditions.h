@@ -86,9 +86,7 @@
 
 - (UIImage *)renderToImage;
 - (UIImage *)renderToImageWithContextSize:(CGSize)contextSize;
-- (BOOL)renderToImageAndCreateFileAtPath:(NSString *)filePath;
-- (BOOL)renderToImageWithContextSize:(CGSize)contextSize andCreateFileAtPath:(NSString *)filePath;
-- (BOOL)renderToImageWithContextSize:(CGSize)contextSize andCreateFileAtPath:(NSString *)filePath attributes:(NSDictionary *)fileAttributes;
+- (UIImage *)renderToImageWithContextSize:(CGSize)contextSize contextTransform:(CGAffineTransform)contextTransform;
 
 - (void)enableDebugBordersRecursively:(BOOL)recursively;
 
