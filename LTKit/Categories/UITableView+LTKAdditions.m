@@ -42,13 +42,21 @@ static NSString *const LTKAllVisibleRectsAssociatedObjectKey = @"LTKAllVisibleRe
 
 - (void)calculateVisibleRects
 {
+	[self removeAssociatedObjectForKey:LTKVisibleSectionRectsAssociatedObjectKey];
+	[self removeAssociatedObjectForKey:LTKVisibleSectionHeaderRectsAssociatedObjectKey];
+	[self removeAssociatedObjectForKey:LTKVisibleSectionFooterRectsAssociatedObjectKey];
+	[self removeAssociatedObjectForKey:LTKVisibleCellRectsAssociatedObjectKey];
+	[self removeAssociatedObjectForKey:LTKAllVisibleRectsAssociatedObjectKey];
+
 	NSMutableArray *visibleSectionRects = [NSMutableArray array];
 	NSMutableArray *visibleSectionHeaderRects = [NSMutableArray array];
+	NSMutableArray *visibleSectionFooterRects = [NSMutableArray array];
 	NSMutableArray *visibleCellRects = [NSMutableArray array];
 	NSMutableArray *allVisibleRects = [NSMutableArray array];
 
 	[self setAssociatedObject:visibleSectionRects forKey:LTKVisibleSectionRectsAssociatedObjectKey];
 	[self setAssociatedObject:visibleSectionHeaderRects forKey:LTKVisibleSectionHeaderRectsAssociatedObjectKey];
+	[self setAssociatedObject:visibleSectionFooterRects forKey:LTKVisibleSectionFooterRectsAssociatedObjectKey];
 	[self setAssociatedObject:visibleCellRects forKey:LTKVisibleCellRectsAssociatedObjectKey];
 	[self setAssociatedObject:allVisibleRects forKey:LTKAllVisibleRectsAssociatedObjectKey];
 
@@ -70,7 +78,7 @@ static NSString *const LTKAllVisibleRectsAssociatedObjectKey = @"LTKAllVisibleRe
 
 			CGRect sectionRect = CGRectIntersection([self rectForSection:section], self.bounds);
 			sectionRect.origin.y -= tableViewContentYOffset;
-			
+
 			[visibleSectionRects addObject:[NSValue valueWithCGRect:sectionRect]];
 
 			// The section header rect is a little bit more work. -rectForHeaderInSection: does not take into consideration that the top-most section header is
@@ -96,7 +104,7 @@ static NSString *const LTKAllVisibleRectsAssociatedObjectKey = @"LTKAllVisibleRe
 
 			[visibleSectionHeaderRects addObject:[NSValue valueWithCGRect:sectionHeaderRect]];
 			[allVisibleRects addObject:[NSValue valueWithCGRect:sectionHeaderRect]];
-			
+
 			// We now enumerate the visible rows for the current section and determine which portion of their rects are visible.
 
 			NSArray *visibleSectionRowIndexPaths = [self indexPathsForVisibleRowsInSection:section];
@@ -117,7 +125,7 @@ static NSString *const LTKAllVisibleRectsAssociatedObjectKey = @"LTKAllVisibleRe
 					// If the table view cell's frame doesn't intersect with the section header's frame (indicated by CGRectIsNull or a rect with 0.0f height),
 					// then the only other condition we need to check for is if this table view cell is the last one visible, in which case it is likely that
 					// only a portion of it will be visible. We clip the rect to the table view's frame if necessary.
-				
+
 					if ([visibleSectionRowIndexPath isEqual:lastTableViewCellIndexPath])
 					{
 						CGRect tableViewCellAndFrameIntersection = CGRectIntersection(tableViewCellRect, self.frame);
@@ -131,7 +139,7 @@ static NSString *const LTKAllVisibleRectsAssociatedObjectKey = @"LTKAllVisibleRe
 				{
 					// If the table view cell's frame does intersect with the section header's frame, then we adjust the frame to only include the portion that
 					// isn't obscured by the section header.
-				
+
 					CGRect sectionRectTableViewCellPartialFrame = tableViewCellRect;
 					tableViewCellRect.origin.y = CGRectGetMaxY(sectionHeaderRect);
 					sectionRectTableViewCellPartialFrame.size.height = (CGRectGetMaxY(tableViewCellRect) - CGRectGetMaxY(sectionHeaderRect));
@@ -170,28 +178,28 @@ static NSString *const LTKAllVisibleRectsAssociatedObjectKey = @"LTKAllVisibleRe
 - (NSArray *)visibleSectionRects
 {
 	[self calculateVisibleRects];
-	
+
 	return [self associatedObjectForKey:LTKVisibleSectionRectsAssociatedObjectKey];
 }
 
 - (NSArray *)visibleSectionHeaderRects
 {
 	[self calculateVisibleRects];
-	
+
 	return [self associatedObjectForKey:LTKVisibleSectionHeaderRectsAssociatedObjectKey];
 }
 
 - (NSArray *)visibleCellRects
 {
 	[self calculateVisibleRects];
-	
+
 	return [self associatedObjectForKey:LTKVisibleCellRectsAssociatedObjectKey];
 }
 
 - (NSArray *)allVisibleRects
 {
 	[self calculateVisibleRects];
-	
+
 	return [self associatedObjectForKey:LTKAllVisibleRectsAssociatedObjectKey];
 }
 
