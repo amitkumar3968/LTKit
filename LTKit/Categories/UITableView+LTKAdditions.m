@@ -141,7 +141,7 @@ static NSString *const LTKAllVisibleRectsAssociatedObjectKey = @"LTKAllVisibleRe
 					// isn't obscured by the section header.
 
 					CGRect sectionRectTableViewCellPartialFrame = tableViewCellRect;
-					tableViewCellRect.origin.y = CGRectGetMaxY(sectionHeaderRect);
+					sectionRectTableViewCellPartialFrame.origin.y = CGRectGetMaxY(sectionHeaderRect);
 					sectionRectTableViewCellPartialFrame.size.height = (CGRectGetMaxY(tableViewCellRect) - CGRectGetMaxY(sectionHeaderRect));
 
 					// Only in the case where the table view cell is not completely covered by a section header is it included as a visible rect.
