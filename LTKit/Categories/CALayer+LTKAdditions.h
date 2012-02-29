@@ -65,6 +65,11 @@
 
 - (void)setAnchorPointAndPreserveExistingPosition:(CGPoint)anchorPoint;
 
++ (CGFloat)smallestWidthInLayers:(NSArray *)layers;
++ (CGFloat)smallestHeightInLayers:(NSArray *)layers;
++ (CGFloat)largestWidthInLayers:(NSArray *)layers;
++ (CGFloat)largestHeightInLayers:(NSArray *)layers;
+
 - (CALayer *)presentationCALayer;
 - (CALayer *)modelCALayer;
 
@@ -76,6 +81,8 @@
 - (void)addMoveInTransitionWithSubtype:(NSString *)subtype duration:(NSTimeInterval)duration;
 - (void)addPushTransitionWithSubtype:(NSString *)subtype duration:(NSTimeInterval)duration;
 - (void)addRevealTransitionWithSubtype:(NSString *)subtype duration:(NSTimeInterval)duration;
+
+- (void)replaceAnimationForKey:(NSString *)key withAnimation:(CAAnimation *)animation;
 
 - (UIImage *)renderToImage;
 - (UIImage *)renderToImageWithContextSize:(CGSize)contextSize;

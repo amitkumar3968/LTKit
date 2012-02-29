@@ -503,6 +503,66 @@ static NSTimeInterval const LTKDefaultTransitionDuration = 0.2;
 	self.anchorPoint = anchorPoint;
 }
 
++ (CGFloat)smallestWidthInLayers:(NSArray *)layers
+{
+	CGFloat smallestWidth = 0.0f;
+
+	for (CALayer *layer in layers)
+	{
+		if (layer.frameWidth < smallestWidth)
+		{
+			smallestWidth = layer.frameWidth;
+		}
+	}
+
+	return smallestWidth;
+}
+
++ (CGFloat)smallestHeightInLayers:(NSArray *)layers
+{
+	CGFloat smallestHeight = 0.0f;
+
+	for (CALayer *layer in layers)
+	{
+		if (layer.frameHeight < smallestHeight)
+		{
+			smallestHeight = layer.frameHeight;
+		}
+	}
+
+	return smallestHeight;
+}
+
++ (CGFloat)largestWidthInLayers:(NSArray *)layers
+{
+	CGFloat largestWidth = 0.0f;
+
+	for (CALayer *layer in layers)
+	{
+		if (layer.frameWidth > largestWidth)
+		{
+			largestWidth = layer.frameWidth;
+		}
+	}
+
+	return largestWidth;
+}
+
++ (CGFloat)largestHeightInLayers:(NSArray *)layers
+{
+	CGFloat largestHeight = 0.0f;
+
+	for (CALayer *layer in layers)
+	{
+		if (layer.frameHeight > largestHeight)
+		{
+			largestHeight = layer.frameHeight;
+		}
+	}
+
+	return largestHeight;
+}
+
 - (CALayer *)presentationCALayer
 {
 	return (CALayer *)[self presentationLayer];
@@ -569,6 +629,12 @@ static NSTimeInterval const LTKDefaultTransitionDuration = 0.2;
 	transition.duration = duration;
 
 	[self addAnimation:transition forKey:kCATransition];
+}
+
+- (void)replaceAnimationForKey:(NSString *)key withAnimation:(CAAnimation *)animation
+{
+	[self removeAnimationForKey:key];
+	[self addAnimation:animation forKey:key];
 }
 
 - (UIImage *)renderToImage
