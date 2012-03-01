@@ -650,18 +650,18 @@ static NSTimeInterval const LTKDefaultTransitionDuration = 0.2;
 - (UIImage *)renderToImageWithContextSize:(CGSize)contextSize contextTransform:(CGAffineTransform)contextTransform
 {
 	contextSize = (CGSizeEqualToSize(contextSize, CGSizeZero) ? self.frameSize : contextSize);
-	
+
 	UIGraphicsBeginImageContextWithOptions(contextSize, NO, 0.0f);
-	
+
 	CGContextRef graphicsContextRef = UIGraphicsGetCurrentContext();
-	
+
 	CGContextConcatCTM(graphicsContextRef, contextTransform);
-	
+
 	[self renderInContext:graphicsContextRef];
 	UIImage *renderedImage = UIGraphicsGetImageFromCurrentImageContext();
-	
+
 	UIGraphicsEndImageContext();
-	
+
 	return renderedImage;
 }
 

@@ -115,7 +115,7 @@
 {
 	NSFileManager *fileManager = [NSFileManager new];
 	BOOL fileCreationStatus = [fileManager createFileAtPath:filePath contents:UIImagePNGRepresentation(self) attributes:fileAttributes];
-	
+
 	return fileCreationStatus;
 }
 
