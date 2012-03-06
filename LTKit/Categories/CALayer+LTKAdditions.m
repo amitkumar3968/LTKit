@@ -483,7 +483,7 @@ static NSTimeInterval const LTKDefaultTransitionDuration = 0.2;
 
 #pragma mark - CALayer (LTKAdditions) Methods
 
-- (void)setAnchorPointAndPreserveExistingPosition:(CGPoint)anchorPoint
+- (void)setAnchorPointAndPreserveCurrentPosition:(CGPoint)anchorPoint
 {
 	CGPoint newPoint = CGPointMake((self.boundsWidth * anchorPoint.x), (self.boundsHeight * anchorPoint.y));
 	CGPoint oldPoint = CGPointMake((self.boundsWidth * self.anchorPoint.x), (self.boundsHeight * self.anchorPoint.y));

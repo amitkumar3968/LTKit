@@ -63,7 +63,7 @@
 @property (readwrite, nonatomic, assign) CGPoint boundsBottomLeftPoint;
 @property (readwrite, nonatomic, assign) CGPoint boundsMiddleLeftPoint;
 
-- (void)setAnchorPointAndPreserveExistingPosition:(CGPoint)anchorPoint;
+- (void)setAnchorPointAndPreserveCurrentPosition:(CGPoint)anchorPoint;
 
 + (CGFloat)smallestWidthInLayers:(NSArray *)layers;
 + (CGFloat)smallestHeightInLayers:(NSArray *)layers;
