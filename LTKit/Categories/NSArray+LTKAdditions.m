@@ -17,6 +17,8 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#import <LTKit/LTKit.h>
+
 #import "NSArray+LTKAdditions.h"
 
 @implementation NSArray (LTKAdditions)
@@ -36,6 +38,11 @@
 - (id)firstObject
 {
 	return [self objectAtIndex:0];
+}
+
+- (id)objectAtBoundedIndex:(NSUInteger)boundedIndex
+{
+	return [self objectAtIndex:LTK_CLAMP(boundedIndex, 0u, ([self count] - 1))];
 }
 
 - (NSArray *)filteredArrayUsingPredicate:(NSPredicate *)predicate andSortedUsingDescriptor:(NSSortDescriptor *)sortDescriptor

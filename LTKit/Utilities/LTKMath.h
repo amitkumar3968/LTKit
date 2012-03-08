@@ -17,7 +17,7 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
+#import <LTKit/LTKit.h>
 
 #define LTK_CLAMP(VALUE, MIN, MAX)			({																								\
 												__typeof__(VALUE) LTK__value = (VALUE);													\
@@ -38,3 +38,13 @@
 #define LTK_VALUE_IS_EVEN(VALUE) 			((VALUE) % 2 == 0)
 
 #define LTK_VALUE_IS_ODD(VALUE) 			((VALUE) % 2 == 1)
+
+LTK_STATIC_INLINE CGFloat LTKMathDegreesToRadians(CGFloat degrees)
+{
+	return ((degrees * (CGFloat)M_PI) / 180.0f);
+}
+
+LTK_STATIC_INLINE CGFloat LTKMathRadiansToDegrees(CGFloat radians)
+{
+	return ((radians * 180.0f) / (CGFloat)M_PI);
+}

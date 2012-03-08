@@ -90,6 +90,8 @@
 		EBACB18A14CB8718009F9D26 /* UIViewController+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBACB18814CB8717009F9D26 /* UIViewController+LTKAdditions.m */; };
 		EBACB18D14CB87E9009F9D26 /* LTKUIViewControllerCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBACB18C14CB87E8009F9D26 /* LTKUIViewControllerCategoryTests.m */; };
 		EBC92B7A14DCC41200CE6232 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC92B7914DCC41200CE6232 /* Accelerate.framework */; };
+		EBF214591506F43300A35420 /* LTKTableViewSectionDefinition.h in Headers */ = {isa = PBXBuildFile; fileRef = EBF214571506F43300A35420 /* LTKTableViewSectionDefinition.h */; };
+		EBF2145A1506F43300A35420 /* LTKTableViewSectionDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF214581506F43300A35420 /* LTKTableViewSectionDefinition.m */; };
 		EBF72BDE1445200F009C9B5E /* LTPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF72BD41445200F009C9B5E /* LTPAppDelegate.m */; };
 		EBF72BE11445200F009C9B5E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBF72BD91445200F009C9B5E /* InfoPlist.strings */; };
 		EBF72BE31445200F009C9B5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF72BDD1445200F009C9B5E /* main.m */; };
@@ -212,6 +214,8 @@
 		EBACB18B14CB87E8009F9D26 /* LTKUIViewControllerCategoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKUIViewControllerCategoryTests.h; sourceTree = "<group>"; };
 		EBACB18C14CB87E8009F9D26 /* LTKUIViewControllerCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKUIViewControllerCategoryTests.m; sourceTree = "<group>"; };
 		EBC92B7914DCC41200CE6232 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		EBF214571506F43300A35420 /* LTKTableViewSectionDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKTableViewSectionDefinition.h; sourceTree = "<group>"; };
+		EBF214581506F43300A35420 /* LTKTableViewSectionDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKTableViewSectionDefinition.m; sourceTree = "<group>"; };
 		EBF72BD31445200F009C9B5E /* LTPAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTPAppDelegate.h; sourceTree = "<group>"; };
 		EBF72BD41445200F009C9B5E /* LTPAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTPAppDelegate.m; sourceTree = "<group>"; };
 		EBF72BDA1445200F009C9B5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -417,6 +421,8 @@
 			children = (
 				EB005D0414AD3FF8009A70C9 /* LTKProgressSlider.h */,
 				EB005D0514AD3FF8009A70C9 /* LTKProgressSlider.m */,
+				EBF214571506F43300A35420 /* LTKTableViewSectionDefinition.h */,
+				EBF214581506F43300A35420 /* LTKTableViewSectionDefinition.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -559,6 +565,7 @@
 				EB84FC7214CF5BD00086C5A4 /* UIImage+LTKAdditions.h in Headers */,
 				EB337BCF14F7294A00564949 /* UINavigationBar+LTKAdditions.h in Headers */,
 				EB5C4C6814F8871600D37841 /* UITableView+LTKAdditions.h in Headers */,
+				EBF214591506F43300A35420 /* LTKTableViewSectionDefinition.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -713,6 +720,7 @@
 				EB84FC7314CF5BD00086C5A4 /* UIImage+LTKAdditions.m in Sources */,
 				EB337BD014F7294A00564949 /* UINavigationBar+LTKAdditions.m in Sources */,
 				EB5C4C6914F8871600D37841 /* UITableView+LTKAdditions.m in Sources */,
+				EBF2145A1506F43300A35420 /* LTKTableViewSectionDefinition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

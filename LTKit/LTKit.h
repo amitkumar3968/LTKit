@@ -17,6 +17,19 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
+// Definitions
+
+#define LTK_STATIC_INLINE static inline
+#define LTK_EXTERN	extern __attribute__((visibility ("default")))
+
+// Cocoa Touch Framework Imports
+
+#import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
+#import <UIKit/UIKit.h>
+
+// LTKit Imports
+
 #import "LTKitCategories.h"
 #import "LTKitClasses.h"
 #import "LTKitUtilities.h"

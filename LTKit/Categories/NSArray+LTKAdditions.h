@@ -25,6 +25,7 @@
 - (BOOL)isNotEmpty;
 
 - (id)firstObject;
+- (id)objectAtBoundedIndex:(NSUInteger)boundedIndex;
 
 - (NSArray *)filteredArrayUsingPredicate:(NSPredicate *)predicate andSortedUsingDescriptor:(NSSortDescriptor *)sortDescriptor;
 - (NSArray *)filteredArrayUsingPredicate:(NSPredicate *)predicate andSortedUsingDescriptors:(NSArray *)sortDescriptors;

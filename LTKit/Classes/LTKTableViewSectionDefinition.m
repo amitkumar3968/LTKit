@@ -1,5 +1,5 @@
 //
-//	LTKitClasses.h
+//	LTKTableViewSectionDefinition.m
 //	LTKit
 //
 //	Copyright (c) 2012 Michael Potter
@@ -17,5 +17,37 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "Classes/LTKProgressSlider.h"
-#import "Classes/LTKTableViewSectionDefinition.h"
+#import "LTKTableViewSectionDefinition.h"
+
+@implementation LTKTableViewSectionDefinition
+
+@synthesize visibleRect;
+@synthesize visibleHeaderRect;
+@synthesize visibleFooterRect;
+@synthesize visibleCells;
+
+#pragma mark - Property Accessors
+
+- (BOOL)isHeaderVisible
+{
+	return !CGRectIsEmpty(self.visibleHeaderRect);
+}
+
+- (BOOL)isFooterVisible
+{
+	return !CGRectIsEmpty(self.visibleFooterRect);
+}
+
+- (NSUInteger)visibleCellCount
+{
+	return [self.visibleCells count];
+}
+
+#pragma mark - LTKTableViewSectionDefinition Methods
+
+- (CGRect)visibleCellRectAtIndex:(NSUInteger)index
+{
+	return [[self.visibleCells objectAtIndex:index] CGRectValue];
+}
+
+@end

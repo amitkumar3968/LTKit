@@ -17,12 +17,12 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
+#import <LTKit/LTKit.h>
 
-UIKIT_EXTERN NSUInteger const LTKViewAutoresizingFlexibleMargins;
-UIKIT_EXTERN NSUInteger const LTKViewAutoresizingFlexibleSize;
+LTK_EXTERN NSUInteger const LTKViewAutoresizingFlexibleMargins;
+LTK_EXTERN NSUInteger const LTKViewAutoresizingFlexibleSize;
 
-CG_INLINE CGPoint LTKPointApplyOffset(CGPoint point, UIOffset offset)
+LTK_STATIC_INLINE CGPoint LTKPointApplyOffset(CGPoint point, UIOffset offset)
 {
 	point.x += offset.horizontal;
 	point.y += offset.vertical;
@@ -30,27 +30,27 @@ CG_INLINE CGPoint LTKPointApplyOffset(CGPoint point, UIOffset offset)
 	return point;
 }
 
-CG_INLINE UIEdgeInsets LTKUniformEdgeInsetsMake(CGFloat inset)
+LTK_STATIC_INLINE UIEdgeInsets LTKUniformEdgeInsetsMake(CGFloat inset)
 {
 	return UIEdgeInsetsMake(inset, inset, inset, inset);
 }
 
-CG_INLINE UIEdgeInsets LTKEdgeOutsetsMake(CGFloat top, CGFloat left, CGFloat bottom, CGFloat right)
+LTK_STATIC_INLINE UIEdgeInsets LTKEdgeOutsetsMake(CGFloat top, CGFloat left, CGFloat bottom, CGFloat right)
 {
 	return UIEdgeInsetsMake(-top, -left, -bottom, -right);
 }
 
-CG_INLINE UIEdgeInsets LTKUniformEdgeOutsetsMake(CGFloat outset)
+LTK_STATIC_INLINE UIEdgeInsets LTKUniformEdgeOutsetsMake(CGFloat outset)
 {
 	return UIEdgeInsetsMake(-outset, -outset, -outset, -outset);
 }
 
-CG_INLINE CGFloat LTKSizeGetArea(CGSize size)
+LTK_STATIC_INLINE CGFloat LTKSizeGetArea(CGSize size)
 {
 	return (size.width * size.height);
 }
 
-CG_INLINE CGFloat LTKRectsGetMaxHeight(const CGRect rects[], size_t count)
+LTK_STATIC_INLINE CGFloat LTKRectsGetMaxHeight(const CGRect rects[], size_t count)
 {
 	CGFloat maxHeight = 0.0f;
 
@@ -65,7 +65,7 @@ CG_INLINE CGFloat LTKRectsGetMaxHeight(const CGRect rects[], size_t count)
 	return maxHeight;
 }
 
-CG_INLINE CGFloat LTKRectsGetMaxWidth(const CGRect rects[], size_t count)
+LTK_STATIC_INLINE CGFloat LTKRectsGetMaxWidth(const CGRect rects[], size_t count)
 {
 	CGFloat maxWidth = 0.0f;
 
@@ -80,7 +80,7 @@ CG_INLINE CGFloat LTKRectsGetMaxWidth(const CGRect rects[], size_t count)
 	return maxWidth;
 }
 
-CG_INLINE CGRect LTKRectsUnion(const CGRect rects[], size_t count)
+LTK_STATIC_INLINE CGRect LTKRectsUnion(const CGRect rects[], size_t count)
 {
 	CGRect rectsUnion = CGRectNull;
 
@@ -92,7 +92,7 @@ CG_INLINE CGRect LTKRectsUnion(const CGRect rects[], size_t count)
 	return rectsUnion;
 }
 
-CG_INLINE CGRect LTKRectsIntersection(const CGRect rects[], size_t count)
+LTK_STATIC_INLINE CGRect LTKRectsIntersection(const CGRect rects[], size_t count)
 {
 	CGRect rectsIntersection = CGRectNull;
 
@@ -104,42 +104,42 @@ CG_INLINE CGRect LTKRectsIntersection(const CGRect rects[], size_t count)
 	return rectsIntersection;
 }
 
-CG_INLINE CGFloat LTKRectsGetMinX(const CGRect rects[], size_t count)
+LTK_STATIC_INLINE CGFloat LTKRectsGetMinX(const CGRect rects[], size_t count)
 {
 	return CGRectGetMinX(LTKRectsUnion(rects, count));
 }
 
-CG_INLINE CGFloat LTKRectsGetMidX(const CGRect rects[], size_t count)
+LTK_STATIC_INLINE CGFloat LTKRectsGetMidX(const CGRect rects[], size_t count)
 {
 	return CGRectGetMidX(LTKRectsUnion(rects, count));
 }
 
-CG_INLINE CGFloat LTKRectsGetMaxX(const CGRect rects[], size_t count)
+LTK_STATIC_INLINE CGFloat LTKRectsGetMaxX(const CGRect rects[], size_t count)
 {
 	return CGRectGetMaxX(LTKRectsUnion(rects, count));
 }
 
-CG_INLINE CGFloat LTKRectsGetMinY(const CGRect rects[], size_t count)
+LTK_STATIC_INLINE CGFloat LTKRectsGetMinY(const CGRect rects[], size_t count)
 {
 	return CGRectGetMinY(LTKRectsUnion(rects, count));
 }
 
-CG_INLINE CGFloat LTKRectsGetMidY(const CGRect rects[], size_t count)
+LTK_STATIC_INLINE CGFloat LTKRectsGetMidY(const CGRect rects[], size_t count)
 {
 	return CGRectGetMidY(LTKRectsUnion(rects, count));
 }
 
-CG_INLINE CGFloat LTKRectsGetMaxY(const CGRect rects[], size_t count)
+LTK_STATIC_INLINE CGFloat LTKRectsGetMaxY(const CGRect rects[], size_t count)
 {
 	return CGRectGetMaxY(LTKRectsUnion(rects, count));
 }
 
-CG_INLINE CGFloat LTKRectsGetWidth(const CGRect rects[], size_t count)
+LTK_STATIC_INLINE CGFloat LTKRectsGetWidth(const CGRect rects[], size_t count)
 {
 	return CGRectGetWidth(LTKRectsUnion(rects, count));
 }
 
-CG_INLINE CGFloat LTKRectsGetHeight(const CGRect rects[], size_t count)
+LTK_STATIC_INLINE CGFloat LTKRectsGetHeight(const CGRect rects[], size_t count)
 {
 	return CGRectGetHeight(LTKRectsUnion(rects, count));
 }

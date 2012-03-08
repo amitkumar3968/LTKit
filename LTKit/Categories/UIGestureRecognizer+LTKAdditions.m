@@ -17,6 +17,8 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#import <LTKit/LTKit.h>
+
 #import "UIGestureRecognizer+LTKAdditions.h"
 
 @implementation UIGestureRecognizer (LTKAdditions)
@@ -25,7 +27,7 @@
 
 + (id)gestureRecognizerWithTarget:(id)target action:(SEL)action
 {
-	return [[self alloc] initWithTarget:target action:action];		// Would be autoreleased in a non-ARC environment
+	return [[self alloc] initWithTarget:target action:action];
 }
 
 @end

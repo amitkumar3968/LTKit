@@ -18,6 +18,7 @@
 //
 
 #import <objc/runtime.h>
+#import <LTKit/LTKit.h>
 
 #import "NSObject+LTKAdditions.h"
 
