@@ -24,51 +24,39 @@
 #pragma mark Internal Definitions
 
 static NSTimeInterval const LTKDefaultTransitionDuration = 0.2;
-static NSString *const LTKAnimationBlockDictionaryAssociatedObjectKey = @"LTKAnimationBlockDictionaryAssociatedObjectKey";
-static NSString *const LTKAnimationBlockDictionaryStartBlockKey = @"LTKAnimationBlockDictionaryStartBlockKey";
-static NSString *const LTKAnimationBlockDictionaryStopBlockKey = @"LTKAnimationBlockDictionaryStopBlockKey";
 
-#pragma mark - CALayer Internal Category
+#pragma mark - LTKAnimationDelegate Internal Class
 
-@interface CALayer (LTKAdditionsInternal)
+@interface LTKAnimationDelegate : NSObject
 
-- (void)animationDidStart:(CAAnimation *)animation;
-- (void)animationDidStop:(CAAnimation *)animation finished:(BOOL)finished;
+@property (readwrite, nonatomic, copy) void (^startBlock)();
+@property (readwrite, nonatomic, copy) void (^stopBlock)(BOOL finished);
 
 @end
 
-#pragma mark -
+@implementation LTKAnimationDelegate
 
-@implementation CALayer (LTKAdditionsInternal)
+@synthesize startBlock;
+@synthesize stopBlock;
 
-#pragma mark - CALayer (LTKAdditionsInternal) Methods
+#pragma mark - Protocol Implementations
+
+#pragma mark - CAAnimation Methods (Informal)
 
 - (void)animationDidStart:(CAAnimation *)animation
 {
-	NSMutableDictionary *mutableAnimationBlockDictionary = [self associatedObjectForKey:LTKAnimationBlockDictionaryAssociatedObjectKey];
-	NSDictionary *animationBlocksDictionary = [mutableAnimationBlockDictionary valueForKey:[NSString stringWithFormat:@"%p", self]];
-
-	void (^startBlock)() = [animationBlocksDictionary valueForKey:LTKAnimationBlockDictionaryStartBlockKey];
-
-	if (startBlock != nil)
+	if (self.startBlock != nil)
 	{
-		startBlock();
+		self.startBlock();
 	}
 }
 
 - (void)animationDidStop:(CAAnimation *)animation finished:(BOOL)finished
 {
-	NSMutableDictionary *mutableAnimationBlockDictionary = [self associatedObjectForKey:LTKAnimationBlockDictionaryAssociatedObjectKey];
-	NSDictionary *animationBlocksDictionary = [mutableAnimationBlockDictionary valueForKey:[NSString stringWithFormat:@"%p", self]];
-
-	void (^stopBlock)(BOOL) = [animationBlocksDictionary valueForKey:LTKAnimationBlockDictionaryStopBlockKey];
-
-	if (stopBlock != nil)
+	if (self.stopBlock != nil)
 	{
-		stopBlock(finished);
+		self.stopBlock(finished);
 	}
-
-	[self removeAssociatedObjectForKey:LTKAnimationBlockDictionaryAssociatedObjectKey];
 }
 
 @end
@@ -683,34 +671,16 @@ static NSString *const LTKAnimationBlockDictionaryStopBlockKey = @"LTKAnimationB
 
 - (void)addAnimation:(CAAnimation *)animation forKey:(NSString *)key withStopBlock:(void (^)(BOOL finished))stopBlock
 {
-	[self addAnimation:animation forKey:key withStartBlock:NULL stopBlock:stopBlock];
+	[self addAnimation:animation forKey:key withStartBlock:nil stopBlock:stopBlock];
 }
 
 - (void)addAnimation:(CAAnimation *)animation forKey:(NSString *)key withStartBlock:(void (^)(void))startBlock stopBlock:(void (^)(BOOL finished))stopBlock
 {
-	NSMutableDictionary *mutableAnimationBlockDictionary = [self associatedObjectForKey:LTKAnimationBlockDictionaryAssociatedObjectKey];
+	LTKAnimationDelegate *animationDelegate = [LTKAnimationDelegate new];
+	animationDelegate.startBlock = startBlock;
+	animationDelegate.stopBlock = stopBlock;
 
-	if (mutableAnimationBlockDictionary == nil)
-	{
-		mutableAnimationBlockDictionary = [NSMutableDictionary dictionary];
-		[self setAssociatedObject:mutableAnimationBlockDictionary forKey:LTKAnimationBlockDictionaryAssociatedObjectKey];
-	}
-
-	NSMutableDictionary *mutableAnimationBlocksDictionary = [NSMutableDictionary dictionary];
-
-	if (startBlock != nil)
-	{
-		[mutableAnimationBlocksDictionary setValue:[startBlock copy] forKey:LTKAnimationBlockDictionaryStartBlockKey];
-	}
-
-	if (stopBlock != nil)
-	{
-		[mutableAnimationBlocksDictionary setValue:[stopBlock copy] forKey:LTKAnimationBlockDictionaryStopBlockKey];
-	}
-
-	[mutableAnimationBlockDictionary setValue:[mutableAnimationBlocksDictionary copy] forKey:[NSString stringWithFormat:@"%p", self]];
-
-	animation.delegate = self;
+	animation.delegate = animationDelegate;
 
 	[self addAnimation:animation forKey:key];
 }
