@@ -82,6 +82,9 @@
 - (void)addPushTransitionWithSubtype:(NSString *)subtype duration:(NSTimeInterval)duration;
 - (void)addRevealTransitionWithSubtype:(NSString *)subtype duration:(NSTimeInterval)duration;
 
+- (void)addAnimation:(CAAnimation *)animation forKey:(NSString *)key withStopBlock:(void (^)(BOOL finished))stopBlock;
+- (void)addAnimation:(CAAnimation *)animation forKey:(NSString *)key withStartBlock:(void (^)(void))startBlock stopBlock:(void (^)(BOOL finished))stopBlock;
+
 - (void)replaceAnimationForKey:(NSString *)key withAnimation:(CAAnimation *)animation;
 
 - (UIImage *)renderToImage;

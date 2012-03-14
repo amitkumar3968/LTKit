@@ -318,8 +318,8 @@
 		// when the animation completes.
 
 		[UIView animateWithDuration:animationDuration
-			animations:
-			^{
+			animations:^
+			{
 				self.thumbViewContainerView.userInteractionEnabled = NO;
 				[self adjustThumbViewFrameForCurrentProgress];
 
@@ -333,8 +333,8 @@
 					// Set up the repeating timer to monitor the presentation layer during animations to alert the delegate at regular intervals
 
 					self.presentationLayerMonitorTimer = [NSTimer scheduledTimerWithTimeInterval:self.presentationLayerMonitoringInterval repeats:YES
-						block:
-						^{
+						block:^
+						{
 							// Based on the currently interpolated position of the thumb view container view, an interpolated progress can be calculated
 
 							CGFloat interpolatedFrameMidX = CGRectGetMidX([[self.thumbViewContainerView.layer presentationLayer] frame]);

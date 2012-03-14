@@ -21,9 +21,59 @@
 
 #import "CALayer+LTKAdditions.h"
 
-#pragma mark Internal Definitions -
+#pragma mark Internal Definitions
 
 static NSTimeInterval const LTKDefaultTransitionDuration = 0.2;
+static NSString *const LTKAnimationBlockDictionaryAssociatedObjectKey = @"LTKAnimationBlockDictionaryAssociatedObjectKey";
+static NSString *const LTKAnimationBlockDictionaryStartBlockKey = @"LTKAnimationBlockDictionaryStartBlockKey";
+static NSString *const LTKAnimationBlockDictionaryStopBlockKey = @"LTKAnimationBlockDictionaryStopBlockKey";
+
+#pragma mark - CALayer Internal Category
+
+@interface CALayer (LTKAdditionsInternal)
+
+- (void)animationDidStart:(CAAnimation *)animation;
+- (void)animationDidStop:(CAAnimation *)animation finished:(BOOL)finished;
+
+@end
+
+#pragma mark -
+
+@implementation CALayer (LTKAdditionsInternal)
+
+#pragma mark - CALayer (LTKAdditionsInternal) Methods
+
+- (void)animationDidStart:(CAAnimation *)animation
+{
+	NSMutableDictionary *mutableAnimationBlockDictionary = [self associatedObjectForKey:LTKAnimationBlockDictionaryAssociatedObjectKey];
+	NSDictionary *animationBlocksDictionary = [mutableAnimationBlockDictionary valueForKey:[NSString stringWithFormat:@"%p", self]];
+
+	void (^startBlock)() = [animationBlocksDictionary valueForKey:LTKAnimationBlockDictionaryStartBlockKey];
+
+	if (startBlock != nil)
+	{
+		startBlock();
+	}
+}
+
+- (void)animationDidStop:(CAAnimation *)animation finished:(BOOL)finished
+{
+	NSMutableDictionary *mutableAnimationBlockDictionary = [self associatedObjectForKey:LTKAnimationBlockDictionaryAssociatedObjectKey];
+	NSDictionary *animationBlocksDictionary = [mutableAnimationBlockDictionary valueForKey:[NSString stringWithFormat:@"%p", self]];
+
+	void (^stopBlock)(BOOL) = [animationBlocksDictionary valueForKey:LTKAnimationBlockDictionaryStopBlockKey];
+
+	if (stopBlock != nil)
+	{
+		stopBlock(finished);
+	}
+
+	[self removeAssociatedObjectForKey:LTKAnimationBlockDictionaryAssociatedObjectKey];
+}
+
+@end
+
+#pragma mark -
 
 @implementation CALayer (LTKAdditions)
 
@@ -629,6 +679,40 @@ static NSTimeInterval const LTKDefaultTransitionDuration = 0.2;
 	transition.duration = duration;
 
 	[self addAnimation:transition forKey:kCATransition];
+}
+
+- (void)addAnimation:(CAAnimation *)animation forKey:(NSString *)key withStopBlock:(void (^)(BOOL finished))stopBlock
+{
+	[self addAnimation:animation forKey:key withStartBlock:NULL stopBlock:stopBlock];
+}
+
+- (void)addAnimation:(CAAnimation *)animation forKey:(NSString *)key withStartBlock:(void (^)(void))startBlock stopBlock:(void (^)(BOOL finished))stopBlock
+{
+	NSMutableDictionary *mutableAnimationBlockDictionary = [self associatedObjectForKey:LTKAnimationBlockDictionaryAssociatedObjectKey];
+
+	if (mutableAnimationBlockDictionary == nil)
+	{
+		mutableAnimationBlockDictionary = [NSMutableDictionary dictionary];
+		[self setAssociatedObject:mutableAnimationBlockDictionary forKey:LTKAnimationBlockDictionaryAssociatedObjectKey];
+	}
+
+	NSMutableDictionary *mutableAnimationBlocksDictionary = [NSMutableDictionary dictionary];
+
+	if (startBlock != nil)
+	{
+		[mutableAnimationBlocksDictionary setValue:[startBlock copy] forKey:LTKAnimationBlockDictionaryStartBlockKey];
+	}
+
+	if (stopBlock != nil)
+	{
+		[mutableAnimationBlocksDictionary setValue:[stopBlock copy] forKey:LTKAnimationBlockDictionaryStopBlockKey];
+	}
+
+	[mutableAnimationBlockDictionary setValue:[mutableAnimationBlocksDictionary copy] forKey:[NSString stringWithFormat:@"%p", self]];
+
+	animation.delegate = self;
+
+	[self addAnimation:animation forKey:key];
 }
 
 - (void)replaceAnimationForKey:(NSString *)key withAnimation:(CAAnimation *)animation

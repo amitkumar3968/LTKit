@@ -24,7 +24,7 @@
 
 #pragma mark Internal Definitions
 
-static NSString *const LTKAssociationKeyPointersKey = @"LTKAssociationKeyPointersKey";
+static NSString *const LTKAssociationKeyPointersAssociatedObjectKey = @"LTKAssociationKeyPointersAssociatedObjectKey";
 
 #pragma mark - NSObject Internal Category
 
@@ -35,11 +35,15 @@ static NSString *const LTKAssociationKeyPointersKey = @"LTKAssociationKeyPointer
 
 @end
 
+#pragma mark -
+
 @implementation NSObject (LTKAdditionsInternal)
+
+#pragma mark - NSObject (LTKAdditionsInternal) Methods
 
 - (NSMutableArray *)associationKeyPointers
 {
-	NSMutableArray *associationKeyPointers = objc_getAssociatedObject(self, (__bridge void *)LTKAssociationKeyPointersKey);
+	NSMutableArray *associationKeyPointers = objc_getAssociatedObject(self, (__bridge void *)LTKAssociationKeyPointersAssociatedObjectKey);
 
 	if (associationKeyPointers == nil)
 	{
@@ -47,7 +51,7 @@ static NSString *const LTKAssociationKeyPointersKey = @"LTKAssociationKeyPointer
 		{
 			associationKeyPointers = [NSMutableArray array];
 
-			objc_setAssociatedObject(self, (__bridge void *)LTKAssociationKeyPointersKey, associationKeyPointers, OBJC_ASSOCIATION_RETAIN);
+			objc_setAssociatedObject(self, (__bridge void *)LTKAssociationKeyPointersAssociatedObjectKey, associationKeyPointers, OBJC_ASSOCIATION_RETAIN);
 		}
 	}
 
@@ -93,6 +97,8 @@ static NSString *const LTKAssociationKeyPointersKey = @"LTKAssociationKeyPointer
 }
 
 @end
+
+#pragma mark -
 
 @implementation NSObject (LTKAdditions)
 
