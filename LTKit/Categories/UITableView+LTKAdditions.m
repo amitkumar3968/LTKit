@@ -59,20 +59,20 @@ static NSString *const LTKVisibleSectionDefinitionsAssociatedObjectKey = @"LTKVi
 	[self setAssociatedObject:visibleCellRects forKey:LTKVisibleCellRectsAssociatedObjectKey];
 	[self setAssociatedObject:visibleSectionDefinitions forKey:LTKVisibleSectionDefinitionsAssociatedObjectKey];
 
-	NSArray *sectionValues = [self visibleSections];
+	NSArray *sectionObjects = [[self visibleSections] sortedArray];
 	NSIndexPath *lastTableViewCellIndexPath = [[self indexPathsForVisibleRows] lastObject];
 
 	CGFloat tableViewContentYOffset = self.contentOffset.y;
 
-	if ([sectionValues isNotEmpty])
+	if ([sectionObjects isNotEmpty])
 	{
-		NSInteger topSection = [[sectionValues firstObject] integerValue];
+		NSInteger topSection = [[sectionObjects firstObject] integerValue];
 
-		for (NSNumber *sectionValue in sectionValues)
+		for (NSNumber *sectionObject in sectionObjects)
 		{
 			LTKTableViewSectionDefinition *visibleSectionDefinition = [LTKTableViewSectionDefinition new];
 
-			NSInteger section = [sectionValue integerValue];
+			NSInteger section = [sectionObject integerValue];
 
 			// -rectForSection: returns the rect for a section relative to the table view's bounds, so in order for it to be made relative to the table view's
 			// frame, its y coordinate is shifted by the table view's content y offset.

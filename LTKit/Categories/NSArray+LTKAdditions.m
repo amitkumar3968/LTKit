@@ -60,4 +60,9 @@
 	return [self sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
 }
 
+- (NSArray *)sortedArray
+{
+	return [self sortedArrayUsingSelector:@selector(compare:)];
+}
+
 @end

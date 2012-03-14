@@ -30,5 +30,6 @@
 - (NSArray *)filteredArrayUsingPredicate:(NSPredicate *)predicate andSortedUsingDescriptor:(NSSortDescriptor *)sortDescriptor;
 - (NSArray *)filteredArrayUsingPredicate:(NSPredicate *)predicate andSortedUsingDescriptors:(NSArray *)sortDescriptors;
 - (NSArray *)sortedArrayUsingDescriptor:(NSSortDescriptor *)sortDescriptor;
+- (NSArray *)sortedArray;
 
 @end
