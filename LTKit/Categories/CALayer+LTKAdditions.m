@@ -23,7 +23,7 @@
 
 #pragma mark Internal Definitions
 
-static NSTimeInterval const LTKDefaultTransitionDuration = 0.2;
+static NSTimeInterval const LTKDefaultTransitionDuration = 0.25;
 
 #pragma mark - LTKAnimationDelegate Internal Class
 
