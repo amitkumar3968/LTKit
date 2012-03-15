@@ -21,9 +21,9 @@
 
 #import "CALayer+LTKAdditions.h"
 
-#pragma mark Internal Definitions
+#pragma mark External Definitions
 
-static NSTimeInterval const LTKDefaultTransitionDuration = 0.25;
+NSTimeInterval const LTKDefaultTransitionDuration = 0.25;
 
 #pragma mark - LTKAnimationDelegate Internal Class
 

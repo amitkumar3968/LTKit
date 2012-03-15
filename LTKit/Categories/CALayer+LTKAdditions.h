@@ -20,6 +20,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
 
+extern NSTimeInterval const LTKDefaultTransitionDuration;
+
 @interface CALayer (LTKAdditions)
 
 @property (readwrite, nonatomic, assign) CGPoint frameOrigin;
