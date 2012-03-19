@@ -669,6 +669,11 @@ NSTimeInterval const LTKDefaultTransitionDuration = 0.25;
 	[self addAnimation:transition forKey:kCATransition];
 }
 
+- (void)addAnimation:(CAAnimation *)animation
+{
+	[self addAnimation:animation forKey:nil];
+}
+
 - (void)addAnimation:(CAAnimation *)animation forKey:(NSString *)key withStopBlock:(void (^)(BOOL finished))stopBlock
 {
 	[self addAnimation:animation forKey:key withStartBlock:nil stopBlock:stopBlock];
