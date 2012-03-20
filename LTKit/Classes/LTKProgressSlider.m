@@ -19,6 +19,9 @@
 
 #import "LTKProgressSlider.h"
 
+#import "LTKitCategories.h"
+#import "LTKitUtilities.h"
+
 #pragma mark Class Extension -
 
 @interface LTKProgressSlider ()

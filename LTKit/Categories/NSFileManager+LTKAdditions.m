@@ -1,5 +1,5 @@
 //
-//	LTKTableViewSectionDefinition.h
+//	NSFileManager+LTKAdditions.m
 //	LTKit
 //
 //	Copyright (c) 2012 Michael Potter
@@ -17,18 +17,15 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
+#import "NSFileManager+LTKAdditions.h"
 
-@interface LTKTableViewSectionDefinition : NSObject
+@implementation NSFileManager (LTKAdditions)
 
-@property (readwrite, nonatomic, assign) CGRect visibleRect;
-@property (readwrite, nonatomic, assign) CGRect visibleHeaderRect;
-@property (readwrite, nonatomic, assign) CGRect visibleFooterRect;
-@property (readwrite, nonatomic, copy) NSArray *visibleCells;
-@property (readonly, nonatomic, assign, getter = isHeaderVisible) BOOL headerVisible;
-@property (readonly, nonatomic, assign, getter = isFooterVisible) BOOL footerVisible;
-@property (readonly, nonatomic, assign) NSUInteger visibleCellCount;
+#pragma mark - NSFileManager (LTKAdditions) Methods
 
-- (CGRect)visibleCellRectAtIndex:(NSUInteger)index;
++ (NSURL *)applicationDocumentsDirectoryURL
+{
+	return [[[NSFileManager new] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
 
 @end

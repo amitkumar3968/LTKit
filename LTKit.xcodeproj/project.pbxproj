@@ -16,6 +16,11 @@
 		EB005D1C14AF9B02009A70C9 /* LTPStoryboardiPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB005D1A14AF9B02009A70C9 /* LTPStoryboardiPhone.storyboard */; };
 		EB005D1E14AF9B0C009A70C9 /* LTKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EB005D1D14AF9B0C009A70C9 /* LTKit.bundle */; };
 		EB005D2314AFEE73009A70C9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB005D2014AFE81D009A70C9 /* QuartzCore.framework */; };
+		EB01F28B15181EC30020B9C3 /* LTKit-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = EB01F28A15181EC30020B9C3 /* LTKit-Prefix.pch */; };
+		EB01F28E151821FB0020B9C3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB01F28C15181FFE0020B9C3 /* AVFoundation.framework */; };
+		EB01F28F151823CB0020B9C3 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC92B7914DCC41200CE6232 /* Accelerate.framework */; };
+		EB01F290151823D70020B9C3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB01F28C15181FFE0020B9C3 /* AVFoundation.framework */; };
+		EB01F292151823FE0020B9C3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB01F291151823FE0020B9C3 /* CoreData.framework */; };
 		EB1CDB32141DB07700729A2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CDB31141DB07700729A2D /* Foundation.framework */; };
 		EB1CDB40141DB07800729A2D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CDB3F141DB07800729A2D /* SenTestingKit.framework */; };
 		EB1CDB43141DB07800729A2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CDB31141DB07700729A2D /* Foundation.framework */; };
@@ -90,6 +95,10 @@
 		EBACB18A14CB8718009F9D26 /* UIViewController+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBACB18814CB8717009F9D26 /* UIViewController+LTKAdditions.m */; };
 		EBACB18D14CB87E9009F9D26 /* LTKUIViewControllerCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBACB18C14CB87E8009F9D26 /* LTKUIViewControllerCategoryTests.m */; };
 		EBC92B7A14DCC41200CE6232 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC92B7914DCC41200CE6232 /* Accelerate.framework */; };
+		EBCB92BC1517C0F400C7DF2B /* NSFileManager+LTKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EBCB92BA1517C0F400C7DF2B /* NSFileManager+LTKAdditions.h */; };
+		EBCB92BD1517C0F400C7DF2B /* NSFileManager+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBCB92BB1517C0F400C7DF2B /* NSFileManager+LTKAdditions.m */; };
+		EBCB92CE1517D53800C7DF2B /* NSEntityDescription+LTKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EBCB92CC1517D53800C7DF2B /* NSEntityDescription+LTKAdditions.h */; };
+		EBCB92CF1517D53800C7DF2B /* NSEntityDescription+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBCB92CD1517D53800C7DF2B /* NSEntityDescription+LTKAdditions.m */; };
 		EBF214591506F43300A35420 /* LTKTableViewSectionDefinition.h in Headers */ = {isa = PBXBuildFile; fileRef = EBF214571506F43300A35420 /* LTKTableViewSectionDefinition.h */; };
 		EBF2145A1506F43300A35420 /* LTKTableViewSectionDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF214581506F43300A35420 /* LTKTableViewSectionDefinition.m */; };
 		EBF72BDE1445200F009C9B5E /* LTPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF72BD41445200F009C9B5E /* LTPAppDelegate.m */; };
@@ -126,6 +135,9 @@
 		EB005D1A14AF9B02009A70C9 /* LTPStoryboardiPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LTPStoryboardiPhone.storyboard; sourceTree = "<group>"; };
 		EB005D1D14AF9B0C009A70C9 /* LTKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = LTKit.bundle; path = LTKit/LTKit.bundle; sourceTree = SOURCE_ROOT; };
 		EB005D2014AFE81D009A70C9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		EB01F28A15181EC30020B9C3 /* LTKit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LTKit-Prefix.pch"; sourceTree = "<group>"; };
+		EB01F28C15181FFE0020B9C3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		EB01F291151823FE0020B9C3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		EB1CDB2E141DB07700729A2D /* libLTKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLTKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB1CDB31141DB07700729A2D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EB1CDB3E141DB07800729A2D /* LTKitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LTKitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -214,6 +226,11 @@
 		EBACB18B14CB87E8009F9D26 /* LTKUIViewControllerCategoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKUIViewControllerCategoryTests.h; sourceTree = "<group>"; };
 		EBACB18C14CB87E8009F9D26 /* LTKUIViewControllerCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKUIViewControllerCategoryTests.m; sourceTree = "<group>"; };
 		EBC92B7914DCC41200CE6232 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		EBCB92BA1517C0F400C7DF2B /* NSFileManager+LTKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+LTKAdditions.h"; sourceTree = "<group>"; };
+		EBCB92BB1517C0F400C7DF2B /* NSFileManager+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+LTKAdditions.m"; sourceTree = "<group>"; };
+		EBCB92CC1517D53800C7DF2B /* NSEntityDescription+LTKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSEntityDescription+LTKAdditions.h"; sourceTree = "<group>"; };
+		EBCB92CD1517D53800C7DF2B /* NSEntityDescription+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSEntityDescription+LTKAdditions.m"; sourceTree = "<group>"; };
+		EBDB87CE1518094A00616BC8 /* LTPlayground.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = LTPlayground.entitlements; sourceTree = "<group>"; };
 		EBF214571506F43300A35420 /* LTKTableViewSectionDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKTableViewSectionDefinition.h; sourceTree = "<group>"; };
 		EBF214581506F43300A35420 /* LTKTableViewSectionDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKTableViewSectionDefinition.m; sourceTree = "<group>"; };
 		EBF72BD31445200F009C9B5E /* LTPAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTPAppDelegate.h; sourceTree = "<group>"; };
@@ -229,6 +246,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB01F28E151821FB0020B9C3 /* AVFoundation.framework in Frameworks */,
 				EBC92B7A14DCC41200CE6232 /* Accelerate.framework in Frameworks */,
 				EB40BABA14B00CEA006DD25D /* CoreGraphics.framework in Frameworks */,
 				EB1CDB32141DB07700729A2D /* Foundation.framework in Frameworks */,
@@ -254,6 +272,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB1CDB94141DB6F200729A2D /* libLTKit.a in Frameworks */,
+				EB01F290151823D70020B9C3 /* AVFoundation.framework in Frameworks */,
+				EB01F28F151823CB0020B9C3 /* Accelerate.framework in Frameworks */,
+				EB01F292151823FE0020B9C3 /* CoreData.framework in Frameworks */,
 				EB1CDB61141DB46F00729A2D /* CoreGraphics.framework in Frameworks */,
 				EB1CDB5F141DB46F00729A2D /* Foundation.framework in Frameworks */,
 				EB005D2314AFEE73009A70C9 /* QuartzCore.framework in Frameworks */,
@@ -331,9 +352,18 @@
 			path = "Interface Builder";
 			sourceTree = "<group>";
 		};
+		EB01F28915181E6A0020B9C3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EB01F28A15181EC30020B9C3 /* LTKit-Prefix.pch */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		EB1CDB23141DB07700729A2D = {
 			isa = PBXGroup;
 			children = (
+				EB01F291151823FE0020B9C3 /* CoreData.framework */,
 				EB1CDB71141DB63000729A2D /* LTKit */,
 				EB1CDB87141DB63F00729A2D /* LTKitTests */,
 				EBF72BD11445200F009C9B5E /* LTPlayground */,
@@ -356,6 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				EBC92B7914DCC41200CE6232 /* Accelerate.framework */,
+				EB01F28C15181FFE0020B9C3 /* AVFoundation.framework */,
 				EB1CDB60141DB46F00729A2D /* CoreGraphics.framework */,
 				EB1CDB31141DB07700729A2D /* Foundation.framework */,
 				EB005D2014AFE81D009A70C9 /* QuartzCore.framework */,
@@ -374,6 +405,7 @@
 				EBA760B614A0F07F009713E2 /* LTKitUtilities.h */,
 				EB1CDB72141DB63000729A2D /* Categories */,
 				EB1CDB73141DB63000729A2D /* Classes */,
+				EB01F28915181E6A0020B9C3 /* Supporting Files */,
 				EBA760B414A0F03F009713E2 /* Utilities */,
 			);
 			path = LTKit;
@@ -388,6 +420,10 @@
 				EB40BB7C14B7505C006DD25D /* CALayer+LTKAdditions.m */,
 				EBACB16114C77488009F9D26 /* NSArray+LTKAdditions.h */,
 				EBACB16214C77488009F9D26 /* NSArray+LTKAdditions.m */,
+				EBCB92CC1517D53800C7DF2B /* NSEntityDescription+LTKAdditions.h */,
+				EBCB92CD1517D53800C7DF2B /* NSEntityDescription+LTKAdditions.m */,
+				EBCB92BA1517C0F400C7DF2B /* NSFileManager+LTKAdditions.h */,
+				EBCB92BB1517C0F400C7DF2B /* NSFileManager+LTKAdditions.m */,
 				EB40BB6C14B733FF006DD25D /* NSObject+LTKAdditions.h */,
 				EB40BB6D14B733FF006DD25D /* NSObject+LTKAdditions.m */,
 				EBACB16814C77600009F9D26 /* NSString+LTKAdditions.h */,
@@ -529,10 +565,11 @@
 		EBF72BD81445200F009C9B5E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				EBF72BD91445200F009C9B5E /* InfoPlist.strings */,
-				EBF72BDB1445200F009C9B5E /* LTPlayground-Info.plist */,
-				EBF72BDC1445200F009C9B5E /* LTPlayground-Prefix.pch */,
+				EBDB87CE1518094A00616BC8 /* LTPlayground.entitlements */,
 				EBF72BDD1445200F009C9B5E /* main.m */,
+				EBF72BDC1445200F009C9B5E /* LTPlayground-Prefix.pch */,
+				EBF72BDB1445200F009C9B5E /* LTPlayground-Info.plist */,
+				EBF72BD91445200F009C9B5E /* InfoPlist.strings */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -566,6 +603,9 @@
 				EB337BCF14F7294A00564949 /* UINavigationBar+LTKAdditions.h in Headers */,
 				EB5C4C6814F8871600D37841 /* UITableView+LTKAdditions.h in Headers */,
 				EBF214591506F43300A35420 /* LTKTableViewSectionDefinition.h in Headers */,
+				EBCB92BC1517C0F400C7DF2B /* NSFileManager+LTKAdditions.h in Headers */,
+				EBCB92CE1517D53800C7DF2B /* NSEntityDescription+LTKAdditions.h in Headers */,
+				EB01F28B15181EC30020B9C3 /* LTKit-Prefix.pch in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -721,6 +761,8 @@
 				EB337BD014F7294A00564949 /* UINavigationBar+LTKAdditions.m in Sources */,
 				EB5C4C6914F8871600D37841 /* UITableView+LTKAdditions.m in Sources */,
 				EBF2145A1506F43300A35420 /* LTKTableViewSectionDefinition.m in Sources */,
+				EBCB92BD1517C0F400C7DF2B /* NSFileManager+LTKAdditions.m in Sources */,
+				EBCB92CF1517D53800C7DF2B /* NSEntityDescription+LTKAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -884,7 +926,8 @@
 					"$(inherited)",
 					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LTKit/Supporting Files/LTKit-Prefix.pch";
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
@@ -901,7 +944,8 @@
 					"$(inherited)",
 					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LTKit/Supporting Files/LTKit-Prefix.pch";
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
@@ -951,6 +995,7 @@
 		EB1CDB6F141DB46F00729A2D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "LTPlayground/Supporting Files/LTPlayground.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -958,6 +1003,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LTPlayground/Supporting Files/LTPlayground-Prefix.pch";
+				HEADER_SEARCH_PATHS = .;
 				INFOPLIST_FILE = "LTPlayground/Supporting Files/LTPlayground-Info.plist";
 				OTHER_LDFLAGS = (
 					"-all_load",
@@ -979,6 +1025,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LTPlayground/Supporting Files/LTPlayground-Prefix.pch";
+				HEADER_SEARCH_PATHS = .;
 				INFOPLIST_FILE = "LTPlayground/Supporting Files/LTPlayground-Info.plist";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = (

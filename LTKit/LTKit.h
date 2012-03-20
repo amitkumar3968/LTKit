@@ -22,12 +22,6 @@
 #define LTK_STATIC_INLINE static inline
 #define LTK_EXTERN	extern __attribute__((visibility ("default")))
 
-// Cocoa Touch Framework Imports
-
-#import <Foundation/Foundation.h>
-#import <QuartzCore/QuartzCore.h>
-#import <UIKit/UIKit.h>
-
 // LTKit Imports
 
 #import "LTKitCategories.h"

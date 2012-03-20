@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'LTPlayground' target in the 'LTKit' project
+// Prefix header for all source files of the 'LTKit' target in the 'LTKit' project
 //
 
 #import <Availability.h>
@@ -10,10 +10,14 @@
 
 #ifdef __OBJC__
 	// Cocoa Touch Frameworks
+	#import <Accelerate/Accelerate.h>
+	#import <AVFoundation/AVFoundation.h>
 	#import <Foundation/Foundation.h>
 	#import <QuartzCore/QuartzCore.h>
 	#import <UIKit/UIKit.h>
 
-	// External Frameworks
-	#import <LTKit/LTKit.h>
+	// Internal
+	#import "LTKitCategories.h"
+	#import "LTKitClasses.h"
+	#import "LTKitUtilities.h"
 #endif
