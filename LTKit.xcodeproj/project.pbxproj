@@ -363,7 +363,6 @@
 		EB1CDB23141DB07700729A2D = {
 			isa = PBXGroup;
 			children = (
-				EB01F291151823FE0020B9C3 /* CoreData.framework */,
 				EB1CDB71141DB63000729A2D /* LTKit */,
 				EB1CDB87141DB63F00729A2D /* LTKitTests */,
 				EBF72BD11445200F009C9B5E /* LTPlayground */,
@@ -387,6 +386,7 @@
 			children = (
 				EBC92B7914DCC41200CE6232 /* Accelerate.framework */,
 				EB01F28C15181FFE0020B9C3 /* AVFoundation.framework */,
+				EB01F291151823FE0020B9C3 /* CoreData.framework */,
 				EB1CDB60141DB46F00729A2D /* CoreGraphics.framework */,
 				EB1CDB31141DB07700729A2D /* Foundation.framework */,
 				EB005D2014AFE81D009A70C9 /* QuartzCore.framework */,
