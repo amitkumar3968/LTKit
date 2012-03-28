@@ -65,6 +65,8 @@
 		EB6F265114A21E6900347EE1 /* LTKMath.h in Headers */ = {isa = PBXBuildFile; fileRef = EB6F265014A21E6900347EE1 /* LTKMath.h */; };
 		EB6F265714A2241F00347EE1 /* LTKGeometryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6F265614A2241F00347EE1 /* LTKGeometryTests.m */; };
 		EB6F265A14A227A200347EE1 /* LTKMathTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6F265914A227A200347EE1 /* LTKMathTests.m */; };
+		EB775227151C0478000EB089 /* NSMutableArray+LTKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EB775225151C0478000EB089 /* NSMutableArray+LTKAdditions.h */; };
+		EB775228151C0478000EB089 /* NSMutableArray+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EB775226151C0478000EB089 /* NSMutableArray+LTKAdditions.m */; };
 		EB84FC7214CF5BD00086C5A4 /* UIImage+LTKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EB84FC7014CF5BD00086C5A4 /* UIImage+LTKAdditions.h */; };
 		EB84FC7314CF5BD00086C5A4 /* UIImage+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EB84FC7114CF5BD00086C5A4 /* UIImage+LTKAdditions.m */; };
 		EB84FC7714CF5C340086C5A4 /* LTKUIImageCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB84FC7614CF5C340086C5A4 /* LTKUIImageCategoryTests.m */; };
@@ -186,6 +188,8 @@
 		EB6F265614A2241F00347EE1 /* LTKGeometryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKGeometryTests.m; sourceTree = "<group>"; };
 		EB6F265814A227A200347EE1 /* LTKMathTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKMathTests.h; sourceTree = "<group>"; };
 		EB6F265914A227A200347EE1 /* LTKMathTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKMathTests.m; sourceTree = "<group>"; };
+		EB775225151C0478000EB089 /* NSMutableArray+LTKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+LTKAdditions.h"; sourceTree = "<group>"; };
+		EB775226151C0478000EB089 /* NSMutableArray+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+LTKAdditions.m"; sourceTree = "<group>"; };
 		EB84FC7014CF5BD00086C5A4 /* UIImage+LTKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+LTKAdditions.h"; sourceTree = "<group>"; };
 		EB84FC7114CF5BD00086C5A4 /* UIImage+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+LTKAdditions.m"; sourceTree = "<group>"; };
 		EB84FC7514CF5C340086C5A4 /* LTKUIImageCategoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKUIImageCategoryTests.h; sourceTree = "<group>"; };
@@ -424,6 +428,8 @@
 				EBCB92CD1517D53800C7DF2B /* NSEntityDescription+LTKAdditions.m */,
 				EBCB92BA1517C0F400C7DF2B /* NSFileManager+LTKAdditions.h */,
 				EBCB92BB1517C0F400C7DF2B /* NSFileManager+LTKAdditions.m */,
+				EB775225151C0478000EB089 /* NSMutableArray+LTKAdditions.h */,
+				EB775226151C0478000EB089 /* NSMutableArray+LTKAdditions.m */,
 				EB40BB6C14B733FF006DD25D /* NSObject+LTKAdditions.h */,
 				EB40BB6D14B733FF006DD25D /* NSObject+LTKAdditions.m */,
 				EBACB16814C77600009F9D26 /* NSString+LTKAdditions.h */,
@@ -606,6 +612,7 @@
 				EBCB92BC1517C0F400C7DF2B /* NSFileManager+LTKAdditions.h in Headers */,
 				EBCB92CE1517D53800C7DF2B /* NSEntityDescription+LTKAdditions.h in Headers */,
 				EB01F28B15181EC30020B9C3 /* LTKit-Prefix.pch in Headers */,
+				EB775227151C0478000EB089 /* NSMutableArray+LTKAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -763,6 +770,7 @@
 				EBF2145A1506F43300A35420 /* LTKTableViewSectionDefinition.m in Sources */,
 				EBCB92BD1517C0F400C7DF2B /* NSFileManager+LTKAdditions.m in Sources */,
 				EBCB92CF1517D53800C7DF2B /* NSEntityDescription+LTKAdditions.m in Sources */,
+				EB775228151C0478000EB089 /* NSMutableArray+LTKAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

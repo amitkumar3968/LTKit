@@ -1,5 +1,5 @@
 //
-//	NSArray+LTKAdditions.h
+//	NSMutableArray+LTKAdditions.m
 //	LTKit
 //
 //	Copyright (c) 2012 Michael Potter
@@ -17,21 +17,21 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
+#import "NSMutableArray+LTKAdditions.h"
 
-@interface NSArray (LTKAdditions)
+@implementation NSMutableArray (LTKAdditions)
 
-- (BOOL)isEmpty;
-- (BOOL)isNotEmpty;
+#pragma mark - NSMutableArray (LTKAdditions) Methods
 
-- (id)firstObject;
-- (id)objectAtBoundedIndex:(NSUInteger)boundedIndex;
-
-- (NSArray *)filteredArrayUsingPredicate:(NSPredicate *)predicate andSortedUsingDescriptor:(NSSortDescriptor *)sortDescriptor;
-- (NSArray *)filteredArrayUsingPredicate:(NSPredicate *)predicate andSortedUsingDescriptors:(NSArray *)sortDescriptors;
-- (NSArray *)sortedArrayUsingDescriptor:(NSSortDescriptor *)sortDescriptor;
-- (NSArray *)sortedArray;
-
-- (NSArray *)reversedArray;
+- (void)reverse
+{
+	NSUInteger i = 0;
+	NSUInteger j = ([self count] - 1);
+	
+	while (i < j)
+	{
+		[self exchangeObjectAtIndex:i++ withObjectAtIndex:j--];
+	}
+}
 
 @end

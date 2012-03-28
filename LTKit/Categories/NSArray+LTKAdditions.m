@@ -20,6 +20,7 @@
 #import <LTKit/LTKit.h>
 
 #import "NSArray+LTKAdditions.h"
+#import "NSMutableArray+LTKAdditions.h"
 
 @implementation NSArray (LTKAdditions)
 
@@ -63,6 +64,14 @@
 - (NSArray *)sortedArray
 {
 	return [self sortedArrayUsingSelector:@selector(compare:)];
+}
+
+- (NSArray *)reversedArray
+{
+	NSMutableArray *mutableCopy = [self mutableCopy];
+	[mutableCopy reverse];
+	
+	return [mutableCopy copy];
 }
 
 @end

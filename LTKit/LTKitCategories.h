@@ -22,6 +22,7 @@
 #import "Categories/NSArray+LTKAdditions.h"
 #import "Categories/NSEntityDescription+LTKAdditions.h"
 #import "Categories/NSFileManager+LTKAdditions.h"
+#import "Categories/NSMutableArray+LTKAdditions.h"
 #import "Categories/NSObject+LTKAdditions.h"
 #import "Categories/NSString+LTKAdditions.h"
 #import "Categories/NSTimer+LTKAdditions.h"
