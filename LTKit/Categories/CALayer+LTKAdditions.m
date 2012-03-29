@@ -519,6 +519,26 @@ NSTimeInterval const LTKDefaultTransitionDuration = 0.25;
 	self.boundsMidY = boundsMiddleLeftPoint.y;
 }
 
+- (CGFloat)positionX
+{
+	return self.position.x;
+}
+
+- (void)setPositionX:(CGFloat)positionX
+{
+	self.position = CGPointMake(positionX, self.positionY);
+}
+
+- (CGFloat)positionY
+{
+	return self.position.y;
+}
+
+- (void)setPositionY:(CGFloat)positionY
+{
+	self.position = CGPointMake(self.positionX, positionY);
+}
+
 #pragma mark - CALayer (LTKAdditions) Methods
 
 - (void)setAnchorPointAndPreserveCurrentPosition:(CGPoint)anchorPoint

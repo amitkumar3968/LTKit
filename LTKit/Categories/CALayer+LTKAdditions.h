@@ -64,6 +64,8 @@ extern NSTimeInterval const LTKDefaultTransitionDuration;
 @property (readwrite, nonatomic, assign) CGPoint boundsBottomMiddlePoint;
 @property (readwrite, nonatomic, assign) CGPoint boundsBottomLeftPoint;
 @property (readwrite, nonatomic, assign) CGPoint boundsMiddleLeftPoint;
+@property (readwrite, nonatomic, assign) CGFloat positionX;
+@property (readwrite, nonatomic, assign) CGFloat positionY;
 
 - (void)setAnchorPointAndPreserveCurrentPosition:(CGPoint)anchorPoint;
 

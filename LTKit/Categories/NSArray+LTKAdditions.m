@@ -70,7 +70,7 @@
 {
 	NSMutableArray *mutableCopy = [self mutableCopy];
 	[mutableCopy reverse];
-	
+
 	return [mutableCopy copy];
 }
 
