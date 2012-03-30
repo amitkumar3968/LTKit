@@ -67,6 +67,9 @@ extern NSTimeInterval const LTKDefaultTransitionDuration;
 @property (readwrite, nonatomic, assign) CGFloat positionX;
 @property (readwrite, nonatomic, assign) CGFloat positionY;
 
++ (id)layerWithFrame:(CGRect)frame;
+- (id)initWithFrame:(CGRect)frame;
+
 - (void)setAnchorPointAndPreserveCurrentPosition:(CGPoint)anchorPoint;
 
 + (CGFloat)smallestWidthInLayers:(NSArray *)layers;

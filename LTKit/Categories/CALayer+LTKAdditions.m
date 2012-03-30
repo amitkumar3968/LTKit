@@ -541,6 +541,23 @@ NSTimeInterval const LTKDefaultTransitionDuration = 0.25;
 
 #pragma mark - CALayer (LTKAdditions) Methods
 
++ (id)layerWithFrame:(CGRect)frame
+{
+	return [[self alloc] initWithFrame:frame];
+}
+
+- (id)initWithFrame:(CGRect)newFrame
+{
+	self = [self init];
+	
+	if (self != nil)
+	{
+		self.frame = newFrame;
+	}
+	
+	return self;
+}
+
 - (void)setAnchorPointAndPreserveCurrentPosition:(CGPoint)anchorPoint
 {
 	CGPoint newPoint = CGPointMake((self.boundsWidth * anchorPoint.x), (self.boundsHeight * anchorPoint.y));
