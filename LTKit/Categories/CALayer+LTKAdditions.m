@@ -549,12 +549,12 @@ NSTimeInterval const LTKDefaultTransitionDuration = 0.25;
 - (id)initWithFrame:(CGRect)newFrame
 {
 	self = [self init];
-	
+
 	if (self != nil)
 	{
 		self.frame = newFrame;
 	}
-	
+
 	return self;
 }
 

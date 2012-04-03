@@ -50,6 +50,11 @@ LTK_STATIC_INLINE CGFloat LTKSizeGetArea(CGSize size)
 	return (size.width * size.height);
 }
 
+LTK_STATIC_INLINE CGRect LTKRectScale(CGRect rect, CGFloat sx, CGFloat sy)
+{
+	return CGRectMake(rect.origin.x, rect.origin.y, (rect.size.width + sx), (rect.size.height + sy));
+}
+
 LTK_STATIC_INLINE CGFloat LTKRectsGetMaxHeight(const CGRect rects[], size_t count)
 {
 	CGFloat maxHeight = 0.0f;
