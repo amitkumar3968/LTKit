@@ -61,4 +61,9 @@
 	return canSetSessionPreset;
 }
 
+- (BOOL)isNotRunning
+{
+	return ![self isRunning];
+}
+
 @end

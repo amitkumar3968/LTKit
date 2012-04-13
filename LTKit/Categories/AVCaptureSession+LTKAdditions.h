@@ -24,5 +24,6 @@
 - (BOOL)addInputIfPossible:(AVCaptureInput *)input;
 - (BOOL)addOutputIfPossible:(AVCaptureOutput *)output;
 - (BOOL)setSessionPresetIfPossible:(NSString *)sessionPreset;
+- (BOOL)isNotRunning;
 
 @end
