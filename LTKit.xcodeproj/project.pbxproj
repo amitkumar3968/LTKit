@@ -21,6 +21,10 @@
 		EB01F28F151823CB0020B9C3 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC92B7914DCC41200CE6232 /* Accelerate.framework */; };
 		EB01F290151823D70020B9C3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB01F28C15181FFE0020B9C3 /* AVFoundation.framework */; };
 		EB01F292151823FE0020B9C3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB01F291151823FE0020B9C3 /* CoreData.framework */; };
+		EB17066E153E22F5008BEC1D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB005D2014AFE81D009A70C9 /* QuartzCore.framework */; };
+		EB170671153E2306008BEC1D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB01F291151823FE0020B9C3 /* CoreData.framework */; };
+		EB170672153E231E008BEC1D /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC92B7914DCC41200CE6232 /* Accelerate.framework */; };
+		EB170673153E2333008BEC1D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB01F28C15181FFE0020B9C3 /* AVFoundation.framework */; };
 		EB1CDB32141DB07700729A2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CDB31141DB07700729A2D /* Foundation.framework */; };
 		EB1CDB40141DB07800729A2D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CDB3F141DB07800729A2D /* SenTestingKit.framework */; };
 		EB1CDB43141DB07800729A2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CDB31141DB07700729A2D /* Foundation.framework */; };
@@ -263,11 +267,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB40D5631495D644006C24CC /* CoreGraphics.framework in Frameworks */,
-				EB40D5621495D63E006C24CC /* UIKit.framework in Frameworks */,
-				EB1CDB40141DB07800729A2D /* SenTestingKit.framework in Frameworks */,
-				EB1CDB43141DB07800729A2D /* Foundation.framework in Frameworks */,
 				EB1CDB46141DB07800729A2D /* libLTKit.a in Frameworks */,
+				EB170672153E231E008BEC1D /* Accelerate.framework in Frameworks */,
+				EB170673153E2333008BEC1D /* AVFoundation.framework in Frameworks */,
+				EB170671153E2306008BEC1D /* CoreData.framework in Frameworks */,
+				EB40D5631495D644006C24CC /* CoreGraphics.framework in Frameworks */,
+				EB1CDB43141DB07800729A2D /* Foundation.framework in Frameworks */,
+				EB17066E153E22F5008BEC1D /* QuartzCore.framework in Frameworks */,
+				EB1CDB40141DB07800729A2D /* SenTestingKit.framework in Frameworks */,
+				EB40D5621495D63E006C24CC /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -971,6 +979,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_WARN_UNUSED_VALUE = NO;
+				HEADER_SEARCH_PATHS = ../LTKit;
 				INFOPLIST_FILE = "LTKitTests/Supporting Files/LTKitTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -990,6 +999,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_WARN_UNUSED_VALUE = NO;
+				HEADER_SEARCH_PATHS = ../LTKit;
 				INFOPLIST_FILE = "LTKitTests/Supporting Files/LTKitTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",

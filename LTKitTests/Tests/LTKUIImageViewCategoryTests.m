@@ -41,10 +41,15 @@ static CGSize const LTKSampleHighlightedImageSize = {75.0f, 110.0f};
 
 @implementation NSBundle (LTKUIImageViewCategoryTests)
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
+
 + (NSBundle *)mainBundle
 {
 	return [NSBundle bundleForClass:[LTKUIImageViewCategoryTests class]];
 }
+
+#pragma clang diagnostic pop
 
 @end
 
