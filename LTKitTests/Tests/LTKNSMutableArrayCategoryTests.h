@@ -1,5 +1,5 @@
 //
-//	LTKNSArrayCategoryTests.m
+//	LTKNSMutableArrayCategoryTests.h
 //	LTKitTests
 //
 //	Copyright (c) 2012 Michael Potter
@@ -17,22 +17,8 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <LTKit/LTKit.h>
+#import <SenTestingKit/SenTestingKit.h>
 
-#import "LTKNSArrayCategoryTests.h"
-
-@implementation LTKNSArrayCategoryTests
-
-#pragma mark - Unit Tests
-
-- (void)testIsEmptyMethod
-{
-
-}
-
-- (void)testIsNotEmptyMethod
-{
-
-}
+@interface LTKNSMutableArrayCategoryTests : SenTestCase
 
 @end

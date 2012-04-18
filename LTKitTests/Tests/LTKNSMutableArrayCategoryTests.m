@@ -1,5 +1,5 @@
 //
-//	LTKNSArrayCategoryTests.m
+//	LTKNSMutableArrayCategoryTests.m
 //	LTKitTests
 //
 //	Copyright (c) 2012 Michael Potter
@@ -19,20 +19,8 @@
 
 #import <LTKit/LTKit.h>
 
-#import "LTKNSArrayCategoryTests.h"
+#import "LTKNSMutableArrayCategoryTests.h"
 
-@implementation LTKNSArrayCategoryTests
-
-#pragma mark - Unit Tests
-
-- (void)testIsEmptyMethod
-{
-
-}
-
-- (void)testIsNotEmptyMethod
-{
-
-}
+@implementation LTKNSMutableArrayCategoryTests
 
 @end

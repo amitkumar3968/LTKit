@@ -17,22 +17,21 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#import <LTKit/LTKit.h>
+
 #import "LTKUIViewCategoryTests.h"
-#import "UIView+LTKAdditions.h"
 
 #pragma mark Class Extension -
 
 @interface LTKUIViewCategoryTests ()
 
-@property (readwrite, nonatomic, strong) UIView *superview;
-@property (readwrite, nonatomic, strong) UIView *subview;
+@property (readwrite, nonatomic, strong) UIView *testView;
 
 @end
 
 @implementation LTKUIViewCategoryTests
 
-@synthesize superview;
-@synthesize subview;
+@synthesize testView;
 
 #pragma mark - SenTestCase Methods
 
@@ -40,347 +39,339 @@
 {
 	[super setUp];
 
-	self.superview = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 200.0f, 200.0f)];
-	self.subview = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 100.0f, 100.0f)];
-
-	[self.superview addSubview:self.subview];
-}
-
-- (void)tearDown
-{
-	[super tearDown];
+	self.testView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 100.0f, 100.0f)];
 }
 
 #pragma mark - Unit Tests
 
 - (void)testFrameOriginProperty
 {
-	self.subview.frameOrigin = CGPointMake(50.0f, 50.0f);
+	self.testView.frameOrigin = CGPointMake(50.0f, 50.0f);
 
-	STAssertTrue(CGRectEqualToRect(self.subview.frame, CGRectMake(50.0f, 50.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.subview.frame)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.frame, CGRectMake(50.0f, 50.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.testView.frame)], nil);
 }
 
 - (void)testFrameSizeProperty
 {
-	self.subview.frameSize = CGSizeMake(50.0f, 50.0f);
+	self.testView.frameSize = CGSizeMake(50.0f, 50.0f);
 
-	STAssertTrue(CGRectEqualToRect(self.subview.frame, CGRectMake(0.0f, 0.0f, 50.0f, 50.0f)),
-		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.subview.frame)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.frame, CGRectMake(0.0f, 0.0f, 50.0f, 50.0f)),
+		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.testView.frame)], nil);
 
-	self.subview.frameSize = CGSizeMake(-100.0f, -100.0f);
+	self.testView.frameSize = CGSizeMake(-100.0f, -100.0f);
 
-	STAssertTrue(CGRectEqualToRect(self.subview.frame, CGRectMake(-100.0f, -100.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.subview.frame)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.frame, CGRectMake(-100.0f, -100.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.testView.frame)], nil);
 }
 
 - (void)testFrameXProperty
 {
-	self.subview.frameX = 25.0f;
+	self.testView.frameX = 25.0f;
 
-	STAssertTrue(CGRectEqualToRect(self.subview.frame, CGRectMake(25.0f, 0.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.subview.frame)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.frame, CGRectMake(25.0f, 0.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.testView.frame)], nil);
 }
 
 - (void)testFrameYProperty
 {
-	self.subview.frameY = 75.0f;
+	self.testView.frameY = 75.0f;
 
-	STAssertTrue(CGRectEqualToRect(self.subview.frame, CGRectMake(0.0f, 75.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.subview.frame)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.frame, CGRectMake(0.0f, 75.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.testView.frame)], nil);
 }
 
 - (void)testFrameWidthProperty
 {
-	self.subview.frameWidth = 200.0f;
+	self.testView.frameWidth = 200.0f;
 
-	STAssertTrue(CGRectEqualToRect(self.subview.frame, CGRectMake(0.0f, 0.0f, 200.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.subview.frame)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.frame, CGRectMake(0.0f, 0.0f, 200.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.testView.frame)], nil);
 }
 
 - (void)testFrameHeightProperty
 {
-	self.subview.frameHeight = 30.0f;
+	self.testView.frameHeight = 30.0f;
 
-	STAssertTrue(CGRectEqualToRect(self.subview.frame, CGRectMake(0.0f, 0.0f, 100.0f, 30.0f)),
-		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.subview.frame)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.frame, CGRectMake(0.0f, 0.0f, 100.0f, 30.0f)),
+		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.testView.frame)], nil);
 }
 
 - (void)testFrameMinXProperty
 {
-	self.subview.frameMinX = 25.0f;
+	self.testView.frameMinX = 25.0f;
 
-	STAssertTrue(CGRectEqualToRect(self.subview.frame, CGRectMake(25.0f, 0.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.subview.frame)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.frame, CGRectMake(25.0f, 0.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.testView.frame)], nil);
 }
 
 - (void)testFrameMidXProperty
 {
-	self.subview.frameMidX = 100.0f;
+	self.testView.frameMidX = 100.0f;
 
-	STAssertTrue(CGRectEqualToRect(self.subview.frame, CGRectMake(50.0f, 0.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.subview.frame)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.frame, CGRectMake(50.0f, 0.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.testView.frame)], nil);
 }
 
 - (void)testFrameMaxXProperty
 {
-	self.subview.frameMaxX = 200.0f;
+	self.testView.frameMaxX = 200.0f;
 
-	STAssertTrue(CGRectEqualToRect(self.subview.frame, CGRectMake(100.0f, 0.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.subview.frame)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.frame, CGRectMake(100.0f, 0.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.testView.frame)], nil);
 }
 
 - (void)testFrameMinYProperty
 {
-	self.subview.frameMinY = 75.0f;
+	self.testView.frameMinY = 75.0f;
 
-	STAssertTrue(CGRectEqualToRect(self.subview.frame, CGRectMake(0.0f, 75.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.subview.frame)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.frame, CGRectMake(0.0f, 75.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.testView.frame)], nil);
 }
 
 - (void)testFrameMidYProperty
 {
-	self.subview.frameMidY = 100.0f;
+	self.testView.frameMidY = 100.0f;
 
-	STAssertTrue(CGRectEqualToRect(self.subview.frame, CGRectMake(0.0f, 50.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.subview.frame)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.frame, CGRectMake(0.0f, 50.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.testView.frame)], nil);
 }
 
 - (void)testFrameMaxYProperty
 {
-	self.subview.frameMaxY = 200.0f;
+	self.testView.frameMaxY = 200.0f;
 
-	STAssertTrue(CGRectEqualToRect(self.subview.frame, CGRectMake(0.0f, 100.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.subview.frame)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.frame, CGRectMake(0.0f, 100.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.testView.frame)], nil);
 }
 
 - (void)testFrameTopLeftPointProperty
 {
-	self.subview.frameTopLeftPoint = CGPointMake(25.0f, 75.0f);
+	self.testView.frameTopLeftPoint = CGPointMake(25.0f, 75.0f);
 
-	STAssertTrue(CGRectEqualToRect(self.subview.frame, CGRectMake(25.0f, 75.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.subview.frame)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.frame, CGRectMake(25.0f, 75.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.testView.frame)], nil);
 }
 
 - (void)testFrameTopMiddlePointProperty
 {
-	self.subview.frameTopMiddlePoint = CGPointMake(100.0f, 75.0f);
+	self.testView.frameTopMiddlePoint = CGPointMake(100.0f, 75.0f);
 
-	STAssertTrue(CGRectEqualToRect(self.subview.frame, CGRectMake(50.0f, 75.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.subview.frame)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.frame, CGRectMake(50.0f, 75.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.testView.frame)], nil);
 }
 
 - (void)testFrameTopRightPointProperty
 {
-	self.subview.frameTopRightPoint = CGPointMake(200.0f, 75.0f);
+	self.testView.frameTopRightPoint = CGPointMake(200.0f, 75.0f);
 
-	STAssertTrue(CGRectEqualToRect(self.subview.frame, CGRectMake(100.0f, 75.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.subview.frame)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.frame, CGRectMake(100.0f, 75.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.testView.frame)], nil);
 }
 
 - (void)testFrameMiddleRightPointProperty
 {
-	self.subview.frameMiddleRightPoint = CGPointMake(200.0f, 100.0f);
+	self.testView.frameMiddleRightPoint = CGPointMake(200.0f, 100.0f);
 
-	STAssertTrue(CGRectEqualToRect(self.subview.frame, CGRectMake(100.0f, 50.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.subview.frame)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.frame, CGRectMake(100.0f, 50.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.testView.frame)], nil);
 }
 
 - (void)testFrameBottomRightPointProperty
 {
-	self.subview.frameBottomRightPoint = CGPointMake(200.0f, 200.0f);
+	self.testView.frameBottomRightPoint = CGPointMake(200.0f, 200.0f);
 
-	STAssertTrue(CGRectEqualToRect(self.subview.frame, CGRectMake(100.0f, 100.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.subview.frame)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.frame, CGRectMake(100.0f, 100.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.testView.frame)], nil);
 }
 
 - (void)testFrameBottomMiddlePointProperty
 {
-	self.subview.frameBottomMiddlePoint = CGPointMake(100.0f, 200.0f);
+	self.testView.frameBottomMiddlePoint = CGPointMake(100.0f, 200.0f);
 
-	STAssertTrue(CGRectEqualToRect(self.subview.frame, CGRectMake(50.0f, 100.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.subview.frame)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.frame, CGRectMake(50.0f, 100.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.testView.frame)], nil);
 }
 
 - (void)testFrameBottomLeftPointProperty
 {
-	self.subview.frameBottomLeftPoint = CGPointMake(0.0f, 200.0f);
+	self.testView.frameBottomLeftPoint = CGPointMake(0.0f, 200.0f);
 
-	STAssertTrue(CGRectEqualToRect(self.subview.frame, CGRectMake(0.0f, 100.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.subview.frame)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.frame, CGRectMake(0.0f, 100.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.testView.frame)], nil);
 }
 
 - (void)testFrameMiddleLeftPointProperty
 {
-	self.subview.frameMiddleLeftPoint = CGPointMake(0.0f, 100.0f);
+	self.testView.frameMiddleLeftPoint = CGPointMake(0.0f, 100.0f);
 
-	STAssertTrue(CGRectEqualToRect(self.subview.frame, CGRectMake(0.0f, 50.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.subview.frame)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.frame, CGRectMake(0.0f, 50.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual frame is %@.", NSStringFromCGRect(self.testView.frame)], nil);
 }
 
 - (void)testBoundsOriginProperty
 {
-	self.subview.boundsOrigin = CGPointMake(50.0f, 50.0f);
+	self.testView.boundsOrigin = CGPointMake(50.0f, 50.0f);
 
-	STAssertTrue(CGRectEqualToRect(self.subview.bounds, CGRectMake(50.0f, 50.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.subview.bounds)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.bounds, CGRectMake(50.0f, 50.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.testView.bounds)], nil);
 }
 
 - (void)testBoundsSizeProperty
 {
-	self.subview.boundsSize = CGSizeMake(50.0f, 50.0f);
+	self.testView.boundsSize = CGSizeMake(50.0f, 50.0f);
 
-	STAssertTrue(CGRectEqualToRect(self.subview.bounds, CGRectMake(0.0f, 0.0f, 50.0f, 50.0f)),
-		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.subview.bounds)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.bounds, CGRectMake(0.0f, 0.0f, 50.0f, 50.0f)),
+		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.testView.bounds)], nil);
 
-	self.subview.boundsSize = CGSizeMake(-100.0f, -100.0f);
+	self.testView.boundsSize = CGSizeMake(-100.0f, -100.0f);
 
-	STAssertTrue(CGRectEqualToRect(self.subview.bounds, CGRectMake(-100.0f, -100.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.subview.bounds)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.bounds, CGRectMake(-100.0f, -100.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.testView.bounds)], nil);
 }
 
 - (void)testBoundsXProperty
 {
-	self.subview.boundsX = 25.0f;
+	self.testView.boundsX = 25.0f;
 
-	STAssertTrue(CGRectEqualToRect(self.subview.bounds, CGRectMake(25.0f, 0.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.subview.bounds)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.bounds, CGRectMake(25.0f, 0.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.testView.bounds)], nil);
 }
 
 - (void)testBoundsYProperty
 {
-	self.subview.boundsY = 75.0f;
+	self.testView.boundsY = 75.0f;
 
-	STAssertTrue(CGRectEqualToRect(self.subview.bounds, CGRectMake(0.0f, 75.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.subview.bounds)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.bounds, CGRectMake(0.0f, 75.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.testView.bounds)], nil);
 }
 
 - (void)testBoundsWidthProperty
 {
-	self.subview.boundsWidth = 200.0f;
+	self.testView.boundsWidth = 200.0f;
 
-	STAssertTrue(CGRectEqualToRect(self.subview.bounds, CGRectMake(0.0f, 0.0f, 200.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.subview.bounds)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.bounds, CGRectMake(0.0f, 0.0f, 200.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.testView.bounds)], nil);
 }
 
 - (void)testBoundsHeightProperty
 {
-	self.subview.boundsHeight = 30.0f;
+	self.testView.boundsHeight = 30.0f;
 
-	STAssertTrue(CGRectEqualToRect(self.subview.bounds, CGRectMake(0.0f, 0.0f, 100.0f, 30.0f)),
-		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.subview.bounds)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.bounds, CGRectMake(0.0f, 0.0f, 100.0f, 30.0f)),
+		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.testView.bounds)], nil);
 }
 
 - (void)testBoundsMinXProperty
 {
-	self.subview.boundsMinX = 25.0f;
+	self.testView.boundsMinX = 25.0f;
 
-	STAssertTrue(CGRectEqualToRect(self.subview.bounds, CGRectMake(25.0f, 0.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.subview.bounds)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.bounds, CGRectMake(25.0f, 0.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.testView.bounds)], nil);
 }
 
 - (void)testBoundsMidXProperty
 {
-	self.subview.boundsMidX = 100.0f;
+	self.testView.boundsMidX = 100.0f;
 
-	STAssertTrue(CGRectEqualToRect(self.subview.bounds, CGRectMake(50.0f, 0.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.subview.bounds)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.bounds, CGRectMake(50.0f, 0.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.testView.bounds)], nil);
 }
 
 - (void)testBoundsMaxXProperty
 {
-	self.subview.boundsMaxX = 200.0f;
+	self.testView.boundsMaxX = 200.0f;
 
-	STAssertTrue(CGRectEqualToRect(self.subview.bounds, CGRectMake(100.0f, 0.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.subview.bounds)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.bounds, CGRectMake(100.0f, 0.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.testView.bounds)], nil);
 }
 
 - (void)testBoundsMinYProperty
 {
-	self.subview.boundsMinY = 75.0f;
+	self.testView.boundsMinY = 75.0f;
 
-	STAssertTrue(CGRectEqualToRect(self.subview.bounds, CGRectMake(0.0f, 75.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.subview.bounds)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.bounds, CGRectMake(0.0f, 75.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.testView.bounds)], nil);
 }
 
 - (void)testBoundsMidYProperty
 {
-	self.subview.boundsMidY = 100.0f;
+	self.testView.boundsMidY = 100.0f;
 
-	STAssertTrue(CGRectEqualToRect(self.subview.bounds, CGRectMake(0.0f, 50.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.subview.bounds)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.bounds, CGRectMake(0.0f, 50.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.testView.bounds)], nil);
 }
 
 - (void)testBoundsMaxYProperty
 {
-	self.subview.boundsMaxY = 200.0f;
+	self.testView.boundsMaxY = 200.0f;
 
-	STAssertTrue(CGRectEqualToRect(self.subview.bounds, CGRectMake(0.0f, 100.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.subview.bounds)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.bounds, CGRectMake(0.0f, 100.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.testView.bounds)], nil);
 }
 
 - (void)testBoundsTopLeftPointProperty
 {
-	self.subview.boundsTopLeftPoint = CGPointMake(25.0f, 75.0f);
+	self.testView.boundsTopLeftPoint = CGPointMake(25.0f, 75.0f);
 
-	STAssertTrue(CGRectEqualToRect(self.subview.bounds, CGRectMake(25.0f, 75.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.subview.bounds)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.bounds, CGRectMake(25.0f, 75.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.testView.bounds)], nil);
 }
 
 - (void)testBoundsTopMiddlePointProperty
 {
-	self.subview.boundsTopMiddlePoint = CGPointMake(100.0f, 75.0f);
+	self.testView.boundsTopMiddlePoint = CGPointMake(100.0f, 75.0f);
 
-	STAssertTrue(CGRectEqualToRect(self.subview.bounds, CGRectMake(50.0f, 75.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.subview.bounds)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.bounds, CGRectMake(50.0f, 75.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.testView.bounds)], nil);
 }
 
 - (void)testBoundsTopRightPointProperty
 {
-	self.subview.boundsTopRightPoint = CGPointMake(200.0f, 75.0f);
+	self.testView.boundsTopRightPoint = CGPointMake(200.0f, 75.0f);
 
-	STAssertTrue(CGRectEqualToRect(self.subview.bounds, CGRectMake(100.0f, 75.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.subview.bounds)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.bounds, CGRectMake(100.0f, 75.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.testView.bounds)], nil);
 }
 
 - (void)testBoundsMiddleRightPointProperty
 {
-	self.subview.boundsMiddleRightPoint = CGPointMake(200.0f, 100.0f);
+	self.testView.boundsMiddleRightPoint = CGPointMake(200.0f, 100.0f);
 
-	STAssertTrue(CGRectEqualToRect(self.subview.bounds, CGRectMake(100.0f, 50.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.subview.bounds)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.bounds, CGRectMake(100.0f, 50.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.testView.bounds)], nil);
 }
 
 - (void)testBoundsBottomRightPointProperty
 {
-	self.subview.boundsBottomRightPoint = CGPointMake(200.0f, 200.0f);
+	self.testView.boundsBottomRightPoint = CGPointMake(200.0f, 200.0f);
 
-	STAssertTrue(CGRectEqualToRect(self.subview.bounds, CGRectMake(100.0f, 100.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.subview.bounds)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.bounds, CGRectMake(100.0f, 100.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.testView.bounds)], nil);
 }
 
 - (void)testBoundsBottomMiddlePointProperty
 {
-	self.subview.boundsBottomMiddlePoint = CGPointMake(100.0f, 200.0f);
+	self.testView.boundsBottomMiddlePoint = CGPointMake(100.0f, 200.0f);
 
-	STAssertTrue(CGRectEqualToRect(self.subview.bounds, CGRectMake(50.0f, 100.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.subview.bounds)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.bounds, CGRectMake(50.0f, 100.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.testView.bounds)], nil);
 }
 
 - (void)testBoundsBottomLeftPointProperty
 {
-	self.subview.boundsBottomLeftPoint = CGPointMake(0.0f, 200.0f);
+	self.testView.boundsBottomLeftPoint = CGPointMake(0.0f, 200.0f);
 
-	STAssertTrue(CGRectEqualToRect(self.subview.bounds, CGRectMake(0.0f, 100.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.subview.bounds)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.bounds, CGRectMake(0.0f, 100.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.testView.bounds)], nil);
 }
 
 - (void)testBoundsMiddleLeftPointProperty
 {
-	self.subview.boundsMiddleLeftPoint = CGPointMake(0.0f, 100.0f);
+	self.testView.boundsMiddleLeftPoint = CGPointMake(0.0f, 100.0f);
 
-	STAssertTrue(CGRectEqualToRect(self.subview.bounds, CGRectMake(0.0f, 50.0f, 100.0f, 100.0f)),
-		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.subview.bounds)], nil);
+	STAssertTrue(CGRectEqualToRect(self.testView.bounds, CGRectMake(0.0f, 50.0f, 100.0f, 100.0f)),
+		[NSString stringWithFormat:@"The actual bounds are %@.", NSStringFromCGRect(self.testView.bounds)], nil);
 }
 
 - (void)testViewWithFrameMethod

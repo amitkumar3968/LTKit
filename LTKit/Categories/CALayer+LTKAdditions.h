@@ -70,7 +70,7 @@ extern NSTimeInterval const LTKDefaultTransitionDuration;
 + (id)layerWithFrame:(CGRect)frame;
 - (id)initWithFrame:(CGRect)frame;
 
-- (void)setAnchorPointAndPreserveCurrentPosition:(CGPoint)anchorPoint;
+- (void)setAnchorPointAndPreserveCurrentFrame:(CGPoint)anchorPoint;
 
 + (CGFloat)smallestWidthInLayers:(NSArray *)layers;
 + (CGFloat)smallestHeightInLayers:(NSArray *)layers;
@@ -93,6 +93,7 @@ extern NSTimeInterval const LTKDefaultTransitionDuration;
 - (void)addAnimation:(CAAnimation *)animation forKey:(NSString *)key withStopBlock:(void (^)(BOOL finished))stopBlock;
 - (void)addAnimation:(CAAnimation *)animation forKey:(NSString *)key withStartBlock:(void (^)(void))startBlock stopBlock:(void (^)(BOOL finished))stopBlock;
 - (void)replaceAnimationForKey:(NSString *)key withAnimation:(CAAnimation *)animation;
+- (NSArray *)keyedAnimations;
 
 - (UIImage *)renderToImage;
 - (UIImage *)renderToImageWithContextSize:(CGSize)contextSize;

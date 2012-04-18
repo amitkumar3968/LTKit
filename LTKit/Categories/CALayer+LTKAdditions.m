@@ -558,7 +558,7 @@ NSTimeInterval const LTKDefaultTransitionDuration = 0.25;
 	return self;
 }
 
-- (void)setAnchorPointAndPreserveCurrentPosition:(CGPoint)anchorPoint
+- (void)setAnchorPointAndPreserveCurrentFrame:(CGPoint)anchorPoint;
 {
 	CGPoint newPoint = CGPointMake((self.boundsWidth * anchorPoint.x), (self.boundsHeight * anchorPoint.y));
 	CGPoint oldPoint = CGPointMake((self.boundsWidth * self.anchorPoint.x), (self.boundsHeight * self.anchorPoint.y));
@@ -731,6 +731,18 @@ NSTimeInterval const LTKDefaultTransitionDuration = 0.25;
 {
 	[self removeAnimationForKey:key];
 	[self addAnimation:animation forKey:key];
+}
+
+- (NSArray *)keyedAnimations
+{
+	NSMutableArray *keyedAnimations = [NSMutableArray array];
+	
+	for (NSString *animationKey in [self animationKeys])
+	{
+		[keyedAnimations addObject:[self animationForKey:animationKey]];
+	}
+	
+	return [keyedAnimations copy];
 }
 
 - (UIImage *)renderToImage

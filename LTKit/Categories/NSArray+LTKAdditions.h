@@ -21,8 +21,8 @@
 
 @interface NSArray (LTKAdditions)
 
-- (BOOL)isEmpty;
 - (BOOL)isNotEmpty;
+- (BOOL)isEmpty;
 
 - (id)firstObject;
 - (id)objectAtBoundedIndex:(NSUInteger)boundedIndex;

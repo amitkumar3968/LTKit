@@ -17,8 +17,9 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#import <LTKit/LTKit.h>
+
 #import "LTKNSTimerCategoryTests.h"
-#import "NSTimer+LTKAdditions.h"
 
 @implementation LTKNSTimerCategoryTests
 
@@ -27,15 +28,15 @@
 - (void)testScheduledTimerWithTimeIntervalRepeatsBlockMethod
 {
 	NSTimer *nonRepeatingTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:NO
-		block:
-		^{
+		block:^
+		{
 			// Intentionally empty
 		}
 	];
 
 	STAssertNotNil(nonRepeatingTimer, @"Non-repeating timer is nil.");
 	STAssertTrue([nonRepeatingTimer isValid], @"Non-repeating timer is not valid.");
-	STAssertEqualsWithAccuracy([nonRepeatingTimer timeInterval], 0.0, 0.0001, @"Non-repeating timer's time interval does not equal 0.0.");
+	STAssertEquals([nonRepeatingTimer timeInterval], 0.0, @"Non-repeating timer's time interval does not equal 0.0.");
 	STAssertNotNil([nonRepeatingTimer userInfo], @"Non-repeating timer's user info is nil.");
 
 	[nonRepeatingTimer fire];
@@ -43,15 +44,15 @@
 	STAssertFalse([nonRepeatingTimer isValid], @"Non-repeating timer is still valid.");
 
 	NSTimer *repeatingTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 repeats:YES
-		block:
-		^{
+		block:^
+		{
 			// Intentionally empty
 		}
 	];
 
 	STAssertNotNil(repeatingTimer, @"Repeating timer is nil.");
 	STAssertTrue([repeatingTimer isValid], @"Repeating timer is not valid.");
-	STAssertEqualsWithAccuracy([repeatingTimer timeInterval], 0.5, 0.0001, @"Repeating timer's time interval does not equal 0.5.");
+	STAssertEquals([repeatingTimer timeInterval], 0.5, @"Repeating timer's time interval does not equal 0.5.");
 	STAssertNotNil([repeatingTimer userInfo], @"Repeating timer's user info is nil.");
 
 	[repeatingTimer fire];
@@ -62,15 +63,15 @@
 - (void)testTimerWithTimeIntervalRepeatsBlockMethod
 {
 	NSTimer *nonRepeatingTimer = [NSTimer timerWithTimeInterval:1.0 repeats:NO
-		block:
-		^{
+		block:^
+		{
 			// Intentionally empty
 		}
 	];
 
 	STAssertNotNil(nonRepeatingTimer, @"Non-repeating timer is nil.");
 	STAssertTrue([nonRepeatingTimer isValid], @"Non-repeating timer is not valid.");
-	STAssertEqualsWithAccuracy([nonRepeatingTimer timeInterval], 0.0, 0.0001, @"Non-repeating timer's time interval does not equal 0.0.");
+	STAssertEquals([nonRepeatingTimer timeInterval], 0.0, @"Non-repeating timer's time interval does not equal 0.0.");
 	STAssertNotNil([nonRepeatingTimer userInfo], @"Non-repeating timer's user info is nil.");
 
 	[nonRepeatingTimer fire];
@@ -78,15 +79,15 @@
 	STAssertFalse([nonRepeatingTimer isValid], @"Non-repeating timer is still valid.");
 
 	NSTimer *repeatingTimer = [NSTimer timerWithTimeInterval:0.5 repeats:YES
-		block:
-		^{
+		block:^
+		{
 			// Intentionally empty
 		}
 	];
 
 	STAssertNotNil(repeatingTimer, @"Repeating timer is nil.");
 	STAssertTrue([repeatingTimer isValid], @"Repeating timer is not valid.");
-	STAssertEqualsWithAccuracy([repeatingTimer timeInterval], 0.5, 0.0001, @"Repeating timer's time interval does not equal 0.5.");
+	STAssertEquals([repeatingTimer timeInterval], 0.5, @"Repeating timer's time interval does not equal 0.5.");
 	STAssertNotNil([repeatingTimer userInfo], @"Repeating timer's user info is nil.");
 
 	[repeatingTimer fire];
@@ -99,15 +100,15 @@
 	NSDate *nonRepeatingTimerFireDate = [NSDate date];
 
 	NSTimer *nonRepeatingTimer = [NSTimer timerWithFireDate:nonRepeatingTimerFireDate timeInterval:1.0 repeats:NO
-		block:
-		^{
+		block:^
+		{
 			// Intentionally empty
 		}
 	];
 
 	STAssertNotNil(nonRepeatingTimer, @"Non-repeating timer is nil.");
 	STAssertTrue([nonRepeatingTimer isValid], @"Non-repeating timer is not valid.");
-	STAssertEqualsWithAccuracy([nonRepeatingTimer timeInterval], 0.0, 0.0001, @"Non-repeating timer's time interval does not equal 0.0.");
+	STAssertEquals([nonRepeatingTimer timeInterval], 0.0, @"Non-repeating timer's time interval does not equal 0.0.");
 	STAssertNotNil([nonRepeatingTimer userInfo], @"Non-repeating timer's user info is nil.");
 	STAssertEqualObjects([nonRepeatingTimer fireDate], nonRepeatingTimerFireDate, @"Non-repeating timer's fire date is not equal to the input fire date.");
 
@@ -118,15 +119,15 @@
 	NSDate *repeatingTimerFireDate = [NSDate date];
 
 	NSTimer *repeatingTimer = [NSTimer timerWithFireDate:repeatingTimerFireDate timeInterval:0.5 repeats:YES
-		block:
-		^{
+		block:^
+		{
 			// Intentionally empty
 		}
 	];
 
 	STAssertNotNil(repeatingTimer, @"Repeating timer is nil.");
 	STAssertTrue([repeatingTimer isValid], @"Repeating timer is not valid.");
-	STAssertEqualsWithAccuracy([repeatingTimer timeInterval], 0.5, 0.0001, @"Repeating timer's time interval does not equal 0.5.");
+	STAssertEquals([repeatingTimer timeInterval], 0.5, @"Repeating timer's time interval does not equal 0.5.");
 	STAssertNotNil([repeatingTimer userInfo], @"Repeating timer's user info is nil.");
 	STAssertEqualObjects([repeatingTimer fireDate], repeatingTimerFireDate, @"Repeating timer's fire date is not equal to the input fire date.");
 
@@ -148,7 +149,7 @@
 
 	STAssertNotNil(nonRepeatingTimer, @"Non-repeating timer is nil.");
 	STAssertTrue([nonRepeatingTimer isValid], @"Non-repeating timer is not valid.");
-	STAssertEqualsWithAccuracy([nonRepeatingTimer timeInterval], 0.0, 0.0001, @"Non-repeating timer's time interval does not equal 0.0.");
+	STAssertEquals([nonRepeatingTimer timeInterval], 0.0, @"Non-repeating timer's time interval does not equal 0.0.");
 	STAssertNotNil([nonRepeatingTimer userInfo], @"Non-repeating timer's user info is nil.");
 	STAssertEqualObjects([nonRepeatingTimer fireDate], nonRepeatingTimerFireDate, @"Non-repeating timer's fire date is not equal to the input fire date.");
 
@@ -159,15 +160,15 @@
 	NSDate *repeatingTimerFireDate = [NSDate date];
 
 	NSTimer *repeatingTimer = [[NSTimer alloc] initWithFireDate:repeatingTimerFireDate timeInterval:0.5 repeats:YES
-		block:
-		^{
+		block:^
+		{
 			// Intentionally empty
 		}
 	];
 
 	STAssertNotNil(repeatingTimer, @"Repeating timer is nil.");
 	STAssertTrue([repeatingTimer isValid], @"Repeating timer is not valid.");
-	STAssertEqualsWithAccuracy([repeatingTimer timeInterval], 0.5, 0.0001, @"Repeating timer's time interval does not equal 0.5.");
+	STAssertEquals([repeatingTimer timeInterval], 0.5, @"Repeating timer's time interval does not equal 0.5.");
 	STAssertNotNil([repeatingTimer userInfo], @"Repeating timer's user info is nil.");
 	STAssertEqualObjects([repeatingTimer fireDate], repeatingTimerFireDate, @"Repeating timer's fire date is not equal to the input fire date.");
 

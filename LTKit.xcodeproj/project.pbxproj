@@ -25,6 +25,11 @@
 		EB170671153E2306008BEC1D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB01F291151823FE0020B9C3 /* CoreData.framework */; };
 		EB170672153E231E008BEC1D /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC92B7914DCC41200CE6232 /* Accelerate.framework */; };
 		EB170673153E2333008BEC1D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB01F28C15181FFE0020B9C3 /* AVFoundation.framework */; };
+		EB170676153E381C008BEC1D /* LTKNSEntityDescriptionCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB170675153E381C008BEC1D /* LTKNSEntityDescriptionCategoryTests.m */; };
+		EB170679153E382E008BEC1D /* LTKNSFileManagerCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB170678153E382E008BEC1D /* LTKNSFileManagerCategoryTests.m */; };
+		EB17067C153E383C008BEC1D /* LTKNSMutableArrayCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB17067B153E383C008BEC1D /* LTKNSMutableArrayCategoryTests.m */; };
+		EB17067E153E54A6008BEC1D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB17067D153E54A6008BEC1D /* CoreMedia.framework */; };
+		EB170680153E54D9008BEC1D /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB17067F153E54D9008BEC1D /* CoreVideo.framework */; };
 		EB1CDB32141DB07700729A2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CDB31141DB07700729A2D /* Foundation.framework */; };
 		EB1CDB40141DB07800729A2D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CDB3F141DB07800729A2D /* SenTestingKit.framework */; };
 		EB1CDB43141DB07800729A2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CDB31141DB07700729A2D /* Foundation.framework */; };
@@ -144,6 +149,14 @@
 		EB01F28A15181EC30020B9C3 /* LTKit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LTKit-Prefix.pch"; sourceTree = "<group>"; };
 		EB01F28C15181FFE0020B9C3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		EB01F291151823FE0020B9C3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		EB170674153E381C008BEC1D /* LTKNSEntityDescriptionCategoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKNSEntityDescriptionCategoryTests.h; sourceTree = "<group>"; };
+		EB170675153E381C008BEC1D /* LTKNSEntityDescriptionCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKNSEntityDescriptionCategoryTests.m; sourceTree = "<group>"; };
+		EB170677153E382E008BEC1D /* LTKNSFileManagerCategoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKNSFileManagerCategoryTests.h; sourceTree = "<group>"; };
+		EB170678153E382E008BEC1D /* LTKNSFileManagerCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKNSFileManagerCategoryTests.m; sourceTree = "<group>"; };
+		EB17067A153E383C008BEC1D /* LTKNSMutableArrayCategoryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKNSMutableArrayCategoryTests.h; sourceTree = "<group>"; };
+		EB17067B153E383C008BEC1D /* LTKNSMutableArrayCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKNSMutableArrayCategoryTests.m; sourceTree = "<group>"; };
+		EB17067D153E54A6008BEC1D /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		EB17067F153E54D9008BEC1D /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		EB1CDB2E141DB07700729A2D /* libLTKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLTKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB1CDB31141DB07700729A2D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EB1CDB3E141DB07800729A2D /* LTKitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LTKitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -272,6 +285,8 @@
 				EB170673153E2333008BEC1D /* AVFoundation.framework in Frameworks */,
 				EB170671153E2306008BEC1D /* CoreData.framework in Frameworks */,
 				EB40D5631495D644006C24CC /* CoreGraphics.framework in Frameworks */,
+				EB17067E153E54A6008BEC1D /* CoreMedia.framework in Frameworks */,
+				EB170680153E54D9008BEC1D /* CoreVideo.framework in Frameworks */,
 				EB1CDB43141DB07800729A2D /* Foundation.framework in Frameworks */,
 				EB17066E153E22F5008BEC1D /* QuartzCore.framework in Frameworks */,
 				EB1CDB40141DB07800729A2D /* SenTestingKit.framework in Frameworks */,
@@ -306,6 +321,12 @@
 				EB40BB8014B75332006DD25D /* LTKCALayerCategoryTests.m */,
 				EBACB16514C77550009F9D26 /* LTKNSArrayCategoryTests.h */,
 				EBACB16614C77551009F9D26 /* LTKNSArrayCategoryTests.m */,
+				EB170674153E381C008BEC1D /* LTKNSEntityDescriptionCategoryTests.h */,
+				EB170675153E381C008BEC1D /* LTKNSEntityDescriptionCategoryTests.m */,
+				EB170677153E382E008BEC1D /* LTKNSFileManagerCategoryTests.h */,
+				EB170678153E382E008BEC1D /* LTKNSFileManagerCategoryTests.m */,
+				EB17067A153E383C008BEC1D /* LTKNSMutableArrayCategoryTests.h */,
+				EB17067B153E383C008BEC1D /* LTKNSMutableArrayCategoryTests.m */,
 				EB40BB7114B73457006DD25D /* LTKNSObjectCategoryTests.h */,
 				EB40BB7214B73457006DD25D /* LTKNSObjectCategoryTests.m */,
 				EBACB16C14C77992009F9D26 /* LTKNSStringCategoryTests.h */,
@@ -400,6 +421,8 @@
 				EB01F28C15181FFE0020B9C3 /* AVFoundation.framework */,
 				EB01F291151823FE0020B9C3 /* CoreData.framework */,
 				EB1CDB60141DB46F00729A2D /* CoreGraphics.framework */,
+				EB17067D153E54A6008BEC1D /* CoreMedia.framework */,
+				EB17067F153E54D9008BEC1D /* CoreVideo.framework */,
 				EB1CDB31141DB07700729A2D /* Foundation.framework */,
 				EB005D2014AFE81D009A70C9 /* QuartzCore.framework */,
 				EB1CDB3F141DB07800729A2D /* SenTestingKit.framework */,
@@ -804,6 +827,9 @@
 				EB84FC7714CF5C340086C5A4 /* LTKUIImageCategoryTests.m in Sources */,
 				EB337BD414F7298200564949 /* LTKUINavigationBarCategoryTests.m in Sources */,
 				EB5C4C6D14F8875D00D37841 /* LTKUITableViewCategoryTests.m in Sources */,
+				EB170676153E381C008BEC1D /* LTKNSEntityDescriptionCategoryTests.m in Sources */,
+				EB170679153E382E008BEC1D /* LTKNSFileManagerCategoryTests.m in Sources */,
+				EB17067C153E383C008BEC1D /* LTKNSMutableArrayCategoryTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

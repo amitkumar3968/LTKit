@@ -26,19 +26,19 @@
 
 #pragma mark - NSArray (LTKAdditions)
 
-- (BOOL)isEmpty
-{
-	return ![self isNotEmpty];
-}
-
 - (BOOL)isNotEmpty
 {
 	return ([self count] > 0);
 }
 
+- (BOOL)isEmpty
+{
+	return ![self isNotEmpty];
+}
+
 - (id)firstObject
 {
-	return [self objectAtIndex:0];
+	return ([self isNotEmpty] ? [self objectAtIndex:0] : nil);
 }
 
 - (id)objectAtBoundedIndex:(NSUInteger)boundedIndex

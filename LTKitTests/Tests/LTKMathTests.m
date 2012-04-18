@@ -32,12 +32,12 @@
 	STAssertEquals(LTK_CLAMP(-50, -49, 0), -49, @"Clamping -50 between -49 and 0 didn't result in -49.");
 	STAssertEquals(LTK_CLAMP(50, 50, 100), 50, @"Clamping 50 between 50 and 100 didn't result in 50.");
 	STAssertEquals(LTK_CLAMP(100, 50, 100), 100, @"Clamping 100 between 50 and 100 didn't result in 100.");
-	STAssertEqualsWithAccuracy(LTK_CLAMP(50.25f, 0.25f, 100.25f), 50.25f, 0.01f, @"Clamping 50.25f between 0.25f and 100.25f didn't result in 50.25f.");
-	STAssertEqualsWithAccuracy(LTK_CLAMP(50.25f, 50.50f, 100.25f), 50.50f, 0.01f, @"Clamping 50.25f between 50.50f and 100.25f didn't result in 50.50f.");
-	STAssertEqualsWithAccuracy(LTK_CLAMP(-50.25f, -100.25f, 0.25f), -50.25f, 0.01f, @"Clamping -50.25f between -100.25f and 0.25f didn't result in -50.25f.");
-	STAssertEqualsWithAccuracy(LTK_CLAMP(-50.25f, -50.00f, 0.25f), -50.00f, 0.01f, @"Clamping -50.25f between -50.00f and 0.25f didn't result in -50.00f.");
-	STAssertEqualsWithAccuracy(LTK_CLAMP(50.25f, 50.25f, 100.25f), 50.25f, 0.01f, @"Clamping 50.25f between 50.25f and 100.25f didn't result in 50.25f.");
-	STAssertEqualsWithAccuracy(LTK_CLAMP(100.25f, 50.25f, 100.25f), 100.25f, 0.01f, @"Clamping 100.25f between 50.25f and 100.25f didn't result in 100.25f.");
+	STAssertEquals(LTK_CLAMP(50.25f, 0.25f, 100.25f), 50.25f, @"Clamping 50.25f between 0.25f and 100.25f didn't result in 50.25f.");
+	STAssertEquals(LTK_CLAMP(50.25f, 50.50f, 100.25f), 50.50f, @"Clamping 50.25f between 50.50f and 100.25f didn't result in 50.50f.");
+	STAssertEquals(LTK_CLAMP(-50.25f, -100.25f, 0.25f), -50.25f, @"Clamping -50.25f between -100.25f and 0.25f didn't result in -50.25f.");
+	STAssertEquals(LTK_CLAMP(-50.25f, -50.00f, 0.25f), -50.00f, @"Clamping -50.25f between -50.00f and 0.25f didn't result in -50.00f.");
+	STAssertEquals(LTK_CLAMP(50.25f, 50.25f, 100.25f), 50.25f, @"Clamping 50.25f between 50.25f and 100.25f didn't result in 50.25f.");
+	STAssertEquals(LTK_CLAMP(100.25f, 50.25f, 100.25f), 100.25f, @"Clamping 100.25f between 50.25f and 100.25f didn't result in 100.25f.");
 	STAssertThrows(LTK_CLAMP(50, 100, 0), @"Clamping 50 between 100 and 0 didn't throw an exception.");
 	STAssertThrows(LTK_CLAMP(-50, 0, -100), @"Clamping -50 between 0 and -100 didn't throw an exception.");
 	STAssertThrows(LTK_CLAMP(50.25f, 100.25f, 0.25f), @"Clamping 50.25f between 100.25f and 0.25f didn't throw an exception.");
