@@ -1,14 +1,37 @@
 //
-//  LTKTesting.h
-//  LTKit
+//	LTKTesting.h
+//	LTKit
 //
-//  Created by Michael Shannon Potter on 4/19/12.
-//  Copyright (c) 2012 LucasTizma. All rights reserved.
+//	Copyright (c) 2012 Michael Potter
+//	http://lucas.tiz.ma
+//	lucas@tiz.ma
+//
+//	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal
+//	in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//	copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+//
+//	The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+//
+//	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+//	FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+//	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#ifndef LTKit_LTKTesting_h
-#define LTKit_LTKTesting_h
+#import <LTKit/LTKit.h>
 
+LTK_STATIC_INLINE BOOL LTKPerformBlockOnRunLoopWhileWaiting(NSTimeInterval waitTime, NSRunLoop *runLoop, BOOL (^block)(void))
+{
+	NSTimeInterval startTime = [[NSProcessInfo processInfo] systemUptime];
 
+	while(!block() && (([[NSProcessInfo processInfo] systemUptime] - startTime) <= waitTime))
+	{
+		[runLoop runMode:NSDefaultRunLoopMode beforeDate:[NSDate date]];
+	}
 
-#endif
+	return block();
+}
+
+LTK_STATIC_INLINE BOOL LTKPerformBlockOnCurrentRunLoopWhileWaiting(NSTimeInterval waitTime, BOOL (^block)(void))
+{
+	return LTKPerformBlockOnRunLoopWhileWaiting(waitTime, [NSRunLoop currentRunLoop], block);
+}

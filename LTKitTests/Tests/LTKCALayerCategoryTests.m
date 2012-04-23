@@ -525,8 +525,7 @@
 
 - (void)testPresentationCALayerMethod
 {
-	// This method does not seem to be trivially testable. CALayers that exist without a valid main run loop do not appear to have presentation layers.
-	// TODO (LucasTizma - 04/18/2012): Investigate simpler async handler for unit tests.
+	// This method does not seem to be easily testable. CALayers created in a unit test target do not appear to have presentation layers.
 }
 
 - (void)testModelCALayerMethod
@@ -1203,57 +1202,133 @@
 
 - (void)testAddAnimationMethod
 {
-	CFTimeInterval basicAnimationBeginTime = (CACurrentMediaTime() + 0.01);
-	CFTimeInterval basicAnimationDuration = 0.5;
-	NSString *basicAnimationTimingFunctionName = kCAMediaTimingFunctionEaseInEaseOut;
-	id basicAnimationFromValue = [NSNumber numberWithFloat:1.0f];
-	id basicAnimationToValue = [NSNumber numberWithFloat:0.0f];
-	id basicAnimationDelegate = self;
-
 	CABasicAnimation *basicAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
-	basicAnimation.delegate = basicAnimationDelegate;
-	basicAnimation.beginTime = basicAnimationBeginTime;
-	basicAnimation.duration = basicAnimationDuration;
-	basicAnimation.timingFunction = [CAMediaTimingFunction functionWithName:basicAnimationTimingFunctionName];
-	basicAnimation.fromValue = basicAnimationFromValue;
-	basicAnimation.toValue = basicAnimationToValue;
+	basicAnimation.duration = 0.2;
+	basicAnimation.toValue = [NSNumber numberWithFloat:0.0f];
 
 	[self.testLayer addAnimation:basicAnimation];
+
+	STAssertEquals([[self.testLayer keyedAnimations] count], 0u, @"The number of keyed animations is not 0.");
 }
 
 - (void)testAddAnimationForKeyWithStopBlockMethod
 {
+	static NSString *const SCBasicAnimationKey = @"SCBasicAnimationKey";
+	__block volatile BOOL stopBlockFinished = NO;
 
+	CABasicAnimation *basicAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+	basicAnimation.duration = 0.2;
+	basicAnimation.toValue = [NSNumber numberWithFloat:0.0f];
+
+	[self.testLayer addAnimation:basicAnimation forKey:SCBasicAnimationKey
+		withStopBlock:^(BOOL animationFinished)
+		{
+			stopBlockFinished = YES;
+		}
+	];
+
+	STAssertNotNil([self.testLayer animationForKey:SCBasicAnimationKey], @"No animation exists with key SCBasicAnimationKey.");
+	STAssertTrue(LTKPerformBlockOnCurrentRunLoopWhileWaiting(2, ^BOOL { return stopBlockFinished; }), @"Animation stop block was never excuted.");
 }
 
 - (void)testAddAnimationForKeyWithStartBlockStopBlockMethod
 {
+	static NSString *const SCBasicAnimationKey = @"SCBasicAnimationKey";
+	__block volatile BOOL startBlockFinished = NO;
+	__block volatile BOOL stopBlockFinished = NO;
 
+	CABasicAnimation *basicAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+	basicAnimation.duration = 0.2;
+	basicAnimation.toValue = [NSNumber numberWithFloat:0.0f];
+
+	[self.testLayer addAnimation:basicAnimation forKey:SCBasicAnimationKey
+		withStartBlock:^
+		{
+			startBlockFinished = YES;
+		}
+		stopBlock:^(BOOL animationFinished)
+		{
+			stopBlockFinished = YES;
+		}
+	];
+
+	STAssertNotNil([self.testLayer animationForKey:SCBasicAnimationKey], @"No animation exists with key SCBasicAnimationKey.");
+	STAssertTrue(LTKPerformBlockOnCurrentRunLoopWhileWaiting(2, ^BOOL { return startBlockFinished; }), @"Animation start block was never excuted.");
+	STAssertTrue(LTKPerformBlockOnCurrentRunLoopWhileWaiting(2, ^BOOL { return stopBlockFinished; }), @"Animation stop block was never excuted.");
 }
 
-- (void)testkeyedAnimationsMethod
+- (void)testKeyedAnimationsMethod
 {
+	static NSString *const SCBasicAnimation2Key = @"SCBasicAnimation2Key";
 
+	CABasicAnimation *basicAnimation1 = [CABasicAnimation animationWithKeyPath:@"opacity"];
+	basicAnimation1.duration = 0.2;
+	basicAnimation1.toValue = [NSNumber numberWithFloat:0.0f];
+
+	CABasicAnimation *basicAnimation2 = [CABasicAnimation animationWithKeyPath:@"opacity"];
+	basicAnimation2.duration = 0.2;
+	basicAnimation2.toValue = [NSNumber numberWithFloat:0.0f];
+
+	[self.testLayer addAnimation:basicAnimation1];
+
+	STAssertEquals([[self.testLayer keyedAnimations] count], 0u, @"The number of keyed animations is not 0.");
+
+	[self.testLayer addAnimation:basicAnimation2 forKey:SCBasicAnimation2Key];
+
+	STAssertEquals([[self.testLayer keyedAnimations] count], 1u, @"The number of keyed animations is not 1.");
 }
 
 - (void)testRenderToImageMethod
 {
+	UIImage *renderedLayerImage1 = [self.testLayer renderToImage];
+	UIImage *renderedLayerImage2 = [[CALayer layer] renderToImage];
 
+	STAssertNotNil(renderedLayerImage1, @"Rendered layer image is nil.");
+	STAssertNil(renderedLayerImage2, @"Rendered layer image is not nil.");
+	STAssertTrue(CGSizeEqualToSize(renderedLayerImage1.size, self.testLayer.frameSize),
+		@"The size of the rendered image does not equal the size of the layer.");
 }
 
 - (void)testRenderToImageWithContextSizeMethod
 {
+	UIImage *renderedLayerImage1 = [self.testLayer renderToImageWithContextSize:CGSizeMake(-25.0f, -25.0f)];
+	UIImage *renderedLayerImage2 = [self.testLayer renderToImageWithContextSize:LTKSizeScaleFactor(self.testLayer.frameSize, 0.5f, 0.5f)];
+	UIImage *renderedLayerImage3 = [self.testLayer renderToImageWithContextSize:CGSizeZero];
 
+	STAssertNil(renderedLayerImage1, @"Rendered layer image is not nil.");
+	STAssertNotNil(renderedLayerImage2, @"Rendered layer image is nil.");
+	STAssertNotNil(renderedLayerImage3, @"Rendered layer image is nil.");
+	STAssertTrue(CGSizeEqualToSize(renderedLayerImage2.size, LTKSizeScaleFactor(self.testLayer.frameSize, 0.5f, 0.5f)),
+		@"The size of the rendered image does not equal half the size of the layer.");
+	STAssertTrue(CGSizeEqualToSize(renderedLayerImage3.size, self.testLayer.frameSize),
+		@"The size of the rendered image does not equal the size of the layer.");
 }
 
 - (void)testRenderToImageWithContextSizeContextTransformMethod
 {
-
+	// A pixel-level test would be required to determine how the context was transformed.
+	// TODO: Add a category on UIImage to return pixel data.
 }
 
 - (void)testEnableDebugBordersRecursivelyMethod
 {
+	CALayer *sublayer1 = [CALayer layer];
+	CALayer *sublayer2 = [CALayer layer];
 
+	[self.testLayer addSublayer:sublayer1];
+	[self.testLayer addSublayer:sublayer2];
+
+	[self.testLayer enableDebugBordersRecursively:NO];
+
+	STAssertEquals(self.testLayer.borderWidth, 1.0f, @"The border width of the test layer is not 1.0f.");
+	STAssertEquals(sublayer1.borderWidth, 0.0f, @"The border width of sublayer 1 is not 0.0f.");
+	STAssertEquals(sublayer2.borderWidth, 0.0f, @"The border width of sublayer 2 is not 0.0f.");
+
+	[self.testLayer enableDebugBordersRecursively:YES];
+
+	STAssertEquals(self.testLayer.borderWidth, 1.0f, @"The border width of the test layer is not 1.0f.");
+	STAssertEquals(sublayer1.borderWidth, 1.0f, @"The border width of sublayer 1 is not 1.0f.");
+	STAssertEquals(sublayer2.borderWidth, 1.0f, @"The border width of sublayer 2 is not 1.0f.");
 }
 
 @end

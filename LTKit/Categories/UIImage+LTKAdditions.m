@@ -27,10 +27,9 @@
 
 - (UIImage *)croppedImageWithRect:(CGRect)rect
 {
-	CGRect drawingRect = CGRectMake((rect.origin.x * self.scale), (rect.origin.y * self.scale), (rect.size.width * self.scale),
-		(rect.size.height * self.scale));
+	CGRect croppingRect = LTKRectScaleFactor(rect, self.scale, self.scale);
 
-	CGImageRef croppedImageRef = CGImageCreateWithImageInRect(self.CGImage, drawingRect);
+	CGImageRef croppedImageRef = CGImageCreateWithImageInRect(self.CGImage, croppingRect);
 	UIImage *croppedImage = [UIImage imageWithCGImage:croppedImageRef scale:self.scale orientation:self.imageOrientation];
 
 	CGImageRelease(croppedImageRef);

@@ -23,4 +23,33 @@
 
 @implementation LTKNSMutableArrayCategoryTests
 
+#pragma mark - Unit Tests
+
+- (void)testReverseMethod
+{
+	NSString *firstObjectAdded = @"A";
+	NSString *secondObjectAdded = @"B";
+	NSString *thirdObjectAdded = @"C";
+
+	NSMutableArray *testObjects = [NSMutableArray arrayWithObjects:firstObjectAdded, secondObjectAdded, thirdObjectAdded, nil];
+
+	[testObjects reverse];
+
+	STAssertEqualObjects([testObjects firstObject], thirdObjectAdded,
+		@"The first object of the reversed array is not equal to the third object added to the original array.");
+	STAssertEqualObjects([testObjects objectAtIndex:1], secondObjectAdded,
+		@"The second object of the reversed array is not equal to the second object added to the original array.");
+	STAssertEqualObjects([testObjects lastObject], firstObjectAdded,
+		@"The third object of the reversed array is not equal to the first object added to the original array.");
+
+	[testObjects reverse];
+
+	STAssertEqualObjects([testObjects firstObject], firstObjectAdded,
+		@"The first object of the twice-reversed array is not equal to the first object added to the original array.");
+	STAssertEqualObjects([testObjects objectAtIndex:1], secondObjectAdded,
+		@"The second object of the twice-reversed array is not equal to the second object added to the original array.");
+	STAssertEqualObjects([testObjects lastObject], thirdObjectAdded,
+		@"The third object of the twice-reversed array is not equal to the third object added to the original array.");
+}
+
 @end

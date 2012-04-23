@@ -736,12 +736,12 @@ NSTimeInterval const LTKDefaultTransitionDuration = 0.25;
 - (NSArray *)keyedAnimations
 {
 	NSMutableArray *keyedAnimations = [NSMutableArray array];
-	
+
 	for (NSString *animationKey in [self animationKeys])
 	{
 		[keyedAnimations addObject:[self animationForKey:animationKey]];
 	}
-	
+
 	return [keyedAnimations copy];
 }
 

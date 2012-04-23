@@ -27,12 +27,12 @@
 
 - (BOOL)isEmpty
 {
-	return ![self isNotEmpty];
+	return [self isEqualToString:@""];
 }
 
 - (BOOL)isNotEmpty
 {
-	return [self isEqualToString:@""];
+	return ![self isEmpty];
 }
 
 - (BOOL)isNotEqualToString:(NSString *)string
@@ -53,7 +53,6 @@
 	{
 		isContainedInStrings = [self isEqualToString:string];
 		string = va_arg(variableArguments, NSString *);
-
 	}
 
 	va_end(variableArguments);

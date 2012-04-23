@@ -23,4 +23,6 @@
 
 @implementation LTKNSEntityDescriptionCategoryTests
 
+#pragma mark - Unit Tests
+
 @end

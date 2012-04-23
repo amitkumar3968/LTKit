@@ -19,10 +19,10 @@
 
 #import <LTKit/LTKit.h>
 
-#define LTK_CLAMP(VALUE, MIN, MAX)			({																								\
+#define LTK_CLAMP(VALUE, MIN, MAX)			({																							\
 												__typeof__(VALUE) LTK__value = (VALUE);													\
-												__typeof__(MIN) LTK__min = (MIN);															\
-												__typeof__(MAX) LTK__max = (MAX);															\
+												__typeof__(MIN) LTK__min = (MIN);														\
+												__typeof__(MAX) LTK__max = (MAX);														\
 												NSCAssert((LTK__min < LTK__max), @"LTK_CLAMP: MIN must be less than MAX.");				\
 												(LTK__min > LTK__value ? LTK__min : (LTK__value < LTK__max ? LTK__value : LTK__max));	\
 											})
@@ -31,9 +31,9 @@
 
 #define LTK_VALUE_IS_NEGATIVE(VALUE)		((VALUE) < 0)
 
-#define LTK_VALUE_IS_NONNEGATIVE(VALUE)	((VALUE) >= 0)
+#define LTK_VALUE_IS_NONNEGATIVE(VALUE)		((VALUE) >= 0)
 
-#define LTK_VALUE_IS_NONPOSITIVE(VALUE)	((VALUE) <= 0)
+#define LTK_VALUE_IS_NONPOSITIVE(VALUE)		((VALUE) <= 0)
 
 #define LTK_VALUE_IS_EVEN(VALUE) 			((VALUE) % 2 == 0)
 

@@ -26,14 +26,14 @@
 
 #pragma mark - NSArray (LTKAdditions)
 
-- (BOOL)isNotEmpty
-{
-	return ([self count] > 0);
-}
-
 - (BOOL)isEmpty
 {
-	return ![self isNotEmpty];
+	return ([self count] == 0);
+}
+
+- (BOOL)isNotEmpty
+{
+	return ![self isEmpty];
 }
 
 - (id)firstObject
@@ -44,16 +44,6 @@
 - (id)objectAtBoundedIndex:(NSUInteger)boundedIndex
 {
 	return [self objectAtIndex:LTK_CLAMP(boundedIndex, 0u, ([self count] - 1))];
-}
-
-- (NSArray *)filteredArrayUsingPredicate:(NSPredicate *)predicate andSortedUsingDescriptor:(NSSortDescriptor *)sortDescriptor
-{
-	return [self filteredArrayUsingPredicate:predicate andSortedUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
-}
-
-- (NSArray *)filteredArrayUsingPredicate:(NSPredicate *)predicate andSortedUsingDescriptors:(NSArray *)sortDescriptors
-{
-	return [[self filteredArrayUsingPredicate:predicate] sortedArrayUsingDescriptors:sortDescriptors];
 }
 
 - (NSArray *)sortedArrayUsingDescriptor:(NSSortDescriptor *)sortDescriptor

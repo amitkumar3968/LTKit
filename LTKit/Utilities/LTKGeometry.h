@@ -22,6 +22,11 @@
 LTK_EXTERN NSUInteger const LTKViewAutoresizingFlexibleMargins;
 LTK_EXTERN NSUInteger const LTKViewAutoresizingFlexibleSize;
 
+LTK_STATIC_INLINE CGRect LTKRectMakeWithPointSize(CGPoint point, CGSize size)
+{
+	return CGRectMake(point.x, point.y, size.width, size.height);
+}
+
 LTK_STATIC_INLINE CGPoint LTKPointApplyOffset(CGPoint point, UIOffset offset)
 {
 	point.x += offset.horizontal;
@@ -50,9 +55,24 @@ LTK_STATIC_INLINE CGFloat LTKSizeGetArea(CGSize size)
 	return (size.width * size.height);
 }
 
-LTK_STATIC_INLINE CGRect LTKRectScale(CGRect rect, CGFloat sx, CGFloat sy)
+LTK_STATIC_INLINE CGSize LTKSizeScale(CGSize size, CGFloat scaleX, CGFloat scaleY)
 {
-	return CGRectMake(rect.origin.x, rect.origin.y, (rect.size.width + sx), (rect.size.height + sy));
+	return CGSizeMake(size.width + scaleX, size.height + scaleY);
+}
+
+LTK_STATIC_INLINE CGSize LTKSizeScaleFactor(CGSize size, CGFloat scaleFactorX, CGFloat scaleFactorY)
+{
+	return CGSizeMake(size.width * scaleFactorX, size.height * scaleFactorY);
+}
+
+LTK_STATIC_INLINE CGRect LTKRectScale(CGRect rect, CGFloat scaleX, CGFloat scaleY)
+{
+	return LTKRectMakeWithPointSize(CGPointMake(rect.origin.x, rect.origin.y), LTKSizeScale(rect.size, scaleX, scaleY));
+}
+
+LTK_STATIC_INLINE CGRect LTKRectScaleFactor(CGRect rect, CGFloat scaleFactorX, CGFloat scaleFactorY)
+{
+	return LTKRectMakeWithPointSize(CGPointMake(rect.origin.x, rect.origin.y), LTKSizeScaleFactor(rect.size, scaleFactorX, scaleFactorY));
 }
 
 LTK_STATIC_INLINE CGFloat LTKRectsGetMaxHeight(const CGRect rects[], size_t count)

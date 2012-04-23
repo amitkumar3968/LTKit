@@ -25,7 +25,72 @@
 
 #pragma mark - Unit Tests
 
-//- (BOOL)isEmpty;
-//- (BOOL)isNotEmpty;
+- (void)testIsNotEmptyMethod
+{
+	NSString *string1 = nil;
+	NSString *string2 = @"string";
+	NSString *string3 = @"";
+	NSString *string4 = [string3 copy];
+
+	STAssertFalse([string1 isNotEmpty], @"A message sent to nil did not return nil.");
+	STAssertTrue([string2 isNotEmpty], @"String 2 is empty.");
+	STAssertFalse([string3 isNotEmpty], @"String 3 is not empty.");
+	STAssertFalse([string4 isNotEmpty], @"String 4 is not empty.");
+}
+
+- (void)testIsEmptyMethod
+{
+	NSString *string1 = nil;
+	NSString *string2 = @"string";
+	NSString *string3 = @"";
+	NSString *string4 = [string3 copy];
+
+	STAssertFalse([string1 isEmpty], @"A message sent to nil did not return nil.");
+	STAssertFalse([string2 isEmpty], @"String 2 is not empty.");
+	STAssertTrue([string3 isEmpty], @"String 3 is empty.");
+	STAssertTrue([string4 isEmpty], @"String 4 is empty.");
+}
+
+- (void)testIsNotEqualToStringMethod
+{
+	NSString *string1 = @"string1";
+	NSString *string2 = string1;
+	NSString *string3 = [string1 copy];
+	NSString *string4 = @"string1";
+	NSString *string5 = @"string5";
+
+	STAssertFalse([string1 isNotEqualToString:string2], @"String 1 and string 2 are not equal.");
+	STAssertFalse([string1 isNotEqualToString:string3], @"String 1 and string 3 are not equal.");
+	STAssertFalse([string1 isNotEqualToString:string4], @"String 1 and string 4 are not equal.");
+	STAssertTrue([string1 isNotEqualToString:string5], @"String 1 and string 5 are equal.");
+	STAssertFalse([string2 isNotEqualToString:string3], @"String 2 and string 3 are not equal.");
+	STAssertFalse([string2 isNotEqualToString:string4], @"String 2 and string 4 are not equal.");
+	STAssertTrue([string2 isNotEqualToString:string5], @"String 2 and string 5 are equal.");
+	STAssertFalse([string3 isNotEqualToString:string4], @"String 3 and string 4 are not equal.");
+	STAssertTrue([string3 isNotEqualToString:string5], @"String 3 and string 5 are equal.");
+	STAssertTrue([string4 isNotEqualToString:string5], @"String 4 and string 5 are equal.");
+}
+
+- (void)testIsContainedInStringsMethod
+{
+	NSString *string1 = @"string1";
+	NSString *string2 = [string1 copy];
+	NSString *string3 = @"string3";
+	NSString *string4 = @"string4";
+
+	STAssertTrue(([string1 isContainedInStrings:string1, string2, string3, string4, nil]), @"String 1 is not contained in the sequence of strings.");
+	STAssertTrue(([string2 isContainedInStrings:string1, string2, string3, string4, nil]), @"String 2 is not contained in the sequence of strings.");
+	STAssertTrue(([string3 isContainedInStrings:string1, string2, string3, string4, nil]), @"String 3 is not contained in the sequence of strings.");
+	STAssertTrue(([string4 isContainedInStrings:string1, string2, string3, string4, nil]), @"String 4 is not contained in the sequence of strings.");
+	STAssertTrue(([@"string1" isContainedInStrings:string1, string2, string3, string4, nil]), @"String 1 is not contained in the sequence of strings.");
+	STAssertFalse(([@"string2" isContainedInStrings:string1, string2, string3, string4, nil]), @"String 2 is contained in the sequence of strings.");
+	STAssertTrue(([@"string3" isContainedInStrings:string1, string2, string3, string4, nil]), @"String 3 is not contained in the sequence of strings.");
+	STAssertTrue(([@"string4" isContainedInStrings:string1, string2, string3, string4, nil]), @"String 4 is not contained in the sequence of strings.");
+	STAssertTrue(([string1 isContainedInStrings:@"string1", string2, string3, string4, nil]), @"String 1 is not contained in the sequence of strings.");
+	STAssertTrue(([string2 isContainedInStrings:@"string1", string2, string3, string4, nil]), @"String 2 is not contained in the sequence of strings.");
+	STAssertTrue(([string3 isContainedInStrings:string1, string2, @"string3", string4, nil]), @"String 3 is not contained in the sequence of strings.");
+	STAssertTrue(([string4 isContainedInStrings:string1, string2, string3, @"string4", nil]), @"String 4 is not contained in the sequence of strings.");
+	STAssertFalse(([@"string5" isContainedInStrings:string1, string2, string3, string4, nil]), @"String 5 is contained in the sequence of strings.");
+}
 
 @end
