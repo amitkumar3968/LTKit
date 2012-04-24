@@ -95,9 +95,9 @@
 
 + (UIColor *)randomColor
 {
-	CGFloat randomPercentageRed = ((CGFloat)arc4random_uniform(UINT32_MAX));
-	CGFloat randomPercentageGreen = ((CGFloat)arc4random_uniform(UINT32_MAX));
-	CGFloat randomPercentageBlue = ((CGFloat)arc4random_uniform(UINT32_MAX));
+	CGFloat randomPercentageRed = ((CGFloat)arc4random_uniform(UINT32_MAX) / UINT32_MAX);
+	CGFloat randomPercentageGreen = ((CGFloat)arc4random_uniform(UINT32_MAX) / UINT32_MAX);
+	CGFloat randomPercentageBlue = ((CGFloat)arc4random_uniform(UINT32_MAX) / UINT32_MAX);
 
 	return [UIColor colorWithRed:randomPercentageRed green:randomPercentageGreen blue:randomPercentageBlue];
 }
