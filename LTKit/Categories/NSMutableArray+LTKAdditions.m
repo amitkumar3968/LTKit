@@ -19,6 +19,8 @@
 
 #import "NSMutableArray+LTKAdditions.h"
 
+#pragma mark Category Implementation
+
 @implementation NSMutableArray (LTKAdditions)
 
 #pragma mark - NSMutableArray (LTKAdditions) Methods

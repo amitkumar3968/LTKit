@@ -19,6 +19,8 @@
 
 #import "NSEntityDescription+LTKAdditions.h"
 
+#pragma mark Category Implementation
+
 @implementation NSEntityDescription (LTKAdditions)
 
 #pragma mark - NSEntityDescription (LTKAdditions) Methods

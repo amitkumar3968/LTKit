@@ -1,5 +1,5 @@
 //
-//	UIGestureRecognizer+LTKAdditions.m
+//	NSBundle+LTKAdditions.h
 //	LTKit
 //
 //	Copyright (c) 2012 Michael Potter
@@ -17,19 +17,14 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <LTKit/LTKit.h>
+#import <Foundation/Foundation.h>
 
-#import "UIGestureRecognizer+LTKAdditions.h"
+@interface NSBundle (LTKAdditions)
 
-#pragma mark Category Implementation
-
-@implementation UIGestureRecognizer (LTKAdditions)
-
-#pragma mark - UIGestureRecognizer (LTKAdditions) Methods
-
-+ (id)gestureRecognizerWithTarget:(id)target action:(SEL)action
-{
-	return [[self alloc] initWithTarget:target action:action];
-}
+- (NSArray *)classStrings;
+- (NSArray *)classStringsMatchingPattern:(NSRegularExpression *)regularExpression;
+- (NSArray *)classStringsConformingToProtocol:(Protocol *)protocol;
+- (NSArray *)classStringsExtendingClass:(Class)superclass;
+- (NSArray *)classStringsExtendingClass:(Class)superclass excludeSuperclass:(BOOL)excludeSuperclass;
 
 @end

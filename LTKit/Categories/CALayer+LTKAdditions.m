@@ -34,6 +34,8 @@ NSTimeInterval const LTKDefaultTransitionDuration = 0.25;
 
 @end
 
+#pragma mark - Category Implementation
+
 @implementation LTKAnimationDelegate
 
 @synthesize startBlock;

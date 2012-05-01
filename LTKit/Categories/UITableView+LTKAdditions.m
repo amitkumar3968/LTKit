@@ -171,6 +171,8 @@ static NSString *const LTKVisibleSectionDefinitionsAssociatedObjectKey = @"LTKVi
 
 @end
 
+#pragma mark - Category Implementation
+
 @implementation UITableView (LTKAdditions)
 
 #pragma mark - UITableView (LTKAdditions)

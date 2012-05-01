@@ -21,6 +21,8 @@
 
 #import "AVCaptureSession+LTKAdditions.h"
 
+#pragma mark Category Implementation
+
 @implementation AVCaptureSession (LTKAdditions)
 
 #pragma mark - AVCaptureSession (LTKAdditions) Methods

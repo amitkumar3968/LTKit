@@ -1,5 +1,5 @@
 //
-//	UIGestureRecognizer+LTKAdditions.m
+//	LTKTextField.h
 //	LTKit
 //
 //	Copyright (c) 2012 Michael Potter
@@ -17,19 +17,17 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <LTKit/LTKit.h>
+#import <UIKit/UIKit.h>
 
-#import "UIGestureRecognizer+LTKAdditions.h"
+@interface LTKTextField : UITextField
 
-#pragma mark Category Implementation
-
-@implementation UIGestureRecognizer (LTKAdditions)
-
-#pragma mark - UIGestureRecognizer (LTKAdditions) Methods
-
-+ (id)gestureRecognizerWithTarget:(id)target action:(SEL)action
-{
-	return [[self alloc] initWithTarget:target action:action];
-}
+@property (readwrite, nonatomic, strong) UIFont *placeholderFont;
+@property (readwrite, nonatomic, strong) UIColor *placeholderTextColor;
+@property (readwrite, nonatomic, strong) UIColor *placeholderShadowColor;
+@property (readwrite, nonatomic, assign) CGSize placeholderShadowOffset;
+@property (readwrite, nonatomic, assign) UITextAlignment placeholderTextAlignment;
+@property (readwrite, nonatomic, assign) UILineBreakMode placeholderLineBreakMode;
+@property (readwrite, nonatomic, assign) UIBaselineAdjustment placeholderBaselineAdjustment;
+@property (readwrite, nonatomic, assign) UIEdgeInsets textEdgeInsets;
 
 @end

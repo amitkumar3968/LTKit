@@ -20,6 +20,7 @@
 #import "Categories/AVCaptureSession+LTKAdditions.h"
 #import "Categories/CALayer+LTKAdditions.h"
 #import "Categories/NSArray+LTKAdditions.h"
+#import "Categories/NSBundle+LTKAdditions.h"
 #import "Categories/NSEntityDescription+LTKAdditions.h"
 #import "Categories/NSFileManager+LTKAdditions.h"
 #import "Categories/NSMutableArray+LTKAdditions.h"

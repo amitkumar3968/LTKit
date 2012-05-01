@@ -47,6 +47,8 @@
 
 @end
 
+#pragma mark - Category Implementation
+
 @implementation UINavigationBar (LTKAdditions)
 
 #pragma mark - Property Accessors

@@ -21,6 +21,8 @@
 
 #import "UIView+LTKAdditions.h"
 
+#pragma mark Category Implementation
+
 @implementation UIView (LTKAdditions)
 
 #pragma mark - Property Accessors

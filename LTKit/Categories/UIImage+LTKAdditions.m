@@ -21,6 +21,8 @@
 
 #import "UIImage+LTKAdditions.h"
 
+#pragma mark Category Implementation
+
 @implementation UIImage (LTKAdditions)
 
 #pragma mark - UIImage (LTKAdditions) Methods

@@ -19,6 +19,8 @@
 
 #import "NSFileManager+LTKAdditions.h"
 
+#pragma mark Category Implementation
+
 @implementation NSFileManager (LTKAdditions)
 
 #pragma mark - NSFileManager (LTKAdditions) Methods

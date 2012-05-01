@@ -21,6 +21,8 @@
 
 #import "UIColor+LTKAdditions.h"
 
+#pragma mark Category Implementation
+
 @implementation UIColor (LTKAdditions)
 
 #pragma mark - UIColor (LTKAdditions) Methods

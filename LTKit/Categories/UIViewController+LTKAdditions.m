@@ -21,6 +21,8 @@
 
 #import "UIViewController+LTKAdditions.h"
 
+#pragma mark Category Implementation
+
 @implementation UIViewController (LTKAdditions)
 
 #pragma mark - UIViewController (LTKAdditions)

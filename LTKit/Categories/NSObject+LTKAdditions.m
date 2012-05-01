@@ -35,8 +35,6 @@ static NSString *const LTKAssociationKeyPointersAssociatedObjectKey = @"LTKAssoc
 
 @end
 
-#pragma mark -
-
 @implementation NSObject (LTKAdditionsInternal)
 
 #pragma mark - NSObject (LTKAdditionsInternal) Methods
@@ -98,7 +96,7 @@ static NSString *const LTKAssociationKeyPointersAssociatedObjectKey = @"LTKAssoc
 
 @end
 
-#pragma mark -
+#pragma mark - Category Implementation
 
 @implementation NSObject (LTKAdditions)
 

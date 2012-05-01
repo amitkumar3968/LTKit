@@ -25,6 +25,45 @@
 
 #pragma mark - Unit Tests
 
+- (void)testStringIsEmptyMethod
+{
+	NSString *string1 = nil;
+	NSString *string2 = @"string";
+	NSString *string3 = @"";
+	NSString *string4 = [string3 copy];
+
+	STAssertTrue([NSString stringIsEmpty:string1], @"String 1 is not empty.");
+	STAssertFalse([NSString stringIsEmpty:string2], @"String 2 is empty.");
+	STAssertTrue([NSString stringIsEmpty:string3], @"String 3 is not empty.");
+	STAssertTrue([NSString stringIsEmpty:string4], @"String 4 is not empty.");
+}
+
+- (void)testStringIsNotEmptyMethod
+{
+	NSString *string1 = nil;
+	NSString *string2 = @"string";
+	NSString *string3 = @"";
+	NSString *string4 = [string3 copy];
+
+	STAssertFalse([NSString stringIsNotEmpty:string1], @"String 1 is not empty.");
+	STAssertTrue([NSString stringIsNotEmpty:string2], @"String 2 is empty.");
+	STAssertFalse([NSString stringIsNotEmpty:string3], @"String 3 is not empty.");
+	STAssertFalse([NSString stringIsNotEmpty:string4], @"String 4 is not empty.");
+}
+
+- (void)testIsEmptyMethod
+{
+	NSString *string1 = nil;
+	NSString *string2 = @"string";
+	NSString *string3 = @"";
+	NSString *string4 = [string3 copy];
+
+	STAssertFalse([string1 isEmpty], @"A message sent to nil did not return nil.");
+	STAssertFalse([string2 isEmpty], @"String 2 is empty.");
+	STAssertTrue([string3 isEmpty], @"String 3 is not empty.");
+	STAssertTrue([string4 isEmpty], @"String 4 is not empty.");
+}
+
 - (void)testIsNotEmptyMethod
 {
 	NSString *string1 = nil;
@@ -36,19 +75,6 @@
 	STAssertTrue([string2 isNotEmpty], @"String 2 is empty.");
 	STAssertFalse([string3 isNotEmpty], @"String 3 is not empty.");
 	STAssertFalse([string4 isNotEmpty], @"String 4 is not empty.");
-}
-
-- (void)testIsEmptyMethod
-{
-	NSString *string1 = nil;
-	NSString *string2 = @"string";
-	NSString *string3 = @"";
-	NSString *string4 = [string3 copy];
-
-	STAssertFalse([string1 isEmpty], @"A message sent to nil did not return nil.");
-	STAssertFalse([string2 isEmpty], @"String 2 is not empty.");
-	STAssertTrue([string3 isEmpty], @"String 3 is empty.");
-	STAssertTrue([string4 isEmpty], @"String 4 is empty.");
 }
 
 - (void)testIsNotEqualToStringMethod

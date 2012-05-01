@@ -21,6 +21,8 @@
 
 @interface NSString (LTKAdditions)
 
++ (BOOL)stringIsEmpty:(NSString *)string;
++ (BOOL)stringIsNotEmpty:(NSString *)string;
 - (BOOL)isEmpty;
 - (BOOL)isNotEmpty;
 

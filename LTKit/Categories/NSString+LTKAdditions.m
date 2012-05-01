@@ -21,13 +21,25 @@
 
 #import "NSString+LTKAdditions.h"
 
+#pragma mark Category Implementation
+
 @implementation NSString (LTKAdditions)
 
 #pragma mark - NSString (LTKAdditions) Methods
 
++ (BOOL)stringIsEmpty:(NSString *)string
+{
+	return (string == nil || [string isEqualToString:@""]);
+}
+
++ (BOOL)stringIsNotEmpty:(NSString *)string
+{
+	return ![self stringIsEmpty:string];
+}
+
 - (BOOL)isEmpty
 {
-	return [self isEqualToString:@""];
+	return [NSString stringIsEmpty:self];
 }
 
 - (BOOL)isNotEmpty

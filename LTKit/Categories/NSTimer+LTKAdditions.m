@@ -21,6 +21,8 @@
 
 #import "NSTimer+LTKAdditions.h"
 
+#pragma mark Category Implementation
+
 @interface NSTimer (LTKAdditionsInternal)
 
 + (void)timerDidFire:(NSTimer *)timer;
