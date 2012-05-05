@@ -73,7 +73,7 @@ static NSString *const SCBundleClassStringsAssociatedObjectKey = @"SCBundleClass
 	return classStrings;
 }
 
-- (NSArray *)classStringsMatchingPattern:(NSRegularExpression *)regularExpression
+- (NSArray *)classStringsMatchingRegularExpression:(NSRegularExpression *)regularExpression
 {
 	NSArray *classStrings = [self classStrings];
 	NSMutableArray *mutableClassStringsMatchingPattern = [NSMutableArray array];

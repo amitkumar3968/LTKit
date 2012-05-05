@@ -22,7 +22,7 @@
 @interface NSBundle (LTKAdditions)
 
 - (NSArray *)classStrings;
-- (NSArray *)classStringsMatchingPattern:(NSRegularExpression *)regularExpression;
+- (NSArray *)classStringsMatchingRegularExpression:(NSRegularExpression *)regularExpression;
 - (NSArray *)classStringsConformingToProtocol:(Protocol *)protocol;
 - (NSArray *)classStringsExtendingClass:(Class)superclass;
 - (NSArray *)classStringsExtendingClass:(Class)superclass excludeSuperclass:(BOOL)excludeSuperclass;
