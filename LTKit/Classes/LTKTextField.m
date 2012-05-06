@@ -84,7 +84,7 @@
 		placeholderRectForBounds.size = [self.placeholder sizeWithFont:font forWidth:placeholderRectForBounds.size.width
 			lineBreakMode:self.placeholderLineBreakMode];
 
-		NSLog(@"Placeholder rect (%@) for bounds (%@).", NSStringFromCGRect(placeholderRectForBounds), NSStringFromCGRect(bounds));
+//		NSLog(@"Placeholder rect (%@) for bounds (%@).", NSStringFromCGRect(placeholderRectForBounds), NSStringFromCGRect(bounds));
 	}
 	else
 	{
@@ -96,7 +96,7 @@
 
 - (void)drawPlaceholderInRect:(CGRect)rect
 {
-	NSLog(@"Drawing rect: %@", NSStringFromCGRect(rect));
+//	NSLog(@"Drawing rect: %@", NSStringFromCGRect(rect));
 
 	UIFont *font = (self.placeholderFont != nil ? self.placeholderFont : self.font);
 	UIColor *textColor = (self.placeholderTextColor != nil ? self.placeholderTextColor : self.textColor);
@@ -120,6 +120,11 @@
 }
 
 - (CGRect)editingRectForBounds:(CGRect)bounds
+{
+	return UIEdgeInsetsInsetRect([super editingRectForBounds:bounds], self.textEdgeInsets);
+}
+
+- (CGRect)textRectForBounds:(CGRect)bounds
 {
 	return UIEdgeInsetsInsetRect([super editingRectForBounds:bounds], self.textEdgeInsets);
 }
