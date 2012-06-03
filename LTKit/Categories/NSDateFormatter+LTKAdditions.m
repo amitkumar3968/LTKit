@@ -1,5 +1,5 @@
 //
-//	LTKitCategories.h
+//	NSDateFormatter+LTKAdditions.m
 //	LTKit
 //
 //	Copyright (c) 2012 Michael Potter
@@ -17,24 +17,45 @@
 //	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "Categories/AVCaptureSession+LTKAdditions.h"
-#import "Categories/CALayer+LTKAdditions.h"
-#import "Categories/NSArray+LTKAdditions.h"
-#import "Categories/NSBundle+LTKAdditions.h"
-#import "Categories/NSDateFormatter+LTKAdditions.h"
-#import "Categories/NSEntityDescription+LTKAdditions.h"
-#import "Categories/NSError+LTKAdditions.h"
-#import "Categories/NSFileManager+LTKAdditions.h"
-#import "Categories/NSMutableArray+LTKAdditions.h"
-#import "Categories/NSObject+LTKAdditions.h"
-#import "Categories/NSString+LTKAdditions.h"
-#import "Categories/NSTimer+LTKAdditions.h"
-#import "Categories/UIColor+LTKAdditions.h"
-#import "Categories/UIGestureRecognizer+LTKAdditions.h"
-#import "Categories/UINavigationBar+LTKAdditions.h"
-#import "Categories/UIImage+LTKAdditions.h"
-#import "Categories/UIImageView+LTKAdditions.h"
-#import "Categories/UIStoryboard+LTKAdditions.h"
-#import "Categories/UITableView+LTKAdditions.h"
-#import "Categories/UIView+LTKAdditions.h"
-#import "Categories/UIViewController+LTKAdditions.h"
+#import "NSDateFormatter+LTKAdditions.h"
+
+@implementation NSDateFormatter (LTKAdditions)
+
+#pragma mark - NSDateFormatter (LTKAdditions) Methods
+
++ (id)dateFormatterWithDateFormat:(NSString *)dateFormat
+{
+	return [[self alloc] initWithDateFormat:dateFormat];
+}
+
++ (id)dateFormatterWithDateStyle:(NSDateFormatterStyle)dateStyle timeStyle:(NSDateFormatterStyle)timeStyle
+{
+	return [[self alloc] initWithDateStyle:dateStyle timeStyle:timeStyle];
+}
+
+- (id)initWithDateFormat:(NSString *)dateFormat
+{
+	self = [self init];
+
+	if (self != nil)
+	{
+		[self setDateFormat:dateFormat];
+	}
+
+	return self;
+}
+
+- (id)initWithDateStyle:(NSDateFormatterStyle)dateStyle timeStyle:(NSDateFormatterStyle)timeStyle
+{
+	self = [self init];
+
+	if (self != nil)
+	{
+		[self setDateStyle:dateStyle];
+		[self setTimeStyle:timeStyle];
+	}
+
+	return self;
+}
+
+@end

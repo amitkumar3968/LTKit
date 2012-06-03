@@ -74,6 +74,8 @@
 		EB69C782154F443300669DC6 /* NSBundle+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EB69C780154F443300669DC6 /* NSBundle+LTKAdditions.m */; };
 		EB6A49A714BF726300D41934 /* AVCaptureSession+LTKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EB6A49A514BF726300D41934 /* AVCaptureSession+LTKAdditions.h */; };
 		EB6A49A814BF726300D41934 /* AVCaptureSession+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6A49A614BF726300D41934 /* AVCaptureSession+LTKAdditions.m */; };
+		EB6B660A157AB5F9003838B7 /* NSError+LTKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EB6B6608157AB5F9003838B7 /* NSError+LTKAdditions.h */; };
+		EB6B660B157AB5F9003838B7 /* NSError+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6B6609157AB5F9003838B7 /* NSError+LTKAdditions.m */; };
 		EB6F265114A21E6900347EE1 /* LTKMath.h in Headers */ = {isa = PBXBuildFile; fileRef = EB6F265014A21E6900347EE1 /* LTKMath.h */; };
 		EB6F265714A2241F00347EE1 /* LTKGeometryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6F265614A2241F00347EE1 /* LTKGeometryTests.m */; };
 		EB6F265A14A227A200347EE1 /* LTKMathTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6F265914A227A200347EE1 /* LTKMathTests.m */; };
@@ -113,6 +115,8 @@
 		EBCB92BD1517C0F400C7DF2B /* NSFileManager+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBCB92BB1517C0F400C7DF2B /* NSFileManager+LTKAdditions.m */; };
 		EBCB92CE1517D53800C7DF2B /* NSEntityDescription+LTKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EBCB92CC1517D53800C7DF2B /* NSEntityDescription+LTKAdditions.h */; };
 		EBCB92CF1517D53800C7DF2B /* NSEntityDescription+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBCB92CD1517D53800C7DF2B /* NSEntityDescription+LTKAdditions.m */; };
+		EBE9D6561573FB0A00CA2F00 /* NSDateFormatter+LTKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EBE9D6541573FB0A00CA2F00 /* NSDateFormatter+LTKAdditions.h */; };
+		EBE9D6571573FB0A00CA2F00 /* NSDateFormatter+LTKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE9D6551573FB0A00CA2F00 /* NSDateFormatter+LTKAdditions.m */; };
 		EBF214591506F43300A35420 /* LTKTableViewSectionDefinition.h in Headers */ = {isa = PBXBuildFile; fileRef = EBF214571506F43300A35420 /* LTKTableViewSectionDefinition.h */; };
 		EBF2145A1506F43300A35420 /* LTKTableViewSectionDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF214581506F43300A35420 /* LTKTableViewSectionDefinition.m */; };
 		EBF72BDE1445200F009C9B5E /* LTPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF72BD41445200F009C9B5E /* LTPAppDelegate.m */; };
@@ -208,6 +212,8 @@
 		EB69C780154F443300669DC6 /* NSBundle+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+LTKAdditions.m"; sourceTree = "<group>"; };
 		EB6A49A514BF726300D41934 /* AVCaptureSession+LTKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AVCaptureSession+LTKAdditions.h"; sourceTree = "<group>"; };
 		EB6A49A614BF726300D41934 /* AVCaptureSession+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "AVCaptureSession+LTKAdditions.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		EB6B6608157AB5F9003838B7 /* NSError+LTKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+LTKAdditions.h"; sourceTree = "<group>"; };
+		EB6B6609157AB5F9003838B7 /* NSError+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+LTKAdditions.m"; sourceTree = "<group>"; };
 		EB6F265014A21E6900347EE1 /* LTKMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKMath.h; sourceTree = "<group>"; };
 		EB6F265514A2241F00347EE1 /* LTKGeometryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKGeometryTests.h; sourceTree = "<group>"; };
 		EB6F265614A2241F00347EE1 /* LTKGeometryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKGeometryTests.m; sourceTree = "<group>"; };
@@ -260,6 +266,8 @@
 		EBCB92CC1517D53800C7DF2B /* NSEntityDescription+LTKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSEntityDescription+LTKAdditions.h"; sourceTree = "<group>"; };
 		EBCB92CD1517D53800C7DF2B /* NSEntityDescription+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSEntityDescription+LTKAdditions.m"; sourceTree = "<group>"; };
 		EBDB87CE1518094A00616BC8 /* LTPlayground.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = LTPlayground.entitlements; sourceTree = "<group>"; };
+		EBE9D6541573FB0A00CA2F00 /* NSDateFormatter+LTKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+LTKAdditions.h"; sourceTree = "<group>"; };
+		EBE9D6551573FB0A00CA2F00 /* NSDateFormatter+LTKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+LTKAdditions.m"; sourceTree = "<group>"; };
 		EBF214571506F43300A35420 /* LTKTableViewSectionDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKTableViewSectionDefinition.h; sourceTree = "<group>"; };
 		EBF214581506F43300A35420 /* LTKTableViewSectionDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKTableViewSectionDefinition.m; sourceTree = "<group>"; };
 		EBF72BD31445200F009C9B5E /* LTPAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTPAppDelegate.h; sourceTree = "<group>"; };
@@ -467,8 +475,12 @@
 				EBACB16214C77488009F9D26 /* NSArray+LTKAdditions.m */,
 				EB69C77F154F443300669DC6 /* NSBundle+LTKAdditions.h */,
 				EB69C780154F443300669DC6 /* NSBundle+LTKAdditions.m */,
+				EBE9D6541573FB0A00CA2F00 /* NSDateFormatter+LTKAdditions.h */,
+				EBE9D6551573FB0A00CA2F00 /* NSDateFormatter+LTKAdditions.m */,
 				EBCB92CC1517D53800C7DF2B /* NSEntityDescription+LTKAdditions.h */,
 				EBCB92CD1517D53800C7DF2B /* NSEntityDescription+LTKAdditions.m */,
+				EB6B6608157AB5F9003838B7 /* NSError+LTKAdditions.h */,
+				EB6B6609157AB5F9003838B7 /* NSError+LTKAdditions.m */,
 				EBCB92BA1517C0F400C7DF2B /* NSFileManager+LTKAdditions.h */,
 				EBCB92BB1517C0F400C7DF2B /* NSFileManager+LTKAdditions.m */,
 				EB775225151C0478000EB089 /* NSMutableArray+LTKAdditions.h */,
@@ -662,6 +674,8 @@
 				EB2772F81540BFF000FB96A9 /* LTKTesting.h in Headers */,
 				EBFBB7E115477B44001D1691 /* LTKTextField.h in Headers */,
 				EB69C781154F443300669DC6 /* NSBundle+LTKAdditions.h in Headers */,
+				EBE9D6561573FB0A00CA2F00 /* NSDateFormatter+LTKAdditions.h in Headers */,
+				EB6B660A157AB5F9003838B7 /* NSError+LTKAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -822,6 +836,8 @@
 				EB775228151C0478000EB089 /* NSMutableArray+LTKAdditions.m in Sources */,
 				EBFBB7E215477B44001D1691 /* LTKTextField.m in Sources */,
 				EB69C782154F443300669DC6 /* NSBundle+LTKAdditions.m in Sources */,
+				EBE9D6571573FB0A00CA2F00 /* NSDateFormatter+LTKAdditions.m in Sources */,
+				EB6B660B157AB5F9003838B7 /* NSError+LTKAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
